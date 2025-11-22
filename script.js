@@ -1,151 +1,132 @@
-// =========================
-// GTTOOLS – Frontend Tools
-// =========================
+// ============================
+// GTTOOLS – 100 Tools Version
+// ============================
 
-// ---- TOOL DEFINITIONS ----
+// ---- TOOL DEFINITIONS (METADATA) ----
 
-// Text tools
+// Text tools (high-usage)
 const TEXT_TOOLS = [
-  // Case
-  { id: "txt-uppercase", name: "Uppercase Converter", category: "Case", group: "text", action: "uppercase" },
-  { id: "txt-lowercase", name: "Lowercase Converter", category: "Case", group: "text", action: "lowercase" },
-  { id: "txt-titlecase", name: "Title Case Converter", category: "Case", group: "text", action: "titlecase" },
-  { id: "txt-sentencecase", name: "Sentence Case Converter", category: "Case", group: "text", action: "sentencecase" },
-  { id: "txt-invertcase", name: "Invert Case", category: "Case", group: "text", action: "invertcase" },
-  { id: "txt-alternating", name: "Alternating Case", category: "Case", group: "text", action: "alternating" },
-
-  // Spaces / lines
-  { id: "txt-remove-extra-spaces", name: "Remove Extra Spaces", category: "Clean", group: "text", action: "removeExtraSpaces" },
-  { id: "txt-trim", name: "Trim Text (Start/End)", category: "Clean", group: "text", action: "trim" },
-  { id: "txt-trim-lines", name: "Trim Each Line", category: "Lines", group: "text", action: "trimLines" },
-  { id: "txt-remove-empty-lines", name: "Remove Empty Lines", category: "Lines", group: "text", action: "removeEmptyLines" },
-  { id: "txt-sort-lines-az", name: "Sort Lines A–Z", category: "Lines", group: "text", action: "sortLinesAZ" },
-  { id: "txt-sort-lines-za", name: "Sort Lines Z–A", category: "Lines", group: "text", action: "sortLinesZA" },
-  { id: "txt-reverse-lines", name: "Reverse Lines Order", category: "Lines", group: "text", action: "reverseLines" },
-
-  // Reverse
-  { id: "txt-reverse-text", name: "Reverse Text", category: "Reverse", group: "text", action: "reverseText" },
-  { id: "txt-reverse-words", name: "Reverse Each Word", category: "Reverse", group: "text", action: "reverseWords" },
-
-  // Line operations
-  { id: "txt-add-line-numbers", name: "Add Line Numbers", category: "Lines", group: "text", action: "addLineNumbers" },
-  { id: "txt-find-replace", name: "Find & Replace", category: "Text", group: "text", action: "findReplace" },
-
-  // Counters
-  { id: "txt-word-count", name: "Word Counter", category: "Stats", group: "text", action: "wordCount" },
-  { id: "txt-char-count", name: "Character Counter", category: "Stats", group: "text", action: "charCount" },
-  { id: "txt-line-count", name: "Line Counter", category: "Stats", group: "text", action: "lineCount" },
-  { id: "txt-paragraph-count", name: "Paragraph Counter", category: "Stats", group: "text", action: "paragraphCount" },
-  { id: "txt-reading-time", name: "Reading Time Estimator", category: "Stats", group: "text", action: "readingTime" },
-
-  // Cleaning / filters
-  { id: "txt-remove-punct", name: "Remove Punctuation", category: "Clean", group: "text", action: "removePunctuation" },
-  { id: "txt-keep-numbers", name: "Keep Only Numbers", category: "Clean", group: "text", action: "keepNumbers" },
-  { id: "txt-remove-numbers", name: "Remove Numbers", category: "Clean", group: "text", action: "removeNumbers" },
-
-  // Naming styles
-  { id: "txt-slug", name: "Slug Generator", category: "Naming", group: "text", action: "slug" },
-  { id: "txt-snake", name: "snake_case Converter", category: "Naming", group: "text", action: "snake" },
-  { id: "txt-kebab", name: "kebab-case Converter", category: "Naming", group: "text", action: "kebab" },
-  { id: "txt-camel", name: "camelCase Converter", category: "Naming", group: "text", action: "camel" },
-  { id: "txt-pascal", name: "PascalCase Converter", category: "Naming", group: "text", action: "pascal" },
-  { id: "txt-hashtags", name: "Hashtag Generator", category: "Social", group: "text", action: "hashtags" },
-
-  // Extractors
-  { id: "txt-email-extract", name: "Email Extractor", category: "Extract", group: "text", action: "emailExtract" },
-  { id: "txt-url-extract", name: "URL Extractor", category: "Extract", group: "text", action: "urlExtract" },
-
-  // Encoding
-  { id: "txt-b64-encode", name: "Base64 Encode (Text)", category: "Encode", group: "text", action: "b64Encode" },
-  { id: "txt-b64-decode", name: "Base64 Decode (Text)", category: "Encode", group: "text", action: "b64Decode" },
-  { id: "txt-url-encode", name: "URL Encode (Text)", category: "Encode", group: "text", action: "urlEncode" },
-  { id: "txt-url-decode", name: "URL Decode (Text)", category: "Encode", group: "text", action: "urlDecode" },
-
-  // JSON
-  { id: "txt-json-pretty", name: "JSON Pretty Print", category: "JSON", group: "text", action: "jsonPretty" },
-  { id: "txt-json-minify", name: "JSON Minify", category: "JSON", group: "text", action: "jsonMinify" },
-
-  // Generators
-  { id: "txt-lorem", name: "Lorem Ipsum Generator", category: "Generator", group: "text", action: "lorem" },
-  { id: "txt-password", name: "Random Password Generator", category: "Generator", group: "text", action: "password" }
+  { id: "word-count", name: "Word Counter", category: "Text / Stats", group: "text", action: "wordCount" },
+  { id: "char-count", name: "Character Counter", category: "Text / Stats", group: "text", action: "charCount" },
+  { id: "remove-extra-spaces", name: "Remove Extra Spaces", category: "Clean", group: "text", action: "removeExtraSpaces" },
+  { id: "remove-line-breaks", name: "Remove Line Breaks", category: "Clean", group: "text", action: "removeLineBreaks" },
+  { id: "remove-empty-lines", name: "Remove Empty Lines", category: "Clean", group: "text", action: "removeEmptyLines" },
+  { id: "sort-lines-az", name: "Sort Lines A→Z", category: "Lines", group: "text", action: "sortLinesAZ" },
+  { id: "sort-lines-za", name: "Sort Lines Z→A", category: "Lines", group: "text", action: "sortLinesZA" },
+  { id: "uppercase", name: "Uppercase Converter", category: "Case", group: "text", action: "uppercase" },
+  { id: "lowercase", name: "Lowercase Converter", category: "Case", group: "text", action: "lowercase" },
+  { id: "titlecase", name: "Title Case Converter", category: "Case", group: "text", action: "titlecase" },
+  { id: "sentencecase", name: "Sentence Case Converter", category: "Case", group: "text", action: "sentencecase" },
+  { id: "reverse-text", name: "Reverse Text", category: "Reverse", group: "text", action: "reverseText" },
+  { id: "find-replace", name: "Find & Replace", category: "Text", group: "text", action: "findReplace" },
+  { id: "add-line-numbers", name: "Add Line Numbers", category: "Lines", group: "text", action: "addLineNumbers" },
+  { id: "merge-lines", name: "Merge Lines", category: "Lines", group: "text", action: "mergeLines" },
+  { id: "email-extractor", name: "Email Extractor", category: "Extract", group: "text", action: "emailExtract" },
+  { id: "url-extractor", name: "URL Extractor", category: "Extract", group: "text", action: "urlExtract" },
+  { id: "number-extractor", name: "Number Extractor", category: "Extract", group: "text", action: "numberExtract" },
+  { id: "hashtag-generator", name: "Hashtag Generator", category: "Social", group: "text", action: "hashtags" },
+  { id: "slug-generator", name: "Slug Generator", category: "SEO", group: "text", action: "slug" },
+  { id: "random-password", name: "Random Password Generator", category: "Generator", group: "text", action: "password" },
+  { id: "lorem-ipsum", name: "Lorem Ipsum Generator", category: "Generator", group: "text", action: "lorem" },
+  { id: "text-to-binary", name: "Text → Binary", category: "Convert", group: "text", action: "textToBinary" },
+  { id: "binary-to-text", name: "Binary → Text", category: "Convert", group: "text", action: "binaryToText" },
+  { id: "reading-time", name: "Reading Time Calculator", category: "Stats", group: "text", action: "readingTime" }
 ];
 
-// Image tools (all canvas-based)
+// Image tools (frontend-only)
 const IMAGE_TOOLS = [
-  { id: "img-resize", name: "Image Resize", category: "Basic", group: "image", action: "resize" },
-  { id: "img-rotate-90", name: "Rotate 90°", category: "Basic", group: "image", action: "rotate90" },
-  { id: "img-rotate-180", name: "Rotate 180°", category: "Basic", group: "image", action: "rotate180" },
-  { id: "img-rotate-270", name: "Rotate 270°", category: "Basic", group: "image", action: "rotate270" },
-  { id: "img-flip-h", name: "Flip Horizontal", category: "Basic", group: "image", action: "flipH" },
-  { id: "img-flip-v", name: "Flip Vertical", category: "Basic", group: "image", action: "flipV" },
-
+  { id: "img-resize", name: "Image Resize", category: "Image", group: "image", action: "resize" },
+  { id: "img-compress-placeholder", name: "Image Compress (Simple)", category: "Image", group: "image", action: "imgCompressPlaceholder" },
+  { id: "img-crop-placeholder", name: "Image Crop (Basic)", category: "Image", group: "image", action: "imgCropPlaceholder" },
+  { id: "img-rotate", name: "Rotate 90°", category: "Image", group: "image", action: "rotate90" },
+  { id: "img-flip-h", name: "Flip Horizontal", category: "Image", group: "image", action: "flipH" },
+  { id: "img-flip-v", name: "Flip Vertical", category: "Image", group: "image", action: "flipV" },
   { id: "img-grayscale", name: "Grayscale", category: "Filter", group: "image", action: "grayscale" },
   { id: "img-invert", name: "Invert Colors", category: "Filter", group: "image", action: "invert" },
-  { id: "img-sepia", name: "Sepia", category: "Filter", group: "image", action: "sepia" },
+  { id: "img-sepia", name: "Sepia Filter", category: "Filter", group: "image", action: "sepia" },
+  { id: "img-blur", name: "Blur Image", category: "Filter", group: "image", action: "blur" },
+  { id: "img-pixelate", name: "Pixelate Image", category: "Filter", group: "image", action: "pixelate" },
   { id: "img-brightness+", name: "Brightness +", category: "Adjust", group: "image", action: "brightnessUp" },
   { id: "img-brightness-", name: "Brightness -", category: "Adjust", group: "image", action: "brightnessDown" },
-  { id: "img-contrast+", name: "Contrast +", category: "Adjust", group: "image", action: "contrastUp" },
-  { id: "img-contrast-", name: "Contrast -", category: "Adjust", group: "image", action: "contrastDown" },
-
-  { id: "img-blur", name: "Blur", category: "Filter", group: "image", action: "blur" },
-  { id: "img-pixelate", name: "Pixelate", category: "Filter", group: "image", action: "pixelate" },
-
   { id: "img-border", name: "Add Border", category: "Style", group: "image", action: "border" },
+  { id: "img-rounded", name: "Rounded Corners", category: "Style", group: "image", action: "roundedCorners" },
   { id: "img-circle", name: "Circle Crop", category: "Style", group: "image", action: "circle" },
-
-  { id: "img-download-png", name: "Download PNG", category: "Export", group: "image", action: "downloadPng" },
-  { id: "img-download-jpg", name: "Download JPG", category: "Export", group: "image", action: "downloadJpg" }
+  { id: "img-to-base64", name: "Image → Base64 (placeholder)", category: "Convert", group: "image", action: "imgToBase64Placeholder" },
+  { id: "base64-to-img", name: "Base64 → Image (placeholder)", category: "Convert", group: "image", action: "base64ToImgPlaceholder" },
+  { id: "img-download-png", name: "Download as PNG", category: "Export", group: "image", action: "downloadPng" },
+  { id: "img-download-jpg", name: "Download as JPG", category: "Export", group: "image", action: "downloadJpg" }
 ];
 
-// Dev tools
+// PDF & file tools (mostly placeholders for now)
+const PDF_TOOLS = [
+  { id: "jpg-to-pdf", name: "JPG → PDF", category: "PDF Convert", group: "pdf", action: "placeholder" },
+  { id: "pdf-to-jpg", name: "PDF → JPG", category: "PDF Convert", group: "pdf", action: "placeholder" },
+  { id: "docx-to-pdf", name: "Word (DOCX) → PDF", category: "PDF Convert", group: "pdf", action: "placeholder" },
+  { id: "ppt-to-pdf", name: "PPT → PDF", category: "PDF Convert", group: "pdf", action: "placeholder" },
+  { id: "excel-to-pdf", name: "Excel → PDF", category: "PDF Convert", group: "pdf", action: "placeholder" },
+  { id: "pdf-to-word", name: "PDF → Word", category: "PDF Convert", group: "pdf", action: "placeholder" },
+  { id: "pdf-to-text", name: "PDF → Text", category: "PDF Convert", group: "pdf", action: "placeholder" },
+  { id: "pdf-split", name: "PDF Splitter", category: "PDF Tools", group: "pdf", action: "placeholder" },
+  { id: "pdf-merge", name: "PDF Merger", category: "PDF Tools", group: "pdf", action: "placeholder" },
+  { id: "pdf-compress", name: "Compress PDF", category: "PDF Tools", group: "pdf", action: "placeholder" },
+  { id: "pdf-unlock", name: "Unlock PDF", category: "PDF Tools", group: "pdf", action: "placeholder" },
+  { id: "pdf-protect", name: "Protect PDF (Password)", category: "PDF Tools", group: "pdf", action: "placeholder" },
+  { id: "pdf-rotate", name: "Rotate PDF Pages", category: "PDF Tools", group: "pdf", action: "placeholder" },
+  { id: "pdf-remove-pages", name: "Remove PDF Pages", category: "PDF Tools", group: "pdf", action: "placeholder" },
+  { id: "pdf-metadata", name: "PDF Metadata Viewer", category: "PDF Tools", group: "pdf", action: "placeholder" }
+];
+
+// Developer tools (working)
 const DEV_TOOLS = [
-  // JSON / CSV
-  { id: "dev-json-validate", name: "JSON Validator", category: "JSON", group: "dev", action: "jsonValidate" },
-  { id: "dev-json-format", name: "JSON Formatter", category: "JSON", group: "dev", action: "jsonPretty" },
-  { id: "dev-json-minify", name: "JSON Minifier", category: "JSON", group: "dev", action: "jsonMinify" },
-  { id: "dev-json-to-csv", name: "JSON → CSV", category: "Data", group: "dev", action: "jsonToCsv" },
-  { id: "dev-csv-to-json", name: "CSV → JSON", category: "Data", group: "dev", action: "csvToJson" },
-
-  // XML
-  { id: "dev-xml-format", name: "XML Formatter", category: "XML", group: "dev", action: "xmlPretty" },
-  { id: "dev-xml-minify", name: "XML Minifier", category: "XML", group: "dev", action: "xmlMinify" },
-
-  // Encoding
-  { id: "dev-b64-encode", name: "Base64 Encode", category: "Encode", group: "dev", action: "b64Encode" },
-  { id: "dev-b64-decode", name: "Base64 Decode", category: "Encode", group: "dev", action: "b64Decode" },
-  { id: "dev-url-encode", name: "URL Encode", category: "Encode", group: "dev", action: "urlEncode" },
-  { id: "dev-url-decode", name: "URL Decode", category: "Encode", group: "dev", action: "urlDecode" },
-  { id: "dev-html-escape", name: "HTML Escape", category: "HTML", group: "dev", action: "htmlEscape" },
-  { id: "dev-html-unescape", name: "HTML Unescape", category: "HTML", group: "dev", action: "htmlUnescape" },
-
-  // Security / IDs
-  { id: "dev-jwt-decode", name: "JWT Decoder", category: "Security", group: "dev", action: "jwtDecode" },
-  { id: "dev-uuid", name: "UUID Generator", category: "Generator", group: "dev", action: "uuid" },
-  { id: "dev-random-string", name: "Random String Generator", category: "Generator", group: "dev", action: "randomString" },
-  { id: "dev-api-key", name: "API Key Generator", category: "Generator", group: "dev", action: "apiKey" },
-
-  // SEO / meta
-  { id: "dev-robots", name: "robots.txt Generator", category: "SEO", group: "dev", action: "robots" },
-  { id: "dev-sitemap", name: "sitemap.xml Generator", category: "SEO", group: "dev", action: "sitemap" },
-  { id: "dev-meta-tags", name: "Meta Tags Generator", category: "SEO", group: "dev", action: "metaTags" },
-  { id: "dev-og-tags", name: "OpenGraph Tags Generator", category: "SEO", group: "dev", action: "ogTags" },
-
-  // Regex / text
-  { id: "dev-regex-tester", name: "Regex Tester", category: "Regex", group: "dev", action: "regexTest" },
-  { id: "dev-diff", name: "Diff Checker (Simple)", category: "Compare", group: "dev", action: "diff" },
-
-  // Network / URL
-  { id: "dev-url-parser", name: "URL Parser", category: "Network", group: "dev", action: "urlParse" },
-  { id: "dev-query-parser", name: "Query String Parser", category: "Network", group: "dev", action: "queryParse" },
-  { id: "dev-ip-extract", name: "IP Extractor", category: "Network", group: "dev", action: "ipExtract" },
-
-  // JSON viewer
-  { id: "dev-json-viewer", name: "JSON Viewer (Pretty)", category: "JSON", group: "dev", action: "jsonPretty" }
+  { id: "json-formatter", name: "JSON Formatter", category: "JSON", group: "dev", action: "jsonPretty" },
+  { id: "json-validator", name: "JSON Validator", category: "JSON", group: "dev", action: "jsonValidate" },
+  { id: "json-minify", name: "JSON Minifier", category: "JSON", group: "dev", action: "jsonMinify" },
+  { id: "json-viewer", name: "JSON Viewer", category: "JSON", group: "dev", action: "jsonPretty" },
+  { id: "json-to-csv", name: "JSON → CSV", category: "Data", group: "dev", action: "jsonToCsv" },
+  { id: "csv-to-json", name: "CSV → JSON", category: "Data", group: "dev", action: "csvToJson" },
+  { id: "html-beautify", name: "HTML Beautifier", category: "Code", group: "dev", action: "htmlBeautify" },
+  { id: "css-beautify", name: "CSS Beautifier", category: "Code", group: "dev", action: "simpleBeautify" },
+  { id: "js-beautify", name: "JS Beautifier", category: "Code", group: "dev", action: "simpleBeautify" },
+  { id: "html-minify", name: "HTML Minifier", category: "Code", group: "dev", action: "htmlMinify" },
+  { id: "css-minify", name: "CSS Minifier", category: "Code", group: "dev", action: "minifyWhitespace" },
+  { id: "js-minify", name: "JS Minifier", category: "Code", group: "dev", action: "minifyWhitespace" },
+  { id: "regex-tester", name: "Regex Tester", category: "Regex", group: "dev", action: "regexTest" },
+  { id: "diff-checker", name: "Diff Checker", category: "Compare", group: "dev", action: "diff" },
+  { id: "b64-encode", name: "Base64 Encode", category: "Encode", group: "dev", action: "b64Encode" },
+  { id: "b64-decode", name: "Base64 Decode", category: "Encode", group: "dev", action: "b64Decode" },
+  { id: "url-encode", name: "URL Encode", category: "Encode", group: "dev", action: "urlEncode" },
+  { id: "url-decode", name: "URL Decode", category: "Encode", group: "dev", action: "urlDecode" },
+  { id: "html-escape", name: "HTML Escape", category: "HTML", group: "dev", action: "htmlEscape" },
+  { id: "html-unescape", name: "HTML Unescape", category: "HTML", group: "dev", action: "htmlUnescape" },
+  { id: "uuid", name: "UUID Generator", category: "Security", group: "dev", action: "uuid" },
+  { id: "random-string", name: "Random String Generator", category: "Security", group: "dev", action: "randomString" },
+  { id: "jwt-decode", name: "JWT Decoder", category: "Security", group: "dev", action: "jwtDecode" },
+  { id: "color-convert", name: "Color Converter (HEX↔RGB)", category: "Color", group: "dev", action: "colorConvert" },
+  { id: "qr-generate", name: "QR Code Generator (placeholder)", category: "QR", group: "dev", action: "placeholder" }
 ];
 
-const TOOLS = [...TEXT_TOOLS, ...IMAGE_TOOLS, ...DEV_TOOLS];
+// Utility tools
+const UTIL_TOOLS = [
+  { id: "unit-converter", name: "Unit Converter (placeholder)", category: "Utility", group: "util", action: "placeholder" },
+  { id: "currency-converter", name: "Currency Converter (offline demo)", category: "Utility", group: "util", action: "currencyDemo" },
+  { id: "time-zone-converter", name: "Time Zone Converter (placeholder)", category: "Utility", group: "util", action: "placeholder" },
+  { id: "epoch-to-time", name: "Epoch → Human Time", category: "Time", group: "util", action: "epochToTime" },
+  { id: "time-to-epoch", name: "Human Time → Epoch", category: "Time", group: "util", action: "timeToEpoch" },
+  { id: "word-frequency", name: "Word Frequency Counter", category: "Text", group: "util", action: "wordFrequency" },
+  { id: "md-to-html", name: "Markdown → HTML", category: "Convert", group: "util", action: "mdToHtml" },
+  { id: "html-to-md", name: "HTML → Markdown (basic)", category: "Convert", group: "util", action: "htmlToMdBasic" },
+  { id: "text-compare", name: "Text Compare Tool", category: "Compare", group: "util", action: "diff" },
+  { id: "emoji-picker", name: "Emoji Extractor", category: "Fun", group: "util", action: "emojiExtract" },
+  { id: "fake-data", name: "Fake Data Generator", category: "Dev / Test", group: "util", action: "fakeData" },
+  { id: "yt-thumb", name: "YouTube Thumbnail Downloader (info)", category: "Media", group: "util", action: "ytThumbInfo" },
+  { id: "insta-dp", name: "Instagram DP Downloader (info)", category: "Media", group: "util", action: "instaDpInfo" },
+  { id: "case-converter", name: "Case Converter (multi)", category: "Text", group: "util", action: "caseCombo" },
+  { id: "emoji-insert-demo", name: "Emoji Helper (demo list)", category: "Fun", group: "util", action: "emojiHelper" }
+];
 
-// ---- GLOBAL STATE ----
+const TOOLS = [...TEXT_TOOLS, ...IMAGE_TOOLS, ...PDF_TOOLS, ...DEV_TOOLS, ...UTIL_TOOLS];
+
+// ---- STATE ----
 let currentTool = null;
 let currentGroupFilter = "all";
 
@@ -154,24 +135,19 @@ let imageCanvas = null;
 let imageCtx = null;
 let imageLoaded = false;
 
-// =====================
-// INITIALISATION
-// =====================
+// ========================
+// INIT
+// ========================
 
 document.addEventListener("DOMContentLoaded", () => {
   setupGroupFilters();
   setupSearch();
   renderToolList();
-
-  // Default: first text tool
-  currentTool = TEXT_TOOLS[0];
-  showTool(currentTool);
-  highlightActiveItem();
 });
 
-// =====================
-// SIDEBAR / FILTERS
-// =====================
+// ========================
+// SIDEBAR + SEARCH
+// ========================
 
 function setupGroupFilters() {
   const buttons = document.querySelectorAll(".group-btn");
@@ -200,10 +176,7 @@ function renderToolList(filterText = "") {
   const query = filterText.trim().toLowerCase();
 
   TOOLS.forEach((tool) => {
-    if (currentGroupFilter !== "all" && tool.group !== currentGroupFilter) {
-      return;
-    }
-
+    if (currentGroupFilter !== "all" && tool.group !== currentGroupFilter) return;
     if (
       query &&
       !tool.name.toLowerCase().includes(query) &&
@@ -214,9 +187,7 @@ function renderToolList(filterText = "") {
 
     const li = document.createElement("li");
     li.className = "tool-item";
-    if (currentTool && tool.id === currentTool.id) {
-      li.classList.add("active");
-    }
+    if (currentTool && tool.id === currentTool.id) li.classList.add("active");
 
     const nameEl = document.createElement("div");
     nameEl.className = "tool-name";
@@ -231,7 +202,15 @@ function renderToolList(filterText = "") {
     const tag = document.createElement("span");
     tag.className = "tool-tag " + tool.group;
     tag.textContent =
-      tool.group === "text" ? "Text" : tool.group === "image" ? "Image" : "Dev";
+      tool.group === "text"
+        ? "Text"
+        : tool.group === "image"
+        ? "Image"
+        : tool.group === "pdf"
+        ? "PDF"
+        : tool.group === "dev"
+        ? "Dev"
+        : "Utility";
     tagsEl.appendChild(tag);
 
     li.appendChild(nameEl);
@@ -260,9 +239,9 @@ function highlightActiveItem() {
   });
 }
 
-// =====================
+// ========================
 // MAIN TOOL RENDER
-// =====================
+// ========================
 
 function showTool(tool) {
   const container = document.getElementById("toolDetails");
@@ -284,14 +263,17 @@ function showTool(tool) {
   }
 }
 
-// Text + Dev UI
+// ---- Text / Dev / PDF / Utility UI ----
+
 function renderTextToolUI(container, tool) {
   const labelInput = document.createElement("label");
   labelInput.className = "label";
   labelInput.textContent =
     tool.group === "dev"
-      ? "Input (paste your JSON / code / data here)"
-      : "Input";
+      ? "Input (JSON / code / data):"
+      : tool.group === "pdf"
+      ? "Input (PDF info / notes / placeholder text):"
+      : "Input text:";
 
   const input = document.createElement("textarea");
   input.id = "inputText";
@@ -321,9 +303,14 @@ function renderTextToolUI(container, tool) {
   info.className = "label";
   info.style.marginTop = "4px";
 
+  if (tool.group === "pdf" || tool.action === "placeholder") {
+    info.textContent =
+      "ℹ️ Ye advanced conversion tool future upgrade/extra libraries ke liye ready hai. Abhi yaha explanation / notes show honge.";
+  }
+
   const labelOutput = document.createElement("label");
   labelOutput.className = "label";
-  labelOutput.textContent = "Output";
+  labelOutput.textContent = "Output:";
 
   const output = document.createElement("textarea");
   output.id = "outputText";
@@ -355,7 +342,8 @@ function renderTextToolUI(container, tool) {
   container.appendChild(copyRow);
 }
 
-// Image UI
+// ---- Image UI ----
+
 function renderImageToolUI(container, tool) {
   imageCanvas = null;
   imageCtx = null;
@@ -363,7 +351,7 @@ function renderImageToolUI(container, tool) {
 
   const label = document.createElement("label");
   label.className = "label";
-  label.textContent = "Upload image";
+  label.textContent = "Upload image:";
 
   const fileInput = document.createElement("input");
   fileInput.type = "file";
@@ -386,7 +374,7 @@ function renderImageToolUI(container, tool) {
 
   const resetBtn = document.createElement("button");
   resetBtn.className = "btn secondary";
-  resetBtn.textContent = "Reset";
+  resetBtn.textContent = "Reset Canvas";
 
   actions.appendChild(applyBtn);
   actions.appendChild(resetBtn);
@@ -434,11 +422,10 @@ function renderImageToolUI(container, tool) {
   });
 
   resetBtn.addEventListener("click", () => {
-    // Simple: clear and ask user to re-upload
     if (!imageCanvas) return;
     imageCtx.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
     imageLoaded = false;
-    info.textContent = "Canvas cleared. Re-upload an image.";
+    info.textContent = "Canvas cleared. Re-upload to continue.";
   });
 
   container.appendChild(uploadWrap);
@@ -447,13 +434,13 @@ function renderImageToolUI(container, tool) {
   container.appendChild(canvasWrap);
 }
 
-// =====================
-// RUN TEXT / DEV TOOLS
-// =====================
+// ========================
+// RUNNER – TEXT/DEV/PDF/UTIL
+// ========================
 
 function runCurrentTool() {
   if (!currentTool) return;
-  if (currentTool.group === "image") return; // image handled via its own button
+  if (currentTool.group === "image") return; // handled by button
 
   const inputEl = document.getElementById("inputText");
   const outputEl = document.getElementById("outputText");
@@ -468,56 +455,50 @@ function runCurrentTool() {
       ({ result, info } = runTextAction(currentTool.action, text));
     } else if (currentTool.group === "dev") {
       ({ result, info } = runDevAction(currentTool.action, text));
+    } else if (currentTool.group === "pdf") {
+      ({ result, info } = runPdfAction(currentTool, text));
+    } else if (currentTool.group === "util") {
+      ({ result, info } = runUtilAction(currentTool.action, text));
     } else {
       result = text;
-      info = "Unknown group.";
+      info = "Basic passthrough.";
     }
 
     outputEl.value = result;
     infoEl.textContent = info || "Done.";
-  } catch (err) {
+  } catch (e) {
     outputEl.value = "";
-    infoEl.textContent = "❌ Error: " + err.message;
+    infoEl.textContent = "❌ Error: " + e.message;
   }
 }
 
-// ---- TEXT ACTIONS ----
+// ========================
+// TEXT ACTIONS
+// ========================
 
 function runTextAction(action, text) {
   let result = "";
   let info = "";
 
   switch (action) {
-    case "uppercase":
-      result = text.toUpperCase();
+    case "wordCount": {
+      const words = getWords(text);
+      result = `Words: ${words.length}`;
       break;
-    case "lowercase":
-      result = text.toLowerCase();
+    }
+    case "charCount": {
+      const withSpaces = text.length;
+      const withoutSpaces = text.replace(/\s/g, "").length;
+      result =
+        `Characters (with spaces): ${withSpaces}\n` +
+        `Characters (without spaces): ${withoutSpaces}`;
       break;
-    case "titlecase":
-      result = toTitleCase(text);
-      break;
-    case "sentencecase":
-      result = toSentenceCase(text);
-      break;
-    case "invertcase":
-      result = invertCase(text);
-      break;
-    case "alternating":
-      result = alternatingCase(text);
-      break;
-
+    }
     case "removeExtraSpaces":
       result = text.replace(/\s+/g, " ").trim();
       break;
-    case "trim":
-      result = text.trim();
-      break;
-    case "trimLines":
-      result = text
-        .split("\n")
-        .map((l) => l.trim())
-        .join("\n");
+    case "removeLineBreaks":
+      result = text.replace(/\r?\n|\r/g, " ");
       break;
     case "removeEmptyLines":
       result = text
@@ -537,27 +518,21 @@ function runTextAction(action, text) {
         .sort((a, b) => b.localeCompare(a))
         .join("\n");
       break;
-    case "reverseLines":
-      result = text.split("\n").reverse().join("\n");
+    case "uppercase":
+      result = text.toUpperCase();
       break;
-
+    case "lowercase":
+      result = text.toLowerCase();
+      break;
+    case "titlecase":
+      result = toTitleCase(text);
+      break;
+    case "sentencecase":
+      result = toSentenceCase(text);
+      break;
     case "reverseText":
       result = text.split("").reverse().join("");
       break;
-    case "reverseWords":
-      result = text
-        .split(/\s+/)
-        .map((w) => w.split("").reverse().join(""))
-        .join(" ");
-      break;
-
-    case "addLineNumbers":
-      result = text
-        .split("\n")
-        .map((l, i) => `${i + 1}. ${l}`)
-        .join("\n");
-      break;
-
     case "findReplace": {
       const search = prompt("Text to find:");
       if (!search) {
@@ -569,50 +544,53 @@ function runTextAction(action, text) {
       result = text.replace(re, replacement);
       break;
     }
-
-    case "wordCount": {
-      const words = getWords(text);
-      result = `Words: ${words.length}`;
+    case "addLineNumbers":
+      result = text
+        .split("\n")
+        .map((l, i) => `${i + 1}. ${l}`)
+        .join("\n");
       break;
-    }
-    case "charCount": {
-      const withSpaces = text.length;
-      const withoutSpaces = text.replace(/\s/g, "").length;
-      result =
-        `Characters (with spaces): ${withSpaces}\n` +
-        `Characters (without spaces): ${withoutSpaces}`;
-      break;
-    }
-    case "lineCount": {
-      const lines = text ? text.split("\n").length : 0;
-      result = `Lines: ${lines}`;
-      break;
-    }
-    case "paragraphCount": {
-      const paras = text
-        .split(/\n\s*\n/)
-        .map((p) => p.trim())
-        .filter((p) => p).length;
-      result = `Paragraphs: ${paras}`;
-      break;
-    }
-    case "readingTime": {
-      const words = getWords(text).length;
-      const mins = Math.max(1, Math.round(words / 200));
-      result = `Words: ${words}\nApprox reading time: ${mins} minute(s).`;
-      break;
-    }
-
-    case "removePunctuation":
-      result = text.replace(/[^\w\s]|_/g, "");
-      break;
-    case "keepNumbers":
-      result = text.replace(/[^0-9]/g, "");
-      break;
-    case "removeNumbers":
-      result = text.replace(/[0-9]/g, "");
+    case "mergeLines":
+      result = text.split("\n").join(" ");
       break;
 
+    case "emailExtract": {
+      const m = text.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g);
+      if (!m) {
+        result = "No emails found.";
+      } else {
+        const u = Array.from(new Set(m));
+        result = u.join("\n");
+        info = `Found ${u.length} unique email(s).`;
+      }
+      break;
+    }
+    case "urlExtract": {
+      const m = text.match(/https?:\/\/[^\s]+/g);
+      if (!m) {
+        result = "No URLs found.";
+      } else {
+        const u = Array.from(new Set(m));
+        result = u.join("\n");
+        info = `Found ${u.length} unique URL(s).`;
+      }
+      break;
+    }
+    case "numberExtract": {
+      const m = text.match(/\d+(\.\d+)?/g);
+      if (!m) {
+        result = "No numbers found.";
+      } else {
+        result = m.join("\n");
+        info = `Found ${m.length} numbers.`;
+      }
+      break;
+    }
+    case "hashtags": {
+      const words = Array.from(new Set(wordsFromText(text)));
+      result = words.map((w) => "#" + w.toLowerCase()).join(" ");
+      break;
+    }
     case "slug":
       result = wordsFromText(text)
         .join("-")
@@ -621,124 +599,44 @@ function runTextAction(action, text) {
         .replace(/-+/g, "-")
         .replace(/^-|-$/g, "");
       break;
-    case "snake":
-      result = wordsFromText(text)
-        .join("_")
-        .toLowerCase()
-        .replace(/[^a-z0-9_]/g, "")
-        .replace(/_+/g, "_")
-        .replace(/^_|_$/g, "");
-      break;
-    case "kebab":
-      result = wordsFromText(text)
-        .join("-")
-        .toLowerCase()
-        .replace(/[^a-z0-9-]/g, "")
-        .replace(/-+/g, "-")
-        .replace(/^-|-$/g, "");
-      break;
-    case "camel": {
-      const words = wordsFromText(text);
-      result = words
-        .map((w, i) => {
-          const lower = w.toLowerCase();
-          return i === 0
-            ? lower
-            : lower.charAt(0).toUpperCase() + lower.slice(1);
-        })
-        .join("");
-      break;
-    }
-    case "pascal": {
-      const words = wordsFromText(text);
-      result = words
-        .map((w) => {
-          const lower = w.toLowerCase();
-          return lower.charAt(0).toUpperCase() + lower.slice(1);
-        })
-        .join("");
-      break;
-    }
-    case "hashtags": {
-      const words = Array.from(new Set(wordsFromText(text)));
-      result = words.map((w) => "#" + w.toLowerCase()).join(" ");
-      break;
-    }
-
-    case "emailExtract": {
-      const matches = text.match(
-        /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g
-      );
-      if (!matches) {
-        result = "No emails found.";
-      } else {
-        const unique = Array.from(new Set(matches));
-        result = unique.join("\n");
-        info = `Found ${unique.length} unique email(s).`;
-      }
-      break;
-    }
-    case "urlExtract": {
-      const matches = text.match(/https?:\/\/[^\s]+/g);
-      if (!matches) {
-        result = "No URLs found.";
-      } else {
-        const unique = Array.from(new Set(matches));
-        result = unique.join("\n");
-        info = `Found ${unique.length} unique URL(s).`;
-      }
-      break;
-    }
-
-    case "b64Encode":
-      result = btoa(unescape(encodeURIComponent(text)));
-      break;
-    case "b64Decode":
-      result = decodeURIComponent(escape(atob(text)));
-      break;
-    case "urlEncode":
-      result = encodeURIComponent(text);
-      break;
-    case "urlDecode":
-      result = decodeURIComponent(text);
-      break;
-
-    case "jsonPretty": {
-      if (!text.trim()) {
-        result = "";
-        break;
-      }
-      const obj = JSON.parse(text);
-      result = JSON.stringify(obj, null, 2);
-      break;
-    }
-    case "jsonMinify": {
-      if (!text.trim()) {
-        result = "";
-        break;
-      }
-      const obj = JSON.parse(text);
-      result = JSON.stringify(obj);
-      break;
-    }
-
-    case "lorem":
-      result = generateLoremIpsum();
-      break;
     case "password":
       result = generateRandomPassword();
       break;
-
+    case "lorem":
+      result = generateLoremIpsum();
+      break;
+    case "textToBinary":
+      result = Array.from(text)
+        .map((ch) => ch.charCodeAt(0).toString(2).padStart(8, "0"))
+        .join(" ");
+      break;
+    case "binaryToText":
+      result = text
+        .trim()
+        .split(/\s+/)
+        .map((bin) =>
+          String.fromCharCode(parseInt(bin.replace(/[^01]/g, ""), 2) || 0)
+        )
+        .join("");
+      break;
+    case "readingTime": {
+      const words = getWords(text).length;
+      const mins = Math.max(1, Math.round(words / 200));
+      result = `Words: ${words}\nEstimated reading time: ${mins} minute(s).`;
+      break;
+    }
     default:
       result = text;
-      info = "Basic passthrough (no extra transform).";
+      info = "Basic passthrough (no transform).";
       break;
   }
 
   return { result, info };
 }
 
-// ---- DEV ACTIONS ----
+// ========================
+// DEV ACTIONS
+// ========================
 
 function runDevAction(action, text) {
   let result = "";
@@ -758,21 +656,18 @@ function runDevAction(action, text) {
       }
       break;
     }
-
     case "jsonPretty": {
       if (!text.trim()) break;
       const obj = JSON.parse(text);
       result = JSON.stringify(obj, null, 2);
       break;
     }
-
     case "jsonMinify": {
       if (!text.trim()) break;
       const obj = JSON.parse(text);
       result = JSON.stringify(obj);
       break;
     }
-
     case "jsonToCsv": {
       if (!text.trim()) break;
       const arr = JSON.parse(text);
@@ -798,7 +693,6 @@ function runDevAction(action, text) {
       result = lines.join("\n");
       break;
     }
-
     case "csvToJson": {
       if (!text.trim()) break;
       const lines = text.split(/\r?\n/).filter((l) => l.trim());
@@ -819,136 +713,24 @@ function runDevAction(action, text) {
       break;
     }
 
-    case "xmlPretty":
+    case "htmlBeautify": {
       result = formatXml(text);
       break;
-
-    case "xmlMinify":
-      result = text.replace(/>\s+</g, "><").trim();
-      break;
-
-    case "b64Encode":
-      result = btoa(unescape(encodeURIComponent(text)));
-      break;
-
-    case "b64Decode":
-      result = decodeURIComponent(escape(atob(text)));
-      break;
-
-    case "urlEncode":
-      result = encodeURIComponent(text);
-      break;
-
-    case "urlDecode":
-      result = decodeURIComponent(text);
-      break;
-
-    case "htmlEscape":
-      result = encodeHtmlEntities(text);
-      break;
-
-    case "htmlUnescape":
-      result = decodeHtmlEntities(text);
-      break;
-
-    case "jwtDecode": {
-      const parts = text.split(".");
-      if (parts.length < 2) {
-        result = "Invalid JWT: should be header.payload[.signature]";
-        break;
-      }
-      const [h, p] = parts;
-      try {
-        const header = JSON.parse(
-          decodeURIComponent(
-            escape(atob(h.replace(/-/g, "+").replace(/_/g, "/")))
-          )
-        );
-        const payload = JSON.parse(
-          decodeURIComponent(
-            escape(atob(p.replace(/-/g, "+").replace(/_/g, "/")))
-          )
-        );
-        result =
-          "Header:\n" +
-          JSON.stringify(header, null, 2) +
-          "\n\nPayload:\n" +
-          JSON.stringify(payload, null, 2);
-      } catch (e) {
-        result = "Failed to decode JWT.\n\n" + e.message;
-      }
+    }
+    case "htmlMinify": {
+      result = text.replace(/\n+/g, "").replace(/\s{2,}/g, " ").trim();
       break;
     }
-
-    case "uuid":
-      result = crypto.randomUUID ? crypto.randomUUID() : fallbackUUID();
-      break;
-
-    case "randomString": {
-      const len = parseInt(prompt("Length?", "16") || "16", 10) || 16;
-      const chars =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      let out = "";
-      for (let i = 0; i < len; i++) {
-        out += chars[Math.floor(Math.random() * chars.length)];
-      }
-      result = out;
+    case "minifyWhitespace": {
+      result = text.replace(/\s+/g, " ").trim();
       break;
     }
-
-    case "apiKey": {
-      const chars =
-        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
-      let out = "";
-      for (let i = 0; i < 40; i++) {
-        out += chars[Math.floor(Math.random() * chars.length)];
-      }
-      result = out;
-      break;
-    }
-
-    case "robots":
-      result =
-        "User-agent: *\n" +
-        "Disallow:\n\n" +
-        "# Add Disallow: /path lines if needed.\n";
-      break;
-
-    case "sitemap": {
-      const urls = getWords(text).filter((u) => u.startsWith("http"));
-      const entries = urls
-        .map((u) => `<url><loc>${u}</loc></url>`)
-        .join("\n");
-      result =
-        `<?xml version="1.0" encoding="UTF-8"?>\n` +
-        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-        entries +
-        `\n</urlset>`;
-      break;
-    }
-
-    case "metaTags": {
-      const title = prompt("Page title:", "My awesome page") || "";
-      const desc = prompt("Description:", "Short description") || "";
-      const url = prompt("Canonical URL:", "https://example.com") || "";
-      result =
-        `<title>${title}</title>\n` +
-        `<meta name="description" content="${desc}" />\n` +
-        `<link rel="canonical" href="${url}" />\n`;
-      break;
-    }
-
-    case "ogTags": {
-      const title = prompt("OG title:", "My page") || "";
-      const desc = prompt("OG description:", "Description here") || "";
-      const url = prompt("URL:", "https://example.com") || "";
-      const img =
-        prompt("Image URL:", "https://example.com/image.jpg") || "";
-      result =
-        `<meta property="og:title" content="${title}" />\n` +
-        `<meta property="og:description" content="${desc}" />\n` +
-        `<meta property="og:url" content="${url}" />\n` +
-        `<meta property="og:image" content="${img}" />\n`;
+    case "simpleBeautify": {
+      result = text
+        .split(";")
+        .map((p) => p.trim())
+        .filter(Boolean)
+        .join(";\n");
       break;
     }
 
@@ -984,10 +766,10 @@ function runDevAction(action, text) {
         const left = a[i] ?? "";
         const right = b[i] ?? "";
         if (left === right) {
-          out.push(`  ${left}`);
+          out.push("  " + left);
         } else {
-          if (left) out.push(`- ${left}`);
-          if (right) out.push(`+ ${right}`);
+          if (left) out.push("- " + left);
+          if (right) out.push("+ " + right);
         }
       }
       result = out.join("\n");
@@ -995,68 +777,308 @@ function runDevAction(action, text) {
       break;
     }
 
-    case "urlParse": {
+    case "b64Encode":
+      result = btoa(unescape(encodeURIComponent(text)));
+      break;
+    case "b64Decode":
+      result = decodeURIComponent(escape(atob(text)));
+      break;
+    case "urlEncode":
+      result = encodeURIComponent(text);
+      break;
+    case "urlDecode":
+      result = decodeURIComponent(text);
+      break;
+    case "htmlEscape":
+      result = encodeHtmlEntities(text);
+      break;
+    case "htmlUnescape":
+      result = decodeHtmlEntities(text);
+      break;
+
+    case "uuid":
+      result = crypto.randomUUID ? crypto.randomUUID() : fallbackUUID();
+      break;
+
+    case "randomString": {
+      const len = parseInt(prompt("Length?", "16") || "16", 10) || 16;
+      const chars =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      let out = "";
+      for (let i = 0; i < len; i++) {
+        out += chars[Math.floor(Math.random() * chars.length)];
+      }
+      result = out;
+      break;
+    }
+
+    case "jwtDecode": {
+      const parts = text.split(".");
+      if (parts.length < 2) {
+        result = "Invalid JWT: should be header.payload[.signature]";
+        break;
+      }
+      const [h, p] = parts;
       try {
-        const u = new URL(text.trim());
+        const header = JSON.parse(
+          decodeURIComponent(
+            escape(atob(h.replace(/-/g, "+").replace(/_/g, "/")))
+          )
+        );
+        const payload = JSON.parse(
+          decodeURIComponent(
+            escape(atob(p.replace(/-/g, "+").replace(/_/g, "/")))
+          )
+        );
         result =
-          `Protocol: ${u.protocol}\n` +
-          `Host: ${u.host}\n` +
-          `Hostname: ${u.hostname}\n` +
-          `Port: ${u.port || "(default)"}\n` +
-          `Pathname: ${u.pathname}\n` +
-          `Search: ${u.search}\n` +
-          `Hash: ${u.hash}\n`;
-      } catch {
-        result =
-          "Invalid URL. Example: https://example.com/path?query=1#hash";
+          "Header:\n" +
+          JSON.stringify(header, null, 2) +
+          "\n\nPayload:\n" +
+          JSON.stringify(payload, null, 2);
+      } catch (e) {
+        result = "Failed to decode JWT.\n\n" + e.message;
       }
       break;
     }
 
-    case "queryParse": {
-      let qs = text.trim();
-      if (qs.startsWith("?")) qs = qs.slice(1);
-      const params = new URLSearchParams(qs);
-      const obj = {};
-      params.forEach((v, k) => {
-        if (obj[k] === undefined) obj[k] = v;
-        else if (Array.isArray(obj[k])) obj[k].push(v);
-        else obj[k] = [obj[k], v];
-      });
-      result = JSON.stringify(obj, null, 2);
-      break;
-    }
-
-    case "ipExtract": {
-      const matches = text.match(
-        /\b(?:(?:25[0-5]|2[0-4]\d|1?\d?\d)(?:\.(?!$)|$)){4}\b/g
-      );
-      if (!matches) {
-        result = "No IPv4 addresses found.";
+    case "colorConvert": {
+      const val = text.trim();
+      if (val.startsWith("#")) {
+        const rgb = hexToRgb(val);
+        if (!rgb) {
+          result = "Invalid HEX color.";
+        } else {
+          result = `HEX: ${val}\nRGB: ${rgb.r}, ${rgb.g}, ${rgb.b}`;
+        }
+      } else if (val.toLowerCase().startsWith("rgb")) {
+        const rgbMatch = val.match(/(\d+),\s*(\d+),\s*(\d+)/);
+        if (!rgbMatch) {
+          result = "Invalid RGB input. Example: rgb(255, 0, 0)";
+        } else {
+          const [r, g, b] = rgbMatch.slice(1).map((n) => parseInt(n, 10));
+          result = `RGB: ${r}, ${g}, ${b}\nHEX: ${rgbToHex(r, g, b)}`;
+        }
       } else {
-        const unique = Array.from(new Set(matches));
-        result = unique.join("\n");
-        info = `Found ${unique.length} unique IP(s).`;
+        result =
+          "Enter either HEX (#ff0000) or RGB format (rgb(255, 0, 0)).";
       }
       break;
     }
 
     default:
-      // fallback: reuse text transformation where possible
-      ({ result, info } = runTextAction(action, text));
-      if (!info) {
-        info =
-          "Basic dev fallback using text action (you can extend this case later).";
-      }
+      result = text;
+      info =
+        "Basic dev fallback (no custom logic). You can extend this action later.";
       break;
   }
 
   return { result, info };
 }
 
-// =====================
+// ========================
+// PDF ACTIONS (placeholders)
+// ========================
+
+function runPdfAction(tool, text) {
+  let result = "";
+  let info =
+    "⚠️ Ye PDF tool advanced conversion ke liye plan hai. Pure frontend me iske liye extra libraries (pdf.js / jsPDF / DOCX parser) ya backend ki zarurat hogi.";
+
+  result =
+    `Tool: ${tool.name}\n\n` +
+    "Abhi demo mode me hai. Future me yaha:\n" +
+    "- file upload UI\n" +
+    "- PDF pages preview\n" +
+    "- merge/split/convert buttons\n\n" +
+    "Filhaal aap yaha notes / instructions likh sakte ho, ya text output dekh sakte ho.";
+
+  return { result, info };
+}
+
+// ========================
+// UTILITY ACTIONS
+// ========================
+
+function runUtilAction(action, text) {
+  let result = "";
+  let info = "";
+
+  switch (action) {
+    case "placeholder":
+      result =
+        "Ye tool abhi placeholder hai. Isko aage chalke backend/API/extra logic se upgrade kar sakta hai.";
+      info =
+        "Frontend structure ready hai. Future me yaha real conversion logic add karega.";
+      break;
+
+    case "currencyDemo": {
+      const amount = parseFloat(text || "1") || 1;
+      // Simple demo: 1 USD = 80 INR (static)
+      const inr = amount * 80;
+      result =
+        `Static demo (no live rates):\n\n` +
+        `${amount} USD ≈ ${inr.toFixed(2)} INR (assuming 1 USD = 80 INR)`;
+      info = "Live currency conversion ke liye API / backend integrate karna padega.";
+      break;
+    }
+
+    case "epochToTime": {
+      const ts = parseInt(text.trim(), 10);
+      if (isNaN(ts)) {
+        result = "Please enter a valid Unix timestamp (seconds).";
+      } else {
+        const d = new Date(ts * 1000);
+        result = d.toISOString();
+      }
+      break;
+    }
+
+    case "timeToEpoch": {
+      const d = new Date(text.trim());
+      if (isNaN(d.getTime())) {
+        result = "Please enter a valid datetime (e.g. 2025-01-01T12:00:00).";
+      } else {
+        result = Math.floor(d.getTime() / 1000).toString();
+      }
+      break;
+    }
+
+    case "wordFrequency": {
+      const words = getWords(text).map((w) => w.toLowerCase());
+      const map = {};
+      words.forEach((w) => {
+        map[w] = (map[w] || 0) + 1;
+      });
+      const entries = Object.entries(map).sort((a, b) => b[1] - a[1]);
+      result = entries
+        .map(([w, c]) => `${w}: ${c}`)
+        .join("\n");
+      break;
+    }
+
+    case "mdToHtml": {
+      // very basic markdown → HTML
+      let out = text;
+      out = out.replace(/^### (.*$)/gim, "<h3>$1</h3>");
+      out = out.replace(/^## (.*$)/gim, "<h2>$1</h2>");
+      out = out.replace(/^# (.*$)/gim, "<h1>$1</h1>");
+      out = out.replace(/\*\*(.*)\*\*/gim, "<strong>$1</strong>");
+      out = out.replace(/\*(.*)\*/gim, "<em>$1</em>");
+      out = out.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>');
+      out = out.replace(/\n$/gim, "<br />");
+      result = out;
+      break;
+    }
+
+    case "htmlToMdBasic": {
+      let out = text;
+      out = out.replace(/<h1>(.*?)<\/h1>/gim, "# $1\n");
+      out = out.replace(/<h2>(.*?)<\/h2>/gim, "## $1\n");
+      out = out.replace(/<h3>(.*?)<\/h3>/gim, "### $1\n");
+      out = out.replace(/<strong>(.*?)<\/strong>/gim, "**$1**");
+      out = out.replace(/<b>(.*?)<\/b>/gim, "**$1**");
+      out = out.replace(/<em>(.*?)<\/em>/gim, "*$1*");
+      out = out.replace(/<i>(.*?)<\/i>/gim, "*$1*");
+      out = out.replace(/<a [^>]*href="(.*?)"[^>]*>(.*?)<\/a>/gim, "[$2]($1)");
+      out = out.replace(/<br\s*\/?>/gim, "\n");
+      out = out.replace(/<[^>]+>/g, "");
+      result = out;
+      break;
+    }
+
+    case "emojiExtract": {
+      const m = text.match(
+        /([\u231A-\u231B\u23E9-\u23EC\u23F0-\u23F4\u25FD-\u25FE\u2600-\u2604\u260E\u2611\u2614-\u2615\u2648-\u2653\u267B\u26A1\u26AA-\u26AB\u26BD-\u26BE\u26C4-\u26C5\u26CE\u26D4\u26EA\u26F2-\u26F3\u26F5\u26FA\u26FD\u2702\u2705\u2708-\u2709\u270A-\u270B\u2728\u274C\u274E\u2753-\u2755\u2757\u2795-\u2797\u27B0\u27BF\u2B1B-\u2B1C\u2B50\u2B55\u1F004\u1F0CF\u1F170-\u1F171\u1F17E-\u1F17F\u1F18E\u1F191-\u1F19A\u1F1E6-\u1F1FF\u1F201-\u1F202\u1F21A\u1F22F\u1F232-\u1F236\u1F238-\u1F23A\u1F250-\u1F251\u1F300-\u1F6FF\u1F900-\u1F9FF])/g
+      );
+      if (!m) {
+        result = "No emojis found.";
+      } else {
+        const u = Array.from(new Set(m));
+        result = u.join(" ");
+        info = `Found ${u.length} unique emoji(s).`;
+      }
+      break;
+    }
+
+    case "fakeData": {
+      const sample = [
+        { name: "Amit Sharma", email: "amit.sharma@example.com" },
+        { name: "Priya Verma", email: "priya.verma@example.com" },
+        { name: "Rohan Gupta", email: "rohan.gupta@example.com" }
+      ];
+      result = sample
+        .map((x, i) => `${i + 1}. ${x.name} — ${x.email}`)
+        .join("\n");
+      info = "Static fake data demo. Aage chalke random generator add kar sakta hai.";
+      break;
+    }
+
+    case "ytThumbInfo": {
+      result =
+        "YouTube Thumbnail Downloader (frontend-safe way):\n\n" +
+        "1. Video URL se video ID nikaalo (v= ke baad wala part).\n" +
+        "2. Thumbnail URL format:\n" +
+        "   https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg\n\n" +
+        "Example:\n" +
+        "Video: https://www.youtube.com/watch?v=dQw4w9WgXcQ\n" +
+        "Thumb: https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg";
+      info =
+        "Ye safe info tool hai. Direct downloader banane ke liye backend / proxy ki zarurat pad sakti hai.";
+      break;
+    }
+
+    case "instaDpInfo": {
+      result =
+        "Instagram DP Downloader info:\n\n" +
+        "- Officially Instagram scraping allow nahi karta.\n" +
+        "- Jo bhi site DP download karti hai, wo backend se request handle karti hai.\n" +
+        "- Pure frontend-only DP downloader reliable nahi banta.\n\n" +
+        "Isliye GTTOOLS me isko sirf 'info tool' ki tarah rakho ya backend ke through implement karo.";
+      info = "Safe explanation only. No scraping is done here.";
+      break;
+    }
+
+    case "caseCombo": {
+      const original = text;
+      const upper = original.toUpperCase();
+      const lower = original.toLowerCase();
+      const title = toTitleCase(original);
+      const sentence = toSentenceCase(original);
+      result =
+        "ORIGINAL:\n" +
+        original +
+        "\n\nUPPERCASE:\n" +
+        upper +
+        "\n\nlowercase:\n" +
+        lower +
+        "\n\nTitle Case:\n" +
+        title +
+        "\n\nSentence case:\n" +
+        sentence;
+      break;
+    }
+
+    case "emojiHelper": {
+      result =
+        "Common emojis:\n\n" +
+        "😀 😃 😄 😁 😆 😅 😂 🤣 😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚\n" +
+        "😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🥳 😏 😒 😞 😔 😟 😕 🙁 ☹️\n\n" +
+        "Copy the ones you want and paste into your content.";
+      break;
+    }
+
+    default:
+      result = text;
+      info =
+        "Basic utility fallback (no specific logic yet). You can extend this later.";
+  }
+
+  return { result, info };
+}
+
+// ========================
 // IMAGE TOOL LOGIC
-// =====================
+// ========================
 
 function runImageTool(tool, infoEl) {
   if (!imageCanvas || !imageCtx) {
@@ -1097,14 +1119,9 @@ function runImageTool(tool, infoEl) {
     }
 
     case "rotate90":
-    case "rotate180":
-    case "rotate270": {
-      const angleMap = { rotate90: 90, rotate180: 180, rotate270: 270 };
-      const deg = angleMap[tool.action];
-      rotateCanvas(deg);
-      infoEl.textContent = `✅ Rotated ${deg}°.`;
+      rotateCanvas(90);
+      infoEl.textContent = "✅ Rotated 90°.";
       break;
-    }
 
     case "flipH": {
       const w = imageCanvas.width;
@@ -1170,6 +1187,7 @@ function runImageTool(tool, infoEl) {
       ]);
       infoEl.textContent = "✅ Brightness increased.";
       break;
+
     case "brightnessDown":
       applyPixelFilter((r, g, b, a) => [
         clamp(r - 20),
@@ -1179,17 +1197,8 @@ function runImageTool(tool, infoEl) {
       ]);
       infoEl.textContent = "✅ Brightness decreased.";
       break;
-    case "contrastUp":
-      adjustContrast(1.1);
-      infoEl.textContent = "✅ Contrast slightly increased.";
-      break;
-    case "contrastDown":
-      adjustContrast(0.9);
-      infoEl.textContent = "✅ Contrast slightly decreased.";
-      break;
 
     case "blur":
-      // using canvas filter for simplicity
       applyCanvasFilter("blur(2px)");
       infoEl.textContent = "✅ Applied blur.";
       break;
@@ -1201,7 +1210,12 @@ function runImageTool(tool, infoEl) {
 
     case "border":
       drawBorder();
-      infoEl.textContent = "✅ Added simple border.";
+      infoEl.textContent = "✅ Added border.";
+      break;
+
+    case "roundedCorners":
+      roundedCorners();
+      infoEl.textContent = "✅ Rounded corners applied.";
       break;
 
     case "circle":
@@ -1209,10 +1223,41 @@ function runImageTool(tool, infoEl) {
       infoEl.textContent = "✅ Circle crop (transparent corners).";
       break;
 
+    case "imgCompressPlaceholder":
+      infoEl.textContent =
+        "ℹ️ Demo: Image compression fully control karne ke liye quality slider + JPEG export add karna padega. Abhi image jaisi hai vaisi hi hai.";
+      break;
+
+    case "imgCropPlaceholder":
+      infoEl.textContent =
+        "ℹ️ Basic crop tool banane ke liye selection rectangle UI chahiye (drag-to-select). Abhi ye placeholder info hai.";
+      break;
+
+    case "imgToBase64Placeholder": {
+      const dataURL = imageCanvas.toDataURL("image/png");
+      const output = document.getElementById("outputText");
+      if (output) {
+        output.value = dataURL;
+        const infoElm = document.getElementById("resultInfo");
+        if (infoElm) {
+          infoElm.textContent =
+            "✅ Image converted to Data URL (Base64). Longer images → bigger text.";
+        }
+      } else {
+        infoEl.textContent =
+          "Open text tool (e.g. Base64 viewer) to see the string.";
+      }
+      break;
+    }
+
+    case "base64ToImgPlaceholder":
+      infoEl.textContent =
+        "Abhi ye sirf placeholder hai. Base64 → Image ke liye text area se dataURL read karke new image create kar sakta hai.";
+      break;
+
     case "downloadPng":
       downloadCanvas("gttools-image.png", "image/png", infoEl);
       break;
-
     case "downloadJpg":
       downloadCanvas("gttools-image.jpg", "image/jpeg", infoEl);
       break;
@@ -1223,12 +1268,12 @@ function runImageTool(tool, infoEl) {
         return [gray, gray, gray, a];
       });
       infoEl.textContent =
-        "✅ Basic grayscale applied (default image effect).";
+        "✅ Basic grayscale applied (default fall-back effect).";
       break;
   }
 }
 
-// Helpers for canvas
+// ---- Canvas helpers ----
 
 function rotateCanvas(deg) {
   const rad = (deg * Math.PI) / 180;
@@ -1270,21 +1315,6 @@ function applyPixelFilter(fn) {
   imageCtx.putImageData(imgData, 0, 0);
 }
 
-function adjustContrast(factor) {
-  const w = imageCanvas.width;
-  const h = imageCanvas.height;
-  const imgData = imageCtx.getImageData(0, 0, w, h);
-  const d = imgData.data;
-  const c = factor;
-  const intercept = 128 * (1 - c);
-  for (let i = 0; i < d.length; i += 4) {
-    d[i] = clamp(d[i] * c + intercept);
-    d[i + 1] = clamp(d[i + 1] * c + intercept);
-    d[i + 2] = clamp(d[i + 2] * c + intercept);
-  }
-  imageCtx.putImageData(imgData, 0, 0);
-}
-
 function applyCanvasFilter(filter) {
   const w = imageCanvas.width;
   const h = imageCanvas.height;
@@ -1318,9 +1348,37 @@ function pixelate(size) {
 function drawBorder() {
   const w = imageCanvas.width;
   const h = imageCanvas.height;
-  imageCtx.lineWidth = 10;
+  imageCtx.lineWidth = 8;
   imageCtx.strokeStyle = "white";
-  imageCtx.strokeRect(5, 5, w - 10, h - 10);
+  imageCtx.strokeRect(4, 4, w - 8, h - 8);
+}
+
+function roundedCorners() {
+  const w = imageCanvas.width;
+  const h = imageCanvas.height;
+  const radius = 30;
+  const temp = document.createElement("canvas");
+  temp.width = w;
+  temp.height = h;
+  const tctx = temp.getContext("2d");
+
+  tctx.beginPath();
+  tctx.moveTo(radius, 0);
+  tctx.lineTo(w - radius, 0);
+  tctx.quadraticCurveTo(w, 0, w, radius);
+  tctx.lineTo(w, h - radius);
+  tctx.quadraticCurveTo(w, h, w - radius, h);
+  tctx.lineTo(radius, h);
+  tctx.quadraticCurveTo(0, h, 0, h - radius);
+  tctx.lineTo(0, radius);
+  tctx.quadraticCurveTo(0, 0, radius, 0);
+  tctx.closePath();
+  tctx.clip();
+
+  tctx.drawImage(imageCanvas, 0, 0);
+
+  imageCtx.clearRect(0, 0, w, h);
+  imageCtx.drawImage(temp, 0, 0);
 }
 
 function circleCrop() {
@@ -1331,6 +1389,7 @@ function circleCrop() {
   temp.width = w;
   temp.height = h;
   const tctx = temp.getContext("2d");
+
   tctx.save();
   tctx.beginPath();
   tctx.arc(w / 2, h / 2, radius, 0, Math.PI * 2);
@@ -1344,10 +1403,6 @@ function circleCrop() {
 }
 
 function downloadCanvas(filename, mime, infoEl) {
-  if (!imageCanvas) {
-    infoEl.textContent = "No canvas to download.";
-    return;
-  }
   const link = document.createElement("a");
   link.href = imageCanvas.toDataURL(mime);
   link.download = filename;
@@ -1357,46 +1412,9 @@ function downloadCanvas(filename, mime, infoEl) {
   infoEl.textContent = "✅ Download started.";
 }
 
-// =====================
-// GENERIC HELPERS
-// =====================
-
-function toTitleCase(str) {
-  return str
-    .toLowerCase()
-    .split(/\s+/)
-    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : ""))
-    .join(" ");
-}
-
-function toSentenceCase(str) {
-  const lower = str.toLowerCase();
-  return lower.replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase());
-}
-
-function invertCase(str) {
-  return Array.from(str)
-    .map((ch) => {
-      if (ch >= "a" && ch <= "z") return ch.toUpperCase();
-      if (ch >= "A" && ch <= "Z") return ch.toLowerCase();
-      return ch;
-    })
-    .join("");
-}
-
-function alternatingCase(str) {
-  let upper = true;
-  return Array.from(str)
-    .map((ch) => {
-      if (/[a-zA-Z]/.test(ch)) {
-        const res = upper ? ch.toUpperCase() : ch.toLowerCase();
-        upper = !upper;
-        return res;
-      }
-      return ch;
-    })
-    .join("");
-}
+// ========================
+// HELPERS
+// ========================
 
 function getWords(str) {
   return str
@@ -1410,6 +1428,19 @@ function wordsFromText(str) {
     .toLowerCase()
     .split(/[^a-zA-Z0-9]+/)
     .filter((w) => w.length > 0);
+}
+
+function toTitleCase(str) {
+  return str
+    .toLowerCase()
+    .split(/\s+/)
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : ""))
+    .join(" ");
+}
+
+function toSentenceCase(str) {
+  const lower = str.toLowerCase();
+  return lower.replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase());
 }
 
 function escapeRegExp(str) {
@@ -1487,7 +1518,27 @@ function formatXml(xml) {
   return formatted.trim();
 }
 
+function hexToRgb(hex) {
+  let h = hex.replace("#", "");
+  if (h.length === 3) {
+    h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+  }
+  if (h.length !== 6) return null;
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  if ([r, g, b].some((x) => Number.isNaN(x))) return null;
+  return { r, g, b };
+}
+
+function rgbToHex(r, g, b) {
+  const toHex = (n) => {
+    const h = n.toString(16);
+    return h.length === 1 ? "0" + h : h;
+  };
+  return "#" + toHex(r) + toHex(g) + toHex(b);
+}
+
 function clamp(v) {
   return Math.max(0, Math.min(255, v));
 }
-
