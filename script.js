@@ -128,6 +128,7 @@ const outputEl = document.getElementById("toolOutput");
 const infoEl = document.getElementById("resultInfo");
 const runBtn = document.getElementById("runTool");
 const imageToolBox = document.getElementById("imageToolBox");
+const welcomeBox = document.getElementById("welcomeBox");
 
 let currentTool = null;
 
@@ -158,6 +159,11 @@ function renderTools(list) {
 function selectTool(id) {
   currentTool = tools.find((t) => t.id === id);
   if (!currentTool) return;
+
+  // hide welcome box on first tool select
+  if (welcomeBox) {
+    welcomeBox.style.display = "none";
+  }
 
   document.querySelectorAll(".tool-item").forEach((li) => {
     li.classList.toggle("active", li.dataset.id === id);
@@ -1221,7 +1227,6 @@ function applyFilter(type) {
       break;
     case "grayscale":
       ctx.filter = "grayscale(100%)";
-      // apply one-time grayscale: re-draw with grayscale, then reset filter chain
       ctx.drawImage(originalImage, 0, 0);
       resetImageFilters();
       break;
