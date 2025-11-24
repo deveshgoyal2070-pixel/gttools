@@ -6,136 +6,81 @@
   <title>GTTOOLS — 100+ Free Online Tools</title>
 
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* --- HOMEPAGE ANIMATION + FIXED PANEL SPACING --- */
-    .welcome-box {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 22px;
-      border: 1px solid #e5e7eb;
-      margin-bottom: 20px;
-      animation: fadeInUp 0.8s ease forwards;
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(26px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .glow {
-      animation: glowPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes glowPulse {
-      0%   { box-shadow: 0 0 0px rgba(37,99,235,0.0); }
-      50%  { box-shadow: 0 0 14px rgba(37,99,235,0.45); }
-      100% { box-shadow: 0 0 0px rgba(37,99,235,0.0); }
-    }
-  </style>
-
 </head>
 
 <body>
-
-<div class="app">
-
-  <div class="layout">
-
+  <div class="container">
     <!-- SIDEBAR -->
     <div class="sidebar">
       <div class="logo">⚡ GTTOOLS</div>
 
-      <input id="searchBar" class="search-input" placeholder="Search tools..." />
+      <div class="search-box">
+        <input type="text" id="searchBar" placeholder="Search tools..." />
+      </div>
 
       <ul class="tool-list"></ul>
     </div>
 
     <!-- MAIN PANEL -->
-    <div class="main">
-
-      <!-- ---------------------------
-           WELCOME BOX (VISIBILE UNTIL TOOL SELECTED)
-      ---------------------------------- -->
-      <div id="welcomeBox" class="welcome-box glow">
-        <h2>Welcome to GTTOOLS — Your All-in-One Tools Hub</h2>
-
+    <div class="main-panel">
+      <!-- SIMPLE WELCOME BOX -->
+      <div id="welcomeBox" class="welcome-box">
+        <h2>Welcome to GTTOOLS — 100+ Free Online Tools</h2>
         <p>
-          GTTOOLS gives you 100+ free online tools for text, images, PDF, utilities and developer work.  
-          No login needed — fast, simple and mobile friendly.
+          GTTOOLS gives you a collection of free, fast and easy-to-use tools for text, images, PDFs,
+          developers and everyday utilities. No login, no signup — everything runs directly in your browser.
         </p>
-
-        <ul style="margin-left: 20px;">
-          <li>🔥 100+ fast & lightweight tools</li>
-          <li>⚡ Instant results</li>
-          <li>📄 PDF → Word/PPT/Excel (backend powered)</li>
-          <li>🖼 Image editing: resize, filters, rotate</li>
-          <li>👨‍💻 Dev Tools: JSON, Base64, Minify</li>
-          <li>🧮 Utility Tools: Calculators, Age, Notes</li>
-          <li>📱 Fully responsive, works everywhere</li>
-          <li>🆓 100% Free</li>
+        <ul>
+          <li>🔥 100+ popular tools for daily work</li>
+          <li>📄 PDF → Word / PPT / Excel (server-powered)</li>
+          <li>🖼 Image editor (rotate, brightness, contrast, filters)</li>
+          <li>👨‍💻 Dev helpers (JSON, Base64, URL, regex)</li>
+          <li>🧮 Utility tools (age, EMI, BMI, unit converters)</li>
+          <li>📱 Works on desktop & mobile</li>
+          <li>🆓 100% free to use</li>
         </ul>
-
-        <p><b>Start by selecting any tool from the left menu.</b></p>
+        <p><b>Select any tool from the left to get started.</b></p>
       </div>
 
-      <!-- TOOL TITLE -->
       <h2 class="selected-tool-title">Choose a tool</h2>
 
-      <!-- INPUT -->
-      <textarea id="userInput" class="textarea" placeholder="Enter your text or data here..."></textarea>
+      <textarea
+        id="userInput"
+        class="text-area"
+        placeholder="Enter your text or data here..."
+      ></textarea>
 
-      <!-- RUN BUTTON -->
-      <div class="actions">
-        <button id="runTool" class="btn">Run Tool</button>
-      </div>
+      <button id="runTool">Run Tool</button>
 
-      <!-- OUTPUT -->
-      <textarea id="toolOutput" class="textarea" readonly></textarea>
+      <textarea id="toolOutput" readonly></textarea>
 
       <div id="resultInfo"></div>
 
-      <!-- IMAGE TOOLBOX -->
-      <div id="imageToolBox" style="display:none;">
+      <!-- IMAGE TOOLS UI -->
+      <div id="imageToolBox">
         <h3>Image Tools</h3>
-        <p>Upload an image and use the tools below.</p>
+        <p>Upload an image and edit it using the controls below.</p>
 
         <input type="file" id="imgInput" accept="image/*" />
 
-        <div class="image-canvas-wrapper">
-          <canvas id="imageCanvas"></canvas>
-        </div>
+        <canvas id="imageCanvas"></canvas>
 
-        <div class="actions">
-          <button onclick="applyFilter('rotate')" class="btn secondary">Rotate</button>
-          <button onclick="applyFilter('flipH')" class="btn secondary">Flip H</button>
-          <button onclick="applyFilter('flipV')" class="btn secondary">Flip V</button>
-          <button onclick="applyFilter('grayscale')" class="btn secondary">Gray</button>
-          <button onclick="applyFilter('invert')" class="btn secondary">Invert</button>
-          <button onclick="applyFilter('blur')" class="btn secondary">Blur +</button>
-          <button onclick="applyFilter('brightness')" class="btn secondary">Brightness +</button>
-          <button onclick="applyFilter('contrast')" class="btn secondary">Contrast +</button>
-          <button onclick="resetImageFilters()" class="btn">Reset</button>
-          <button onclick="downloadImage()" class="btn">Download</button>
+        <div class="image-buttons">
+          <button onclick="applyFilter('rotate')">Rotate 90°</button>
+          <button onclick="applyFilter('flipH')">Flip Horizontal</button>
+          <button onclick="applyFilter('flipV')">Flip Vertical</button>
+          <button onclick="applyFilter('grayscale')">Grayscale</button>
+          <button onclick="applyFilter('invert')">Invert</button>
+          <button onclick="applyFilter('blur')">Blur +</button>
+          <button onclick="applyFilter('brightness')">Brightness +</button>
+          <button onclick="applyFilter('contrast')">Contrast +</button>
+          <button onclick="resetImageFilters()">Reset</button>
+          <button onclick="downloadImage()">Download Image</button>
         </div>
       </div>
-
     </div>
   </div>
-</div>
 
-<script src="script.js"></script>
-
-<script>
-  // HIDE WELCOME BOX WHEN TOOL SELECTED
-  document.addEventListener("click", function(e) {
-    if (e.target.closest(".tool-item")) {
-      document.getElementById("welcomeBox").style.display = "none";
-    }
-  });
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
