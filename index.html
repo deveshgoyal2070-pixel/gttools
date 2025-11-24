@@ -8,236 +8,134 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: #f4f8ff;
-    }
-
-    .container {
-      display: flex;
-      height: 100vh;
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      width: 260px;
-      background: #ffffff;
-      border-right: 1px solid #e5e7eb;
-      padding: 16px;
-      overflow-y: auto;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #2563eb;
-      margin-bottom: 15px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 9px 10px;
-      border-radius: 8px;
-      border: 1px solid #d1d5db;
-      font-size: 14px;
-      outline: none;
-    }
-
-    .tool-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 15px;
-    }
-
-    .tool-item {
-      background: #f9fbff;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      padding: 10px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      transition: 0.2s ease-out;
-    }
-
-    .tool-item:hover {
-      transform: translateX(5px);
-      background: #eef4ff;
-      border-color: #2563eb;
-    }
-
-    .tool-item.active {
-      background: #2563eb;
-      color: white;
-      border-color: #2563eb;
-    }
-
-    /* MAIN PANEL */
-    .main-panel {
-      flex: 1;
-      padding: 22px;
-      overflow-y: auto;
-    }
-
-    /* ANIMATIONS */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.9s ease-out forwards;
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(26px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .glow {
-      animation: glowPulse 2.8s ease-in-out infinite;
-    }
-
-    @keyframes glowPulse {
-      0% { box-shadow: 0 0 0px rgba(37, 99, 235, 0.0); }
-      50% { box-shadow: 0 0 14px rgba(37, 99, 235, 0.45); }
-      100% { box-shadow: 0 0 0px rgba(37, 99, 235, 0.0); }
-    }
-
+    /* --- HOMEPAGE ANIMATION + FIXED PANEL SPACING --- */
     .welcome-box {
       background: #ffffff;
       border-radius: 14px;
       padding: 22px;
       border: 1px solid #e5e7eb;
       margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
-    .selected-tool-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 10px;
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    .text-area, #toolOutput {
-      width: 100%;
-      min-height: 125px;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #d1d5db;
-      margin-bottom: 10px;
-      font-size: 14px;
+    .glow {
+      animation: glowPulse 3s ease-in-out infinite;
     }
 
-    #runTool {
-      padding: 10px 20px;
-      background: #2563eb;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 15px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    #runTool:hover {
-      background: #1e4fcc;
-    }
-
-    /* IMAGE TOOLBOX */
-    #imageToolBox {
-      display: none;
-      background: #ffffff;
-      border-radius: 12px;
-      border: 1px solid #e5e7eb;
-      padding: 14px;
-      margin-top: 14px;
-    }
-
-    #imageCanvas {
-      max-width: 100%;
-      border-radius: 10px;
-      border: 1px solid #e5e7eb;
-      margin-top: 10px;
+    @keyframes glowPulse {
+      0%   { box-shadow: 0 0 0px rgba(37,99,235,0.0); }
+      50%  { box-shadow: 0 0 14px rgba(37,99,235,0.45); }
+      100% { box-shadow: 0 0 0px rgba(37,99,235,0.0); }
     }
   </style>
+
 </head>
 
 <body>
 
-  <div class="container">
+<div class="app">
+
+  <div class="layout">
 
     <!-- SIDEBAR -->
     <div class="sidebar">
       <div class="logo">⚡ GTTOOLS</div>
 
-      <div class="search-box">
-        <input type="text" id="searchBar" placeholder="Search tools..." />
-      </div>
+      <input id="searchBar" class="search-input" placeholder="Search tools..." />
 
       <ul class="tool-list"></ul>
     </div>
 
     <!-- MAIN PANEL -->
-    <div class="main-panel">
+    <div class="main">
 
-      <!-- WELCOME BOX -->
-      <div class="welcome-box fade-in glow" id="welcomeBox">
-        <h2>Welcome to GTTOOLS — Your All-in-One Online Tools Hub</h2>
+      <!-- ---------------------------
+           WELCOME BOX (VISIBILE UNTIL TOOL SELECTED)
+      ---------------------------------- -->
+      <div id="welcomeBox" class="welcome-box glow">
+        <h2>Welcome to GTTOOLS — Your All-in-One Tools Hub</h2>
 
         <p>
-          GTTOOLS brings you a powerful collection of 100+ free online tools built for creators,
-          developers, students, freelancers and businesses.  
-          No login, no sign-up — just fast, clean tools that work instantly in your browser.
+          GTTOOLS gives you 100+ free online tools for text, images, PDF, utilities and developer work.  
+          No login needed — fast, simple and mobile friendly.
         </p>
 
-        <h3>Why GTTOOLS?</h3>
-        <ul>
-          <li>🔥 100+ fast & lightweight productivity tools</li>
-          <li>⚡ Instant results — no installations required</li>
-          <li>📄 PDF Converters (Word, Excel, PPT — server-backed)</li>
-          <li>🖼 Image Editor (rotate, filters, brightness, crop & more)</li>
-          <li>👨‍💻 Developer Tools (JSON, Base64, Minify, Formatter)</li>
-          <li>🧰 Utility Tools (Calculator, Timer, Age, Notes, QR)</li>
-          <li>📱 Works on every device — fully responsive</li>
-          <li>🆓 100% Free Forever</li>
+        <ul style="margin-left: 20px;">
+          <li>🔥 100+ fast & lightweight tools</li>
+          <li>⚡ Instant results</li>
+          <li>📄 PDF → Word/PPT/Excel (backend powered)</li>
+          <li>🖼 Image editing: resize, filters, rotate</li>
+          <li>👨‍💻 Dev Tools: JSON, Base64, Minify</li>
+          <li>🧮 Utility Tools: Calculators, Age, Notes</li>
+          <li>📱 Fully responsive, works everywhere</li>
+          <li>🆓 100% Free</li>
         </ul>
 
-        <p><b>Select any tool from the left and start using it instantly!</b></p>
+        <p><b>Start by selecting any tool from the left menu.</b></p>
       </div>
 
+      <!-- TOOL TITLE -->
       <h2 class="selected-tool-title">Choose a tool</h2>
 
-      <textarea id="userInput" class="text-area" placeholder="Enter your text or data here..."></textarea>
+      <!-- INPUT -->
+      <textarea id="userInput" class="textarea" placeholder="Enter your text or data here..."></textarea>
 
-      <button id="runTool">Run Tool</button>
+      <!-- RUN BUTTON -->
+      <div class="actions">
+        <button id="runTool" class="btn">Run Tool</button>
+      </div>
 
-      <textarea id="toolOutput" readonly></textarea>
+      <!-- OUTPUT -->
+      <textarea id="toolOutput" class="textarea" readonly></textarea>
 
       <div id="resultInfo"></div>
 
       <!-- IMAGE TOOLBOX -->
-      <div id="imageToolBox">
+      <div id="imageToolBox" style="display:none;">
         <h3>Image Tools</h3>
-        <p>Upload an image and edit it using the filters below.</p>
+        <p>Upload an image and use the tools below.</p>
 
         <input type="file" id="imgInput" accept="image/*" />
 
-        <canvas id="imageCanvas"></canvas>
+        <div class="image-canvas-wrapper">
+          <canvas id="imageCanvas"></canvas>
+        </div>
 
-        <br><br>
-
-        <button onclick="applyFilter('rotate')">Rotate 90°</button>
-        <button onclick="applyFilter('flipH')">Flip Horizontal</button>
-        <button onclick="applyFilter('flipV')">Flip Vertical</button>
-        <button onclick="applyFilter('grayscale')">Grayscale</button>
-        <button onclick="applyFilter('invert')">Invert</button>
-        <button onclick="applyFilter('blur')">Blur +</button>
-        <button onclick="applyFilter('brightness')">Brightness +</button>
-        <button onclick="applyFilter('contrast')">Contrast +</button>
-        <button onclick="resetImageFilters()">Reset</button>
-        <button onclick="downloadImage()">Download Image</button>
+        <div class="actions">
+          <button onclick="applyFilter('rotate')" class="btn secondary">Rotate</button>
+          <button onclick="applyFilter('flipH')" class="btn secondary">Flip H</button>
+          <button onclick="applyFilter('flipV')" class="btn secondary">Flip V</button>
+          <button onclick="applyFilter('grayscale')" class="btn secondary">Gray</button>
+          <button onclick="applyFilter('invert')" class="btn secondary">Invert</button>
+          <button onclick="applyFilter('blur')" class="btn secondary">Blur +</button>
+          <button onclick="applyFilter('brightness')" class="btn secondary">Brightness +</button>
+          <button onclick="applyFilter('contrast')" class="btn secondary">Contrast +</button>
+          <button onclick="resetImageFilters()" class="btn">Reset</button>
+          <button onclick="downloadImage()" class="btn">Download</button>
+        </div>
       </div>
 
     </div>
   </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
+<script>
+  // HIDE WELCOME BOX WHEN TOOL SELECTED
+  document.addEventListener("click", function(e) {
+    if (e.target.closest(".tool-item")) {
+      document.getElementById("welcomeBox").style.display = "none";
+    }
+  });
+</script>
+
 </body>
 </html>
