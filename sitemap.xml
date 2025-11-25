@@ -1,34 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- HOMEPAGE -->
   <url>
     <loc>https://deveshgoyal2070-pixel.github.io/gttools/</loc>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Tools auto indexed by sidebar -->
-  <url>
-    <loc>https://deveshgoyal2070-pixel.github.io/gttools/#/pdf</loc>
-    <priority>0.90</priority>
-  </url>
+  <!-- =============== TEXT TOOLS (36) =============== -->
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-word-count.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-char-count.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-line-count.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-sentence-count.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-remove-extra-spaces.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-trim-lines.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-remove-empty-lines.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-remove-duplicate-lines.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-sort-az.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-sort-za.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-shuffle-lines.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-upper.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-lower.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-title.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-sentence.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-toggle-case.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-reverse.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-reverse-lines.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-find-replace.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-remove-punct.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-extract-numbers.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-extract-emails.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-extract-urls.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-extract-hashtags.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-slug-generator.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-hashtag-generator.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-reading-time.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-deduplicate.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-prefix-lines.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-suffix-lines.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-add-line-numbers.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-remove-line-numbers.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-diff-simple.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-word-frequency.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/text-to-binary.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/binary-to-text.html</loc></url>
 
-  <url>
-    <loc>https://deveshgoyal2070-pixel.github.io/gttools/#/text</loc>
-    <priority>0.90</priority>
-  </url>
+  <!-- =============== IMAGE TOOLS (15) =============== -->
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-resize.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-crop.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-rotate.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-flip.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-grayscale.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-invert.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-blur.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-brightness.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-contrast.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-to-base64.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/base64-to-img.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-jpg-to-png.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-png-to-jpg.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-watermark.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/img-info.html</loc></url>
 
-  <url>
-    <loc>https://deveshgoyal2070-pixel.github.io/gttools/#/image</loc>
-    <priority>0.90</priority>
-  </url>
+  <!-- =============== PDF TOOLS (3) =============== -->
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/pdf-to-word.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/pdf-to-ppt.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/pdf-to-excel.html</loc></url>
 
-  <url>
-    <loc>https://deveshgoyal2070-pixel.github.io/gttools/#/utility</loc>
-    <priority>0.80</priority>
-  </url>
+  <!-- =============== DEV TOOLS (16) =============== -->
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-json-format.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-json-minify.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-json-validate.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-b64-encode.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-b64-decode.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-url-encode.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-url-decode.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-html-escape.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-html-unescape.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-css-beautify.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-js-beautify.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-regex-test.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-uuid.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-random-color.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-sha256.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/dev-lorem.html</loc></url>
 
-  <url>
-    <loc>https://deveshgoyal2070-pixel.github.io/gttools/#/developer</loc>
-    <priority>0.80</priority>
-  </url>
+  <!-- =============== UTILITY TOOLS (30) =============== -->
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-password.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-random-number.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-coin.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-dice.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-age.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-date-diff.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-epoch.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-stopwatch.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-timer.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-unit-length.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-unit-weight.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-unit-temp.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-bmi.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-tip.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-emi.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-si.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-ci.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-percentage.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-discount.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-notes.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-todo.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-url-preview.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-yt-thumb.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-emoji.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-color-picker-helper.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-day-of-week.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-prime-check.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-factorial.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-base-convert.html</loc></url>
+  <url><loc>https://deveshgoyal2070-pixel.github.io/gttools/tools/util-random-list-picker.html</loc></url>
+
 </urlset>
