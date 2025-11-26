@@ -4,33 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✅ Google Search Console Verification -->
+  <!-- Google Verification -->
   <meta name="google-site-verification" content="CPJg92e7iwA5U1-s1cRBTxGltL8zz3iGafPtq-2pfGY" />
 
-  <!-- ✅ SEO -->
   <title>GTTOOLS — 100+ Free Online Tools (Text, PDF, Image, Dev, Utility)</title>
   <meta name="description" content="GTTOOLS — 100+ free online tools for text editing, PDF conversion, image editing, developer utilities, calculators, and more. No login. Instant results. 100% free forever." />
-  <meta name="keywords" content="online tools, pdf to word, image editor, text tools, free tools, GTTOOLS, dev tools, SEO tools, utility tools" />
-  <meta name="author" content="GTTOOLS" />
 
-  <!-- 🟦 Open Graph (Facebook / WhatsApp) -->
-  <meta property="og:title" content="GTTOOLS — 100+ Free Online Tools" />
-  <meta property="og:description" content="Use 100+ free tools for PDF, Text, Image, Dev, Utilities. Fast & Easy." />
-  <meta property="og:image" content="https://deveshgoyal2070-pixel.github.io/gttools/banner.png" />
-  <meta property="og:url" content="https://deveshgoyal2070-pixel.github.io/gttools/" />
-  <meta property="og:type" content="website" />
-
-  <!-- 🟦 Twitter SEO -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GTTOOLS — 100+ Free Online Tools" />
-  <meta name="twitter:description" content="Free tools for PDF, Text, Image, Dev & more." />
-  <meta name="twitter:image" content="https://deveshgoyal2070-pixel.github.io/gttools/banner.png" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
     body {
@@ -38,13 +19,7 @@
       font-family: "Poppins", sans-serif;
       background: #f4f8ff;
     }
-
-    .container {
-      display: flex;
-      height: 100vh;
-    }
-
-    /* SIDEBAR */
+    .container { display: flex; height: 100vh; }
     .sidebar {
       width: 260px;
       background: #ffffff;
@@ -52,29 +27,16 @@
       padding: 16px;
       overflow-y: auto;
     }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #2563eb;
-      margin-bottom: 15px;
-    }
-
+    .logo { font-size: 24px; font-weight: 700; color: #2563eb; margin-bottom: 15px; }
     .search-box input {
       width: 100%;
       padding: 9px 10px;
       border-radius: 8px;
       border: 1px solid #d1d5db;
       font-size: 14px;
-      outline: none;
     }
 
-    .tool-list {
-      list-style: none;
-      padding: 0;
-      margin-top: 15px;
-    }
-
+    .tool-list { list-style: none; padding: 0; margin-top: 15px; }
     .tool-item {
       background: #f9fbff;
       border-radius: 10px;
@@ -82,48 +44,36 @@
       padding: 10px;
       margin-bottom: 8px;
       cursor: pointer;
-      transition: 0.2s ease-out;
+      transition: 0.2s;
     }
-
     .tool-item:hover {
       transform: translateX(5px);
       background: #eef4ff;
       border-color: #2563eb;
     }
-
     .tool-item.active {
       background: #2563eb;
       color: white;
       border-color: #2563eb;
     }
 
-    /* MAIN PANEL */
     .main-panel {
       flex: 1;
       padding: 22px;
       overflow-y: auto;
     }
 
-    /* ANIMATIONS */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.9s ease-out forwards;
-    }
-
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.9s ease-out forwards; }
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(26px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    .glow {
-      animation: glowPulse 2.8s ease-in-out infinite;
-    }
-
+    .glow { animation: glowPulse 2.8s ease-in-out infinite; }
     @keyframes glowPulse {
-      0% { box-shadow: 0 0 0 rgba(37,99,235,0.0); }
+      0% { box-shadow: 0 0 0 rgba(37,99,235,0); }
       50% { box-shadow: 0 0 14px rgba(37,99,235,0.45); }
-      100% { box-shadow: 0 0 0 rgba(37,99,235,0.0); }
+      100% { box-shadow: 0 0 0 rgba(37,99,235,0); }
     }
 
     .welcome-box {
@@ -134,11 +84,7 @@
       margin-bottom: 20px;
     }
 
-    .selected-tool-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+    .selected-tool-title { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
 
     .text-area, #toolOutput {
       width: 100%;
@@ -156,16 +102,11 @@
       border: none;
       border-radius: 8px;
       color: white;
-      font-size: 15px;
       cursor: pointer;
-      transition: 0.2s;
+      font-size: 15px;
     }
+    #runTool:hover { background: #1e4fcc; }
 
-    #runTool:hover {
-      background: #1e4fcc;
-    }
-
-    /* IMAGE TOOLBOX */
     #imageToolBox {
       display: none;
       background: #ffffff;
@@ -174,7 +115,6 @@
       padding: 14px;
       margin-top: 14px;
     }
-
     #imageCanvas {
       max-width: 100%;
       border-radius: 10px;
@@ -191,65 +131,49 @@
     <!-- SIDEBAR -->
     <div class="sidebar">
       <div class="logo">⚡ GTTOOLS</div>
-
       <div class="search-box">
         <input type="text" id="searchBar" placeholder="Search tools..." />
       </div>
-
       <ul class="tool-list"></ul>
     </div>
 
     <!-- MAIN PANEL -->
     <div class="main-panel">
 
-      <!-- ⭐ WELCOME BOX (Now Visible!) -->
-      <div class="welcome-box fade-in glow">
+      <!-- ⭐ FIXED WELCOME BOX -->
+      <div id="welcomeBox" class="welcome-box fade-in glow">
         <h2>Welcome to GTTOOLS — Your All-in-One Online Tools Hub</h2>
-
-        <p>
-          GTTOOLS brings you 100+ free online tools for creators, developers, students,
-          freelancers & businesses.  
-          No login. No install. Instant browser-based tools.
-        </p>
+        <p>GTTOOLS brings you 100+ free online tools…</p>
 
         <h3>Why GTTOOLS?</h3>
         <ul>
-          <li>🔥 100+ fast & lightweight productivity tools</li>
-          <li>📄 PDF Converters (Word, Excel, PPT)</li>
-          <li>🖼 Image Editor (filters, rotate, crop, brightness)</li>
-          <li>👨‍💻 Developer Tools (JSON, Base64, Minify)</li>
-          <li>🧮 Utility Tools (Age, BMI, EMI, Timer)</li>
-          <li>📱 Fully responsive — works on mobile</li>
-          <li>🆓 100% Free Forever</li>
+          <li>🔥 100+ fast & lightweight tools</li>
+          <li>📄 PDF Converters</li>
+          <li>🖼 Image Editor</li>
+          <li>👨‍💻 Developer Tools</li>
+          <li>🧮 Utility Tools</li>
+          <li>📱 Full Responsive</li>
+          <li>🆓 Free Forever</li>
         </ul>
 
         <p><b>Choose any tool from the left to get started.</b></p>
       </div>
 
       <h2 class="selected-tool-title">Choose a tool</h2>
-
-      <textarea id="userInput" class="text-area" placeholder="Enter your text or data here..."></textarea>
-
+      <textarea id="userInput" class="text-area" placeholder="Enter your text…"></textarea>
       <button id="runTool">Run Tool</button>
-
       <textarea id="toolOutput" readonly></textarea>
-
       <div id="resultInfo"></div>
 
       <!-- IMAGE TOOLBOX -->
       <div id="imageToolBox">
         <h3>Image Tools</h3>
-        <p>Upload an image and edit it using the filters below.</p>
-
         <input type="file" id="imgInput" accept="image/*" />
-
         <canvas id="imageCanvas"></canvas>
-
         <br><br>
-
         <button onclick="applyFilter('rotate')">Rotate 90°</button>
-        <button onclick="applyFilter('flipH')">Flip Horizontal</button>
-        <button onclick="applyFilter('flipV')">Flip Vertical</button>
+        <button onclick="applyFilter('flipH')">Flip H</button>
+        <button onclick="applyFilter('flipV')">Flip V</button>
         <button onclick="applyFilter('grayscale')">Grayscale</button>
         <button onclick="applyFilter('invert')">Invert</button>
         <button onclick="applyFilter('blur')">Blur +</button>
