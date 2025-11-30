@@ -1,0 +1,331 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f8ff;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== LAYOUT ===== */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px;
+  overflow-y: auto;
+  box-shadow: 4px 0 16px rgba(15, 23, 42, 0.03);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+/* SEARCH BOX */
+
+.search-box {
+  margin-bottom: 12px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #fafafa;
+  font-size: 14px;
+  color: #374151;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+/* TOOL LIST */
+
+.tool-list {
+  list-style: none;
+  margin-top: 10px;
+  padding-right: 4px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.tool-item {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.18s ease-out;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.tool-item:hover {
+  border-color: #2563eb;
+  background: #eef4ff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
+  transform: translateX(4px);
+}
+
+.tool-item.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+/* TOOL ITEM INNER */
+
+.tool-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.tool-tags {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tool-tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* CATEGORY COLORS */
+.tool-tag.text { background: #2563eb; }
+.tool-tag.image { background: #16a34a; }
+.tool-tag.pdf { background: #dc2626; }
+.tool-tag.dev { background: #9333ea; }
+.tool-tag.util { background: #d97706; }
+
+/* ===== MAIN PANEL ===== */
+
+.main-panel {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* WELCOME BOX */
+
+.welcome-box {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.welcome-box h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.welcome-box p {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.welcome-box ul {
+  padding-left: 18px;
+  margin-bottom: 8px;
+}
+
+.welcome-box li {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+/* SELECTED TOOL TITLE */
+
+.selected-tool-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* TEXTAREAS */
+
+.text-area {
+  width: 100%;
+  min-height: 140px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #fafafa;
+  color: #111827;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.text-area:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
+#toolOutput {
+  width: 100%;
+  min-height: 160px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 14px;
+  resize: vertical;
+}
+
+/* RUN BUTTON */
+
+#runTool {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.30);
+  transition: 0.2s ease-out;
+}
+
+#runTool:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+#resultInfo {
+  font-size: 13px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+/* ===== IMAGE TOOLS ===== */
+
+#imageToolBox {
+  display: none; /* script.js toggles */
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 14px 14px 16px;
+  margin-top: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+#imageToolBox h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+}
+
+#imageToolBox p {
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 10px;
+}
+
+#imgInput {
+  margin-bottom: 10px;
+}
+
+#imageCanvas {
+  display: block;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  margin-top: 8px;
+}
+
+/* Image buttons row */
+
+.image-buttons {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.image-buttons button {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f3f4ff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.18s;
+}
+
+.image-buttons button:hover {
+  background: #e0e7ff;
+  border-color: #2563eb;
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 220px;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .tool-list {
+    max-height: 150px;
+  }
+
+  .main-panel {
+    height: calc(100vh - 220px);
+    padding: 16px;
+  }
+}
