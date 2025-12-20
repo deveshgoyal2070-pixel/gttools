@@ -1,46 +1,34 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Palindrome Checker | Free Online Tool</title>
-  <meta name="description" content="Check palindromes Free online tool. No login required." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://deveshgoyal2070-pixel.github.io/gttools/tools/text/palindrome-checker.html" />
-  <style>
-    body{font-family:system-ui,Arial;margin:0;background:#f8fafc;color:#0f172a}
-    .wrap{max-width:900px;margin:32px auto;padding:16px}
-    h1{margin-bottom:8px}
-    .box{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin-top:16px}
-    .muted{color:#64748b}
-    a{color:#0ea5a4;text-decoration:none}
-  </style>
+<meta charset="UTF-8">
+<title>Palindrome Checker | GTTools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:system-ui;background:#f8fafc;margin:0}
+.box{max-width:900px;margin:30px auto;padding:20px}
+textarea{width:100%;min-height:120px;padding:12px;font-size:16px}
+.result{margin-top:10px;font-weight:600}
+button{margin-top:10px;padding:10px 16px;background:#0ea5a4;color:#fff;border:none;border-radius:6px}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <a href="/">← Back to all tools</a>
+<div class="box">
+<a href="/">← Back</a>
+<h1>Palindrome Checker</h1>
+<textarea id="text" placeholder="Enter text"></textarea>
+<button onclick="check()">Check</button>
+<div class="result" id="res"></div>
+</div>
 
-    <h1>Palindrome Checker</h1>
-    <p class="muted">Check palindromes</p>
-
-    <div class="box">
-      <strong>Tool Status</strong>
-      <p>This tool is being improved. Full functionality coming soon.</p>
-    </div>
-
-    <div class="box">
-      <h2>About this tool</h2>
-      <p>
-        Palindrome Checker is a free online tool available on gttools.
-        You can use it directly in your browser without signup.
-      </p>
-    </div>
-
-    <div class="box">
-      <h2>More tools</h2>
-      <p>
-        Check other free tools on <a href="/">gttools</a>.
-      </p>
-    </div>
-  </div>
+<script>
+function check(){
+  const t=document.getElementById("text").value
+    .toLowerCase().replace(/[^a-z0-9]/g,"");
+  const rev=t.split("").reverse().join("");
+  document.getElementById("res").textContent =
+    t && t===rev ? "✅ It is a palindrome" : "❌ Not a palindrome";
+}
+</script>
 </body>
 </html>
