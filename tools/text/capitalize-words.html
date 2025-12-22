@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Capitalize Words</title></head>
+<body>
+<div class="box">
+<a href="/">← Back</a>
+<h1>Capitalize Each Word</h1>
+<textarea id="t"></textarea>
+<button onclick="cap()">Convert</button>
+</div>
+<script>
+function cap(){
+ t.value=t.value.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
+}
+</script>
+</body>
+</html>
