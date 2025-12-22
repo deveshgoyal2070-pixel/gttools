@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Text Statistics</title></head>
+<body>
+<div class="box">
+<a href="/">← Back</a>
+<h1>Text Statistics</h1>
+<textarea id="t"></textarea>
+<button onclick="stats()">Analyze</button>
+<pre id="o"></pre>
+</div>
+<script>
+function stats(){
+ const w=t.value.match(/\b\w+\b/g)||[];
+ const avg=w.reduce((a,b)=>a+b.length,0)/(w.length||1);
+ o.textContent=`Words: ${w.length}\nAverage word length: ${avg.toFixed(2)}`;
+}
+</script>
+</body>
+</html>
