@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Hash Generator | GTTools</title>
+<style>body{font-family:system-ui;background:#f8fafc}textarea{width:100%;min-height:120px;padding:10px}input{width:100%;padding:10px}</style>
+</head><body>
+<a href="/">← Back</a><h1>Hash Generator</h1>
+<textarea id="t" placeholder="Text"></textarea>
+<button onclick="sha()">SHA-256</button>
+<input id="o" placeholder="Hash">
+<script>
+async function sha(){
+ const b=new TextEncoder().encode(t.value);
+ const h=await crypto.subtle.digest('SHA-256',b);
+ o.value=[...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('');
+}
+</script></body></html>
