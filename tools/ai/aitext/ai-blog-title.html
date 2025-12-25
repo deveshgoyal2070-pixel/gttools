@@ -1,46 +1,78 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>AI Blog Title Generator | Free Online Tool</title>
-  <meta name="description" content="Template-driven title ideas Free online tool. No login required." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://deveshgoyal2070-pixel.github.io/gttools/tools/aitext/ai-blog-title.html" />
-  <style>
-    body{font-family:system-ui,Arial;margin:0;background:#f8fafc;color:#0f172a}
-    .wrap{max-width:900px;margin:32px auto;padding:16px}
-    h1{margin-bottom:8px}
-    .box{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin-top:16px}
-    .muted{color:#64748b}
-    a{color:#0ea5a4;text-decoration:none}
-  </style>
+<meta charset="utf-8">
+<title>AI Blog Title Generator | GTTools</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:system-ui;background:#f8fafc;margin:0;color:#0f172a}
+.container{max-width:900px;margin:32px auto;padding:20px}
+textarea,input{width:100%;padding:12px;margin-top:10px;border-radius:8px;border:1px solid #e5e7eb;font-size:15px}
+button{margin-top:10px;padding:10px 14px;background:#0ea5a4;color:#fff;border:0;border-radius:8px;cursor:pointer}
+.results{margin-top:14px}
+.item{background:#fff;border:1px solid #e5e7eb;padding:12px;border-radius:8px;margin-top:10px}
+.small{color:#64748b;font-size:13px}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <a href="/">← Back to all tools</a>
+<div class="container">
+  <a href="/">← Back</a>
+  <h1>AI Blog Title Generator</h1>
+  <p class="small">Topic / keywords डालो — और मैं multiple catchy titles दूँगा.</p>
+  <input id="topic" placeholder="Enter blog topic or keywords (eg. 'remote work tips')">
+  <select id="tone" style="margin-top:8px;padding:10px;border-radius:8px;border:1px solid #e5e7eb">
+    <option value="howto">How-to / Practical</option>
+    <option value="list">Listicle</option>
+    <option value="opinion">Opinion / Thought</option>
+    <option value="seo">SEO-focused</option>
+  </select>
+  <button onclick="gen()">Generate Titles</button>
 
-    <h1>AI Blog Title Generator</h1>
-    <p class="muted">Template-driven title ideas</p>
+  <div class="results" id="out"></div>
+</div>
 
-    <div class="box">
-      <strong>Tool Status</strong>
-      <p>This tool is being improved. Full functionality coming soon.</p>
-    </div>
+<script>
+const templates = {
+  howto:[
+    "How to {{topic}}: A Practical Guide",
+    "The Ultimate Guide to {{topic}} in 2025",
+    "How I Improved {{topic}} with 7 Simple Steps"
+  ],
+  list:[
+    "10 Proven {{topic}} Tips You Should Use",
+    "17 {{topic}} Ideas That Work Right Now",
+    "Top 8 Ways to Boost {{topic}}"
+  ],
+  opinion:[
+    "Why {{topic}} is Changing the Game",
+    "The Truth About {{topic}} and What It Means",
+    "I Used {{topic}} for 30 Days — Here’s What Happened"
+  ],
+  seo:[
+    "{{topic}}: Complete Beginners Guide (2025)",
+    "{{topic}} — Tips, Tools & Examples",
+    "How to Master {{topic}}: Proven Strategies"
+  ]
+};
 
-    <div class="box">
-      <h2>About this tool</h2>
-      <p>
-        AI Blog Title Generator is a free online tool available on gttools.
-        You can use it directly in your browser without signup.
-      </p>
-    </div>
+function titleCase(s){ return s.replace(/\b\w/g,ch=>ch.toUpperCase()); }
 
-    <div class="box">
-      <h2>More tools</h2>
-      <p>
-        Check other free tools on <a href="/">gttools</a>.
-      </p>
-    </div>
-  </div>
+function gen(){
+  const topic=document.getElementById('topic').value.trim();
+  const tone=document.getElementById('tone').value;
+  const out=document.getElementById('out');
+  out.innerHTML='';
+  if(!topic){ out.innerHTML='<div class="item">Please enter a topic.</div>'; return; }
+  const base = titleCase(topic.replace(/\s+/g,' '));
+  const candidates = templates[tone].map(t => t.replace(/\{\{topic\}\}/g, base));
+  // add some variants
+  candidates.push(`A Beginner's Guide to ${base}`);
+  candidates.push(`${base}: Tips, Examples & Best Practices`);
+  candidates.forEach(c=>{
+    const el=document.createElement('div'); el.className='item'; el.textContent=c;
+    out.appendChild(el);
+  });
+}
+</script>
 </body>
 </html>
