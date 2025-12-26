@@ -1,46 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>AI Image Prompt Generator | Free Online Tool</title>
-  <meta name="description" content="Prompts for image models Free online tool. No login required." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://deveshgoyal2070-pixel.github.io/gttools/tools/aiimage/ai-image-prompt.html" />
-  <style>
-    body{font-family:system-ui,Arial;margin:0;background:#f8fafc;color:#0f172a}
-    .wrap{max-width:900px;margin:32px auto;padding:16px}
-    h1{margin-bottom:8px}
-    .box{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin-top:16px}
-    .muted{color:#64748b}
-    a{color:#0ea5a4;text-decoration:none}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <a href="/">← Back to all tools</a>
-
-    <h1>AI Image Prompt Generator</h1>
-    <p class="muted">Prompts for image models</p>
-
-    <div class="box">
-      <strong>Tool Status</strong>
-      <p>This tool is being improved. Full functionality coming soon.</p>
-    </div>
-
-    <div class="box">
-      <h2>About this tool</h2>
-      <p>
-        AI Image Prompt Generator is a free online tool available on gttools.
-        You can use it directly in your browser without signup.
-      </p>
-    </div>
-
-    <div class="box">
-      <h2>More tools</h2>
-      <p>
-        Check other free tools on <a href="/">gttools</a>.
-      </p>
-    </div>
-  </div>
-</body>
-</html>
+<!doctype html><html><head><meta charset="utf-8"><title>AI Image Prompt Builder</title></head><body style="font-family:system-ui;padding:18px">
+<a href="/">← Back</a><h1>AI Image Prompt</h1>
+<input id="subject" placeholder="Subject (e.g. mountain lake at sunrise)" style="width:100%;padding:8px">
+<input id="style" placeholder="Style (photorealistic, oil painting)" style="width:100%;padding:8px;margin-top:8px">
+<select id="ratio" style="width:100%;padding:8px;margin-top:8px"><option>16:9</option><option>4:3</option><option>1:1</option></select>
+<button onclick="gen()" style="margin-top:8px">Build Prompt</button>
+<pre id="out" style="background:#fff;border:1px solid #e5e7eb;padding:10px;margin-top:10px"></pre>
+<script>
+function gen(){
+ const s=subject.value.trim(); const st=style.value.trim()||'photorealistic'; const r=ratio.value;
+ if(!s){ out.textContent='Enter subject.'; return; }
+ out.textContent = `Prompt: ${s}, ${st}, cinematic lighting, ultra-detailed, high resolution, aspect ${r}.`;
+}
+</script></body></html>
