@@ -1,46 +1,18 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>AI Color Palette Generator | Free Online Tool</title>
-  <meta name="description" content="Color palette ideas Free online tool. No login required." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="canonical" href="https://deveshgoyal2070-pixel.github.io/gttools/tools/aiimage/ai-color-palette.html" />
-  <style>
-    body{font-family:system-ui,Arial;margin:0;background:#f8fafc;color:#0f172a}
-    .wrap{max-width:900px;margin:32px auto;padding:16px}
-    h1{margin-bottom:8px}
-    .box{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin-top:16px}
-    .muted{color:#64748b}
-    a{color:#0ea5a4;text-decoration:none}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <a href="/">← Back to all tools</a>
-
-    <h1>AI Color Palette Generator</h1>
-    <p class="muted">Color palette ideas</p>
-
-    <div class="box">
-      <strong>Tool Status</strong>
-      <p>This tool is being improved. Full functionality coming soon.</p>
-    </div>
-
-    <div class="box">
-      <h2>About this tool</h2>
-      <p>
-        AI Color Palette Generator is a free online tool available on gttools.
-        You can use it directly in your browser without signup.
-      </p>
-    </div>
-
-    <div class="box">
-      <h2>More tools</h2>
-      <p>
-        Check other free tools on <a href="/">gttools</a>.
-      </p>
-    </div>
-  </div>
-</body>
-</html>
+<!doctype html><html><head><meta charset="utf-8"><title>AI Color Palette</title></head><body style="font-family:system-ui;padding:18px">
+<a href="/">← Back</a><h1>AI Color Palette</h1>
+<input id="mood" placeholder="Mood or brand (e.g. calm, energetic, tech)" style="width:100%;padding:8px">
+<button onclick="gen()" style="margin-top:8px">Generate Palette</button>
+<pre id="out" style="background:#fff;border:1px solid #e5e7eb;padding:10px;margin-top:10px"></pre>
+<script>
+function gen(){
+ const m=(mood.value||'modern').trim();
+ // simple mapping
+ const map = {
+  calm:['#0ea5a4','#a7f3d0','#035d56','#e6fffb','#064e4a'],
+  energetic:['#ff6b6b','#ffd166','#ff9f1c','#ffde7d','#ff3b3b'],
+  tech:['#0f172a','#0ea5a4','#94a3b8','#1e293b','#c7f9f1']
+ };
+ const p = map[m.toLowerCase()]||['#111827','#06b6d4','#34d399','#f8fafc','#64748b'];
+ out.textContent = `Palette for "${m}":\n` + p.join(' ');
+}
+</script></body></html>
