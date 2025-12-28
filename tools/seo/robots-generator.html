@@ -1,11 +1,9 @@
 <!DOCTYPE html><html><body>
-<a href="/">← Back</a><h1>Page Size Checker</h1>
-<textarea id="t" placeholder="Paste HTML"></textarea>
-<button onclick="calc()">Check</button>
-<p id="o"></p>
+<a href="/">← Back</a><h1>Robots.txt Generator</h1>
+<button onclick="gen()">Generate</button>
+<pre id="o"></pre>
 <script>
-function calc(){
- const size=(new Blob([t.value]).size/1024).toFixed(2);
- o.textContent=`Page Size: ${size} KB`;
+function gen(){
+ o.textContent=`User-agent: *\nAllow: /\nSitemap: https://example.com/sitemap.xml`;
 }
 </script></body></html>
