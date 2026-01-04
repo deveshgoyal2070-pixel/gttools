@@ -1,116 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>AI Tools – GTTools</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="GTTools — AI tools collection. Subcategories: AI Code, AI Image, AI Marketing, AI Text, AI Utility." />
-  <style>
-    :root{--bg:#f8fafc;--card:#fff;--muted:#64748b;--accent:#0ea5a4;--border:#e5e7eb}
-    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;margin:0;background:var(--bg);color:#0f172a}
-    header{background:var(--accent);color:#fff;padding:28px 18px;text-align:center}
-    header h1{margin:0;font-size:28px}
-    .container{max-width:1100px;margin:24px auto;padding:0 18px}
-    .intro{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:10px}
-    .subcats{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .subcat{background:var(--card);border:1px solid var(--border);padding:12px 14px;border-radius:10px;min-width:160px}
-    .subcat a{color:var(--accent);text-decoration:none;font-weight:600}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px}
-    .card{background:var(--card);border:1px solid var(--border);padding:14px;border-radius:10px}
-    .card h3{margin:0 0 6px 0;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    footer{margin:40px 0;text-align:center;color:var(--muted);font-size:14px}
-    a.back{color:#fff;text-decoration:none;display:inline-block;margin-top:8px}
-  </style>
+<meta charset="UTF-8">
+<title>AI Tools – GTTools</title>
+<meta name="description" content="AI-powered text, image and productivity tools">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;font-family:system-ui;background:#f8fafc;color:#0f172a}
+nav{background:#0f172a;padding:14px;text-align:center}
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600}
+.container{max-width:1100px;margin:40px auto;padding:0 16px}
+.ad{margin:30px 0;text-align:center}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.item{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px;text-align:center}
+footer{text-align:center;padding:30px;color:#64748b}
+</style>
 </head>
 <body>
-  <header>
-    <h1>GTTools — AI Tools</h1>
-    <p style="margin-top:8px;opacity:.95">Subcategories: AI Code, AI Image, AI Marketing, AI Text, AI Utility — free, browser-first tools.</p>
-    <div style="margin-top:10px"><a class="back" href="/">← Back to homepage</a></div>
-  </header>
 
-  <main class="container">
-    <section class="intro">
-      <p><strong>AI Tools collection</strong> — quick generators, prompts and code helpers grouped by purpose. Click a subcategory to jump.</p>
-      <div class="subcats">
-        <div class="subcat"><a href="#ai-code">AI Code</a><div style="font-size:13px;color:var(--muted)">Explainers, translators, refactors</div></div>
-        <div class="subcat"><a href="#ai-image">AI Image</a><div style="font-size:13px;color:var(--muted)">Prompts, captions, mockups</div></div>
-        <div class="subcat"><a href="#ai-marketing">AI Marketing</a><div style="font-size:13px;color:var(--muted)">Ad copy, hooks, CTAs</div></div>
-        <div class="subcat"><a href="#ai-text">AI Text</a><div style="font-size:13px;color:var(--muted)">Rewriters, summaries, generators</div></div>
-        <div class="subcat"><a href="#ai-utility">AI Utility</a><div style="font-size:13px;color:var(--muted)">Planning, names, bios</div></div>
-      </div>
-    </section>
+<nav>
+<a href="index.html">Home</a>
+<a href="text-tools.html">Text</a>
+<a href="dev-tools.html">Developer</a>
+<a href="ai-tools.html">AI</a>
+<a href="image-tools.html">Images</a>
+<a href="calculator-tools.html">Calculator</a>
+<a href="utility-tools.html">Utility</a>
+</nav>
 
-    <section id="ai-code">
-      <h2 style="margin-top:26px">AI Code Tools</h2>
-      <div class="grid">
-        <article class="card"><h3><a href="tools/ai/code-summarizer.html">Code Summarizer</a></h3><p>Extract functions, imports and short summary.</p></article>
-        <article class="card"><h3><a href="tools/ai/code-explainer.html">Code Explainer</a></h3><p>Explain functions and key lines.</p></article>
-        <article class="card"><h3><a href="tools/ai/code-translator.html">Code Translator (JS ↔ Python)</a></h3><p>Heuristic conversions for small snippets.</p></article>
-        <article class="card"><h3><a href="tools/ai/code-to-pseudocode.html">Code → Pseudocode</a></h3><p>Convert code blocks into simple pseudocode steps.</p></article>
-        <article class="card"><h3><a href="tools/ai/generate-unit-tests.html">Generate Unit Tests</a></h3><p>Skeleton tests for detected functions.</p></article>
-        <article class="card"><h3><a href="tools/ai/inline-commenter.html">Inline Commenter</a></h3><p>Insert short comments above functions.</p></article>
-        <article class="card"><h3><a href="tools/ai/code-complexity.html">Code Complexity Estimator</a></h3><p>LOC, function count and nesting heuristics.</p></article>
-        <article class="card"><h3><a href="tools/ai/dependency-extractor.html">Dependency Extractor</a></h3><p>List imports/requires from code.</p></article>
-      </div>
-    </section>
+<div class="container">
+<h1>AI Tools</h1>
+<p>AI-powered text, image and productivity tools</p>
 
-    <section id="ai-image">
-      <h2 style="margin-top:26px">AI Image Tools</h2>
-      <div class="grid">
-        <article class="card"><h3><a href="tools/ai/ai-image-prompt.html">Image Prompt Builder</a></h3><p>Build high-quality prompts for image generation.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-avatar-prompt.html">Avatar Prompt</a></h3><p>Prompts for avatars and portraits.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-logo-prompt.html">Logo Prompt</a></h3><p>Logo design prompt templates.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-color-palette.html">Color Palette</a></h3><p>Generate brand palettes by mood.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-product-mockup.html">Product Mockup Prompt</a></h3><p>Mockup scene prompts for presentations.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-alt-text.html">Alt Text Generator</a></h3><p>Short & detailed alt text variants for accessibility.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-thumbnail-ideas.html">Thumbnail Ideas</a></h3><p>YouTube thumbnail composition ideas.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-style-transfer.html">Style Transfer Prompt</a></h3><p>Prompts for style transfer workflows.</p></article>
-      </div>
-    </section>
+<div class="ad">
+<ins style="width:300px;height:250px"
+     data-width="300"
+     data-height="250"
+     class="gcd4534bd46"
+     data-domain="//data527.click"
+     data-affquery="/ca412dc3df7f172679ee/cd4534bd46/?placementName=default">
+  <script src="//data527.click/js/responsive.js" async></script>
+</ins>
+</div>
 
-    <section id="ai-marketing">
-      <h2 style="margin-top:26px">AI Marketing Tools</h2>
-      <div class="grid">
-        <article class="card"><h3><a href="tools/ai/ai-ad-copy.html">Ad Copy Generator</a></h3><p>Short ad copy templates.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-cta-generator.html">CTA Generator</a></h3><p>High-converting call-to-action variants.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-email-sequence.html">Email Sequence</a></h3><p>4-step outreach sequence templates.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-elevator-pitch.html">Elevator Pitch</a></h3><p>Concise pitch generator.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-landing-hook.html">Landing Hook</a></h3><p>Headline + subhead hook ideas.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-usp-extractor.html">USP Extractor</a></h3><p>Pull unique selling points from descriptions.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-promo-30s.html">30s Promo Script</a></h3><p>Short promo scripts.</p></article>
-      </div>
-    </section>
+<div class="list">
+<div class="item">Tool 1</div>
+<div class="item">Tool 2</div>
+<div class="item">Tool 3</div>
+<div class="item">Tool 4</div>
+</div>
+</div>
 
-    <section id="ai-text">
-      <h2 style="margin-top:26px">AI Text Tools</h2>
-      <div class="grid">
-        <article class="card"><h3><a href="tools/ai/ai-blog-title.html">Blog Title Generator</a></h3><p>Catchy blog titles by tone.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-meta-description.html">Meta Description Generator</a></h3><p>SEO-friendly meta descriptions.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-paragraph-rewriter.html">Paragraph Rewriter</a></h3><p>Rewrite text with simple substitutions.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-summary.html">Short Summary</a></h3><p>Extractive summary (top sentences).</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-summary-long.html">Long Summary</a></h3><p>Longer extractive summary.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-email-writer.html">Email Writer</a></h3><p>Template-driven email drafts.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-hashtag-generator.html">Hashtag Generator</a></h3><p>Hashtag ideas for Instagram/Twitter.</p></article>
-      </div>
-    </section>
+<footer>
+<p>© GTTools</p>
+</footer>
 
-    <section id="ai-utility">
-      <h2 style="margin-top:26px">AI Utility Tools</h2>
-      <div class="grid">
-        <article class="card"><h3><a href="tools/ai/ai-bio-generator.html">Bio Generator</a></h3><p>Create short bios for profiles.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-name-generator.html">Name Generator</a></h3><p>Names for projects, startups and products.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-business-ideas.html">Business Ideas</a></h3><p>Idea sparks for niches.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-project-planner.html">Project Planner</a></h3><p>Simple phase-based planner.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-brainstorm.html">Brainstorm</a></h3><p>Quick brainstorming prompts.</p></article>
-        <article class="card"><h3><a href="tools/ai/ai-okr-starter.html">OKR Starter</a></h3><p>Objective and KRs templates.</p></article>
-      </div>
-    </section>
-
-    <footer>
-      <p>← <a href="/">Back to GTTools</a> · <a href="sitemap.xml">Sitemap</a></p>
-    </footer>
-  </main>
 </body>
 </html>
