@@ -1,122 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GTTools — Text Tools Collection</title>
-  <meta name="description" content="All Text Tools on GTTools: Word Counter, Case Converter, Slug Generator, Palindrome Checker and more. Use free browser tools without signup." />
-  <link rel="canonical" href="https://deveshgoyal2070-pixel.github.io/gttools/text-tools.html" />
-  <style>
-    :root{--bg:#f8fafc;--card:#fff;--muted:#64748b;--accent:#0ea5a4;--border:#e5e7eb}
-    body{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; background:var(--bg); color:#0f172a}
-    header{background:var(--accent); color:#fff; padding:28px 18px; text-align:center}
-    header h1{margin:0;font-size:28px}
-    .container{max-width:1100px;margin:24px auto;padding:0 18px}
-    .intro{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:10px}
-    .intro p{margin:0;color:var(--muted)}
-    .controls{display:flex;gap:10px;align-items:center;margin:18px 0;flex-wrap:wrap}
-    .search{flex:1;min-width:220px}
-    input[type=search]{width:100%;padding:10px;border-radius:8px;border:1px solid var(--border);font-size:15px}
-    .filters{display:flex;gap:8px}
-    button.filter{background:#fff;border:1px solid var(--border);padding:8px 10px;border-radius:8px;cursor:pointer}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:10px}
-    .card{background:var(--card);border:1px solid var(--border);padding:14px;border-radius:10px}
-    .card h3{margin:0 0 6px 0;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .card a{display:inline-block;margin-top:10px;color:var(--accent);text-decoration:none}
-    footer{margin:40px 0;text-align:center;color:var(--muted);font-size:14px}
-    @media (max-width:520px){header h1{font-size:20px}}
-  </style>
+<meta charset="UTF-8">
+<title>Developer Tools – GTTools</title>
+<meta name="description" content="Developer utilities and converters">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;font-family:system-ui;background:#f8fafc;color:#0f172a}
+nav{background:#0f172a;padding:14px;text-align:center}
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600}
+.container{max-width:1100px;margin:40px auto;padding:0 16px}
+.ad{margin:30px 0;text-align:center}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.item{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:18px;text-align:center}
+footer{text-align:center;padding:30px;color:#64748b}
+</style>
 </head>
 <body>
-  <header>
-    <h1>GTTools — Text Tools</h1>
-    <p style="margin-top:8px;opacity:.95">सब text tools एक जगह — बिना signup के, ब्राउज़र में रन करते हैं।</p>
-  </header>
 
-  <main class="container">
-    <section class="intro">
-      <p><strong>यहाँ GTTools के सारे Text tools का कलेक्शन है.</strong> नीचे search या filter करके तुरंत कोई भी tool खोलें। Homepage पर केवल प्रमुख tools हैं — पर इस पेज पर पूरा collection है.</p>
-    </section>
+<nav>
+<a href="index.html">Home</a>
+<a href="text-tools.html">Text</a>
+<a href="dev-tools.html">Developer</a>
+<a href="ai-tools.html">AI</a>
+<a href="image-tools.html">Images</a>
+<a href="calculator-tools.html">Calculator</a>
+<a href="utility-tools.html">Utility</a>
+</nav>
 
-    <div class="controls">
-      <div class="search"><input id="q" type="search" placeholder="Search tools e.g. word, slug, palindrome..." oninput="render()"/></div>
-      <div class="filters">
-        <button class="filter" onclick="showAll()">Show All</button>
-        <button class="filter" onclick="showCore()">Core</button>
-        <button class="filter" onclick="showAdvanced()">Advanced</button>
-      </div>
-    </div>
+<div class="container">
+<h1>Developer Tools</h1>
+<p>Developer utilities and converters</p>
 
-    <section id="list" class="grid" aria-live="polite">
-      <!-- cards injected by JS -->
-    </section>
+<div class="ad">
+<ins style="width:300px;height:250px"
+     data-width="300"
+     data-height="250"
+     class="gcd4534bd46"
+     data-domain="//data527.click"
+     data-affquery="/ca412dc3df7f172679ee/cd4534bd46/?placementName=default">
+  <script src="//data527.click/js/responsive.js" async></script>
+</ins>
+</div>
 
-    <footer>
-      <p>Back to <a href="/gttools/" style="color:var(--accent);text-decoration:none">All tools</a> · Sitemap available <a href="sitemap.xml" style="color:var(--accent)">here</a></p>
-    </footer>
-  </main>
+<div class="list">
+<div class="item">Tool 1</div>
+<div class="item">Tool 2</div>
+<div class="item">Tool 3</div>
+<div class="item">Tool 4</div>
+</div>
+</div>
 
-  <script>
-    const tools = [
-      {name:'Word Counter', path:'tools/text/word-counter.html', cat:'core', desc:'Count words and characters'},
-      {name:'Character Counter', path:'tools/text/character-counter.html', cat:'core', desc:'Characters with & without spaces'},
-      {name:'Case Converter', path:'tools/text/case-converter.html', cat:'core', desc:'Uppercase, lowercase, sentence case'},
-      {name:'Sentence Case Converter', path:'tools/text/sentence-case-converter.html', cat:'core', desc:'Convert text to sentence case'},
-      {name:'Slug Generator', path:'tools/text/slug-generator.html', cat:'core', desc:'Create SEO-friendly URLs'},
-      {name:'Find & Replace', path:'tools/text/find-replace.html', cat:'core', desc:'Find and replace text'},
-      {name:'Remove Extra Spaces', path:'tools/text/remove-extra-spaces.html', cat:'core', desc:'Clean unnecessary spaces'},
-      {name:'Reverse Text', path:'tools/text/reverse-text.html', cat:'core', desc:'Reverse the text content'},
-      {name:'Line Counter', path:'tools/text/line-counter.html', cat:'core', desc:'Count number of lines'},
-      {name:'Duplicate Line Remover', path:'tools/text/duplicate-line-remover.html', cat:'core', desc:'Remove repeated lines'},
-      {name:'Text Sorter', path:'tools/text/text-sorter.html', cat:'core', desc:'Sort text alphabetically'},
-      {name:'Palindrome Checker', path:'tools/text/palindrome-checker.html', cat:'core', desc:'Check palindromes'},
-      {name:'Anagram Checker', path:'tools/text/anagram-checker.html', cat:'core', desc:'Check anagram strings'},
-      {name:'Word Frequency Counter', path:'tools/text/word-frequency.html', cat:'core', desc:'Analyze word usage'},
+<footer>
+<p>© GTTools</p>
+</footer>
 
-      {name:'Text Difference Checker', path:'tools/text/text-difference-checker.html', cat:'advanced', desc:'Compare two texts'},
-      {name:'Text Repeater', path:'tools/text/text-repeater.html', cat:'advanced', desc:'Repeat text multiple times'},
-      {name:'Remove Duplicate Words', path:'tools/text/remove-duplicate-words.html', cat:'advanced', desc:'Deduplicate words'},
-      {name:'Capitalize Each Word', path:'tools/text/capitalize-words.html', cat:'advanced', desc:'Capitalize every word'},
-      {name:'Uppercase Converter', path:'tools/text/uppercase-converter.html', cat:'advanced', desc:'Convert to UPPERCASE'},
-      {name:'Lowercase Converter', path:'tools/text/lowercase-converter.html', cat:'advanced', desc:'Convert to lowercase'},
-      {name:'Trim Text', path:'tools/text/trim-spaces.html', cat:'advanced', desc:'Trim extra spaces & line breaks'},
-      {name:'Random Text', path:'tools/text/random-text.html', cat:'advanced', desc:'Generate placeholder text'},
-      {name:'Sentence Counter', path:'tools/text/sentence-counter.html', cat:'advanced', desc:'Count sentences'},
-      {name:'Paragraph Counter', path:'tools/text/paragraph-counter.html', cat:'advanced', desc:'Count paragraphs'},
-
-      {name:'Text to Binary', path:'tools/text/text-to-binary.html', cat:'encoding', desc:'Convert text to binary'},
-      {name:'Binary to Text', path:'tools/text/binary-to-text.html', cat:'encoding', desc:'Binary to readable text'},
-      {name:'Text Encoder (URI)', path:'tools/text/text-encoder.html', cat:'encoding', desc:'URI encode text'},
-      {name:'Text Decoder (URI)', path:'tools/text/text-decoder.html', cat:'encoding', desc:'URI decode text'},
-
-      {name:'Text Statistics', path:'tools/text/text-statistics.html', cat:'utility', desc:'Words, avg word length, etc.'},
-      {name:'Readability Checker', path:'tools/text/readability-checker.html', cat:'utility', desc:'Readability score'},
-      {name:'Remove Line Breaks', path:'tools/text/remove-line-breaks.html', cat:'utility', desc:'Remove newlines'},
-      {name:'Line Numberer', path:'tools/text/line-numberer.html', cat:'utility', desc:'Add line numbers to lines'}
-    ];
-
-    const list = document.getElementById('list');
-    const q = document.getElementById('q');
-
-    function render(){
-      const filter = q.value.trim().toLowerCase();
-      list.innerHTML = '';
-      tools.filter(t=>t.name.toLowerCase().includes(filter) || t.desc.toLowerCase().includes(filter))
-           .forEach(t=>{
-             const el = document.createElement('article'); el.className='card';
-             el.innerHTML = `<h3>${t.name}</h3><p>${t.desc}</p><a href='${t.path}'>Open</a>`;
-             list.appendChild(el);
-           });
-      if(list.children.length===0){ list.innerHTML='<div style="grid-column:1/-1;padding:18px;background:#fff;border:1px solid var(--border);border-radius:8px">No tools found</div>' }
-    }
-
-    function showAll(){ q.value=''; render(); }
-    function showCore(){ q.value=''; list.innerHTML=''; tools.filter(t=>t.cat==='core').forEach(t=>{ const el=document.createElement('article'); el.className='card'; el.innerHTML=`<h3>${t.name}</h3><p>${t.desc}</p><a href='${t.path}'>Open</a>`; list.appendChild(el); }); }
-    function showAdvanced(){ q.value=''; list.innerHTML=''; tools.filter(t=>t.cat==='advanced').forEach(t=>{ const el=document.createElement('article'); el.className='card'; el.innerHTML=`<h3>${t.name}</h3><p>${t.desc}</p><a href='${t.path}'>Open</a>`; list.appendChild(el); }); }
-
-    // initial render
-    render();
-  </script>
 </body>
 </html>
