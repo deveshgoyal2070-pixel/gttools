@@ -1,1 +1,32 @@
-<!doctype html><html><head><meta charset='utf-8'><title>AI Tools – GTTools</title></head><body><h1>AI Tools</h1><ul><li><a href='tools/ai/ai-blog-title.html'>Ai Blog Title</a></li><li><a href='tools/ai/ai-meta-description.html'>Ai Meta Description</a></li><li><a href='tools/ai/ai-youtube-title.html'>Ai Youtube Title</a></li><li><a href='tools/ai/ai-instagram-caption.html'>Ai Instagram Caption</a></li><li><a href='tools/ai/ai-summary-long.html'>Ai Summary Long</a></li><li><a href='tools/ai/ai-translate-basic.html'>Ai Translate Basic</a></li><li><a href='tools/ai/ai-product-description.html'>Ai Product Description</a></li><li><a href='tools/ai/ai-email-writer.html'>Ai Email Writer</a></li><li><a href='tools/ai/ai-persona-builder.html'>Ai Persona Builder</a></li><li><a href='tools/ai/ai-image-prompt.html'>Ai Image Prompt</a></li><li><a href='tools/ai/ai-alt-text.html'>Ai Alt Text</a></li><li><a href='tools/ai/ai-image-caption.html'>Ai Image Caption</a></li><li><a href='tools/ai/ai-avatar-prompt.html'>Ai Avatar Prompt</a></li><li><a href='tools/ai/ai-color-palette.html'>Ai Color Palette</a></li><li><a href='tools/ai/ai-thumbnail-ideas.html'>Ai Thumbnail Ideas</a></li></ul><p><a href='index.html'>Home</a></p></body></html>
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>Ai Tools – GTTools</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:system-ui;margin:0;background:#f8fafc;color:#0f172a}
+header{padding:24px;text-align:center;background:#0f172a;color:#fff}
+.container{max-width:1100px;margin:30px auto;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
+a{color:#0ea5a4;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<header><h1>Ai Tools</h1></header>
+<div class="container">
+<div class="grid" id="tools"></div>
+</div>
+<script>
+fetch("tools.json")
+ .then(r=>r.json())
+ .then(d=>{
+   d.ai.forEach(t=>{
+     const div=document.createElement("div");
+     div.className="card";
+     div.innerHTML=`<a href="tools/${t.file}">${t.name}</a>`;
+     document.getElementById("tools").appendChild(div);
+   });
+ });
+</script>
+</body></html>
