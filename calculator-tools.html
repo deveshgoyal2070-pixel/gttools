@@ -1,1 +1,32 @@
-<!doctype html><html><head><meta charset='utf-8'><title>Calculator Tools – GTTools</title></head><body><h1>Calculator Tools</h1><ul><li><a href='tools/calculator/emi-calculator.html'>Emi Calculator</a></li><li><a href='tools/calculator/bmi-calculator.html'>Bmi Calculator</a></li><li><a href='tools/calculator/loan-calculator.html'>Loan Calculator</a></li><li><a href='tools/calculator/gst-calculator.html'>Gst Calculator</a></li><li><a href='tools/calculator/compound-interest.html'>Compound Interest</a></li><li><a href='tools/calculator/percentage-calculator.html'>Percentage Calculator</a></li><li><a href='tools/calculator/simple-interest.html'>Simple Interest</a></li></ul><p><a href='index.html'>Home</a></p></body></html>
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>Calculator Tools – GTTools</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:system-ui;margin:0;background:#f8fafc;color:#0f172a}
+header{padding:24px;text-align:center;background:#0f172a;color:#fff}
+.container{max-width:1100px;margin:30px auto;padding:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
+a{color:#0ea5a4;text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<header><h1>Calculator Tools</h1></header>
+<div class="container">
+<div class="grid" id="tools"></div>
+</div>
+<script>
+fetch("tools.json")
+ .then(r=>r.json())
+ .then(d=>{
+   d.calculator.forEach(t=>{
+     const div=document.createElement("div");
+     div.className="card";
+     div.innerHTML=`<a href="tools/${t.file}">${t.name}</a>`;
+     document.getElementById("tools").appendChild(div);
+   });
+ });
+</script>
+</body></html>
