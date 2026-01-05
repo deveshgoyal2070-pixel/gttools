@@ -1,0 +1,884 @@
+{
+  "ai": [
+    {
+      "name": "Ai Api Mock",
+      "file": "ai/ai-api-mock.html"
+    },
+    {
+      "name": "Ai Cli Template",
+      "file": "ai/ai-cli-template.html"
+    },
+    {
+      "name": "Ai Code Commenter",
+      "file": "ai/ai-code-commenter.html"
+    },
+    {
+      "name": "Ai Css Generator",
+      "file": "ai/ai-css-generator.html"
+    },
+    {
+      "name": "Ai Data Validator",
+      "file": "ai/ai-data-validator.html"
+    },
+    {
+      "name": "Ai Docstring",
+      "file": "ai/ai-docstring.html"
+    },
+    {
+      "name": "Ai Error Explainer",
+      "file": "ai/ai-error-explainer.html"
+    },
+    {
+      "name": "Ai Html Generator",
+      "file": "ai/ai-html-generator.html"
+    },
+    {
+      "name": "Ai Js Snippet",
+      "file": "ai/ai-js-snippet.html"
+    },
+    {
+      "name": "Ai Readme Starter",
+      "file": "ai/ai-readme-starter.html"
+    },
+    {
+      "name": "Ai Refactor",
+      "file": "ai/ai-refactor.html"
+    },
+    {
+      "name": "Ai Regex Generator",
+      "file": "ai/ai-regex-generator.html"
+    },
+    {
+      "name": "Ai Snippet Formatter",
+      "file": "ai/ai-snippet-formatter.html"
+    },
+    {
+      "name": "Ai Sql Generator",
+      "file": "ai/ai-sql-generator.html"
+    },
+    {
+      "name": "Ai Testcase",
+      "file": "ai/ai-testcase.html"
+    },
+    {
+      "name": "Ai Alt Text",
+      "file": "ai/ai-alt-text.html"
+    },
+    {
+      "name": "Ai Avatar Prompt",
+      "file": "ai/ai-avatar-prompt.html"
+    },
+    {
+      "name": "Ai Bg Remove Guide",
+      "file": "ai/ai-bg-remove-guide.html"
+    },
+    {
+      "name": "Ai Color Palette",
+      "file": "ai/ai-color-palette.html"
+    },
+    {
+      "name": "Ai Icon Prompt",
+      "file": "ai/ai-icon-prompt.html"
+    },
+    {
+      "name": "Ai Image Caption",
+      "file": "ai/ai-image-caption.html"
+    },
+    {
+      "name": "Ai Image Prompt",
+      "file": "ai/ai-image-prompt.html"
+    },
+    {
+      "name": "Ai Logo Prompt",
+      "file": "ai/ai-logo-prompt.html"
+    },
+    {
+      "name": "Ai Meme Caption",
+      "file": "ai/ai-meme-caption.html"
+    },
+    {
+      "name": "Ai Moodboard Prompt",
+      "file": "ai/ai-moodboard-prompt.html"
+    },
+    {
+      "name": "Ai Pattern Prompt",
+      "file": "ai/ai-pattern-prompt.html"
+    },
+    {
+      "name": "Ai Photo Title",
+      "file": "ai/ai-photo-title.html"
+    },
+    {
+      "name": "Ai Poster Copy",
+      "file": "ai/ai-poster-copy.html"
+    },
+    {
+      "name": "Ai Product Mockup",
+      "file": "ai/ai-product-mockup.html"
+    },
+    {
+      "name": "Ai Social Image",
+      "file": "ai/ai-social-image.html"
+    },
+    {
+      "name": "Ai Sticker Ideas",
+      "file": "ai/ai-sticker-ideas.html"
+    },
+    {
+      "name": "Ai Style Transfer",
+      "file": "ai/ai-style-transfer.html"
+    },
+    {
+      "name": "Ai Tattoo Ideas",
+      "file": "ai/ai-tattoo-ideas.html"
+    },
+    {
+      "name": "Ai Thumbnail Ideas",
+      "file": "ai/ai-thumbnail-ideas.html"
+    },
+    {
+      "name": "Ai Wallpaper Prompt",
+      "file": "ai/ai-wallpaper-prompt.html"
+    },
+    {
+      "name": "Ai Ad Angle",
+      "file": "ai/ai-ad-angle.html"
+    },
+    {
+      "name": "Ai Competitor Oneliner",
+      "file": "ai/ai-competitor-oneliner.html"
+    },
+    {
+      "name": "Ai Cta Generator",
+      "file": "ai/ai-cta-generator.html"
+    },
+    {
+      "name": "Ai Elevator Pitch",
+      "file": "ai/ai-elevator-pitch.html"
+    },
+    {
+      "name": "Ai Email Sequence",
+      "file": "ai/ai-email-sequence.html"
+    },
+    {
+      "name": "Ai Growth Hypothesis",
+      "file": "ai/ai-growth-hypothesis.html"
+    },
+    {
+      "name": "Ai Landing Hook",
+      "file": "ai/ai-landing-hook.html"
+    },
+    {
+      "name": "Ai Offer Generator",
+      "file": "ai/ai-offer-generator.html"
+    },
+    {
+      "name": "Ai Promo 30S",
+      "file": "ai/ai-promo-30s.html"
+    },
+    {
+      "name": "Ai Promo 60S",
+      "file": "ai/ai-promo-60s.html"
+    },
+    {
+      "name": "Ai Referral Copy",
+      "file": "ai/ai-referral-copy.html"
+    },
+    {
+      "name": "Ai Retention Hook",
+      "file": "ai/ai-retention-hook.html"
+    },
+    {
+      "name": "Ai Sales Headline",
+      "file": "ai/ai-sales-headline.html"
+    },
+    {
+      "name": "Ai Usp Extractor",
+      "file": "ai/ai-usp-extractor.html"
+    },
+    {
+      "name": "Ai Value Prop",
+      "file": "ai/ai-value-prop.html"
+    },
+    {
+      "name": "Ai Ad Copy",
+      "file": "ai/ai-ad-copy.html"
+    },
+    {
+      "name": "Ai Blog Keywords",
+      "file": "ai/ai-blog-keywords.html"
+    },
+    {
+      "name": "Ai Blog Title",
+      "file": "ai/ai-blog-title.html"
+    },
+    {
+      "name": "Ai Bullet Generator",
+      "file": "ai/ai-bullet-generator.html"
+    },
+    {
+      "name": "Ai Cold Email Subject",
+      "file": "ai/ai-cold-email-subject.html"
+    },
+    {
+      "name": "Ai Conclusion Generator",
+      "file": "ai/ai-conclusion-generator.html"
+    },
+    {
+      "name": "Ai Content Ideas",
+      "file": "ai/ai-content-ideas.html"
+    },
+    {
+      "name": "Ai Email Writer",
+      "file": "ai/ai-email-writer.html"
+    },
+    {
+      "name": "Ai Faq Generator",
+      "file": "ai/ai-faq-generator.html"
+    },
+    {
+      "name": "Ai Feature Benefit",
+      "file": "ai/ai-feature-benefit.html"
+    },
+    {
+      "name": "Ai Formalizer",
+      "file": "ai/ai-formalizer.html"
+    },
+    {
+      "name": "Ai Hashtag Generator",
+      "file": "ai/ai-hashtag-generator.html"
+    },
+    {
+      "name": "Ai Heading Generator",
+      "file": "ai/ai-heading-generator.html"
+    },
+    {
+      "name": "Ai Instagram Caption",
+      "file": "ai/ai-instagram-caption.html"
+    },
+    {
+      "name": "Ai Intro Generator",
+      "file": "ai/ai-intro-generator.html"
+    },
+    {
+      "name": "Ai Job Description",
+      "file": "ai/ai-job-description.html"
+    },
+    {
+      "name": "Ai Keyword Generator",
+      "file": "ai/ai-keyword-generator.html"
+    },
+    {
+      "name": "Ai Linkedin About",
+      "file": "ai/ai-linkedin-about.html"
+    },
+    {
+      "name": "Ai Longform Outline",
+      "file": "ai/ai-longform-outline.html"
+    },
+    {
+      "name": "Ai Meeting Notes",
+      "file": "ai/ai-meeting-notes.html"
+    },
+    {
+      "name": "Ai Meta Description",
+      "file": "ai/ai-meta-description.html"
+    },
+    {
+      "name": "Ai Paragraph Rewriter",
+      "file": "ai/ai-paragraph-rewriter.html"
+    },
+    {
+      "name": "Ai Persona Builder",
+      "file": "ai/ai-persona-builder.html"
+    },
+    {
+      "name": "Ai Product Description",
+      "file": "ai/ai-product-description.html"
+    },
+    {
+      "name": "Ai Sentence Simplifier",
+      "file": "ai/ai-sentence-simplifier.html"
+    },
+    {
+      "name": "Ai Summary Long",
+      "file": "ai/ai-summary-long.html"
+    },
+    {
+      "name": "Ai Summary Short",
+      "file": "ai/ai-summary-short.html"
+    },
+    {
+      "name": "Ai Tone Adjuster",
+      "file": "ai/ai-tone-adjuster.html"
+    },
+    {
+      "name": "Ai Translate Basic",
+      "file": "ai/ai-translate-basic.html"
+    },
+    {
+      "name": "Ai Tweet Generator",
+      "file": "ai/ai-tweet-generator.html"
+    },
+    {
+      "name": "Ai Youtube Title",
+      "file": "ai/ai-youtube-title.html"
+    },
+    {
+      "name": "Ai Bio Generator",
+      "file": "ai/ai-bio-generator.html"
+    },
+    {
+      "name": "Ai Brainstorm",
+      "file": "ai/ai-brainstorm.html"
+    },
+    {
+      "name": "Ai Business Ideas",
+      "file": "ai/ai-business-ideas.html"
+    },
+    {
+      "name": "Ai Domain Ideas",
+      "file": "ai/ai-domain-ideas.html"
+    },
+    {
+      "name": "Ai Email Reply",
+      "file": "ai/ai-email-reply.html"
+    },
+    {
+      "name": "Ai Faq Draft",
+      "file": "ai/ai-faq-draft.html"
+    },
+    {
+      "name": "Ai Habit Tracker",
+      "file": "ai/ai-habit-tracker.html"
+    },
+    {
+      "name": "Ai Interview Qs",
+      "file": "ai/ai-interview-qs.html"
+    },
+    {
+      "name": "Ai Job Title",
+      "file": "ai/ai-job-title.html"
+    },
+    {
+      "name": "Ai Meeting Agenda",
+      "file": "ai/ai-meeting-agenda.html"
+    },
+    {
+      "name": "Ai Name Generator",
+      "file": "ai/ai-name-generator.html"
+    },
+    {
+      "name": "Ai Okr Starter",
+      "file": "ai/ai-okr-starter.html"
+    },
+    {
+      "name": "Ai Personal Goals",
+      "file": "ai/ai-personal-goals.html"
+    },
+    {
+      "name": "Ai Prioritization",
+      "file": "ai/ai-prioritization.html"
+    },
+    {
+      "name": "Ai Project Planner",
+      "file": "ai/ai-project-planner.html"
+    },
+    {
+      "name": "Ai Resume Summary",
+      "file": "ai/ai-resume-summary.html"
+    },
+    {
+      "name": "Ai Scorecard",
+      "file": "ai/ai-scorecard.html"
+    },
+    {
+      "name": "Ai Startup Name",
+      "file": "ai/ai-startup-name.html"
+    },
+    {
+      "name": "Ai Support Response",
+      "file": "ai/ai-support-response.html"
+    },
+    {
+      "name": "Ai Tagline",
+      "file": "ai/ai-tagline.html"
+    }
+  ],
+  "calculator": [
+    {
+      "name": "Age Calculator",
+      "file": "calculator/age-calculator.html"
+    },
+    {
+      "name": "Bmi Calculator",
+      "file": "calculator/bmi-calculator.html"
+    },
+    {
+      "name": "Compound Interest",
+      "file": "calculator/compound-interest.html"
+    },
+    {
+      "name": "Discount Calculator",
+      "file": "calculator/discount-calculator.html"
+    },
+    {
+      "name": "Emi Calculator",
+      "file": "calculator/emi-calculator.html"
+    },
+    {
+      "name": "Gst Calculator",
+      "file": "calculator/gst-calculator.html"
+    },
+    {
+      "name": "Loan Calculator",
+      "file": "calculator/loan-calculator.html"
+    },
+    {
+      "name": "Percentage Calculator",
+      "file": "calculator/percentage-calculator.html"
+    },
+    {
+      "name": "Profit Loss Calculator",
+      "file": "calculator/profit-loss-calculator.html"
+    },
+    {
+      "name": "Simple Interest",
+      "file": "calculator/simple-interest.html"
+    }
+  ],
+  "dev": [
+    {
+      "name": "Base64 Decoder",
+      "file": "dev/base64-decoder.html"
+    },
+    {
+      "name": "Base64 Encoder",
+      "file": "dev/base64-encoder.html"
+    },
+    {
+      "name": "Code Minifier",
+      "file": "dev/code-minifier.html"
+    },
+    {
+      "name": "Color Converter",
+      "file": "dev/color-converter.html"
+    },
+    {
+      "name": "Css Minifier",
+      "file": "dev/css-minifier.html"
+    },
+    {
+      "name": "Css Prefixer",
+      "file": "dev/css-prefixer.html"
+    },
+    {
+      "name": "Csv To Json",
+      "file": "dev/csv-to-json.html"
+    },
+    {
+      "name": "Hash Generator",
+      "file": "dev/hash-generator.html"
+    },
+    {
+      "name": "Html Minifier",
+      "file": "dev/html-minifier.html"
+    },
+    {
+      "name": "Js Beautifier",
+      "file": "dev/js-beautifier.html"
+    },
+    {
+      "name": "Js Minifier",
+      "file": "dev/js-minifier.html"
+    },
+    {
+      "name": "Json Formatter",
+      "file": "dev/json-formatter.html"
+    },
+    {
+      "name": "Json To Csv",
+      "file": "dev/json-to-csv.html"
+    },
+    {
+      "name": "Json Validator",
+      "file": "dev/json-validator.html"
+    },
+    {
+      "name": "Jwt Decoder",
+      "file": "dev/jwt-decoder.html"
+    },
+    {
+      "name": "Regex Tester",
+      "file": "dev/regex-tester.html"
+    },
+    {
+      "name": "Sql Formatter",
+      "file": "dev/sql-formatter.html"
+    },
+    {
+      "name": "Timestamp Converter",
+      "file": "dev/timestamp-converter.html"
+    },
+    {
+      "name": "Timestamp Diff",
+      "file": "dev/timestamp-diff.html"
+    },
+    {
+      "name": "Url Encoder Decoder",
+      "file": "dev/url-encoder-decoder.html"
+    },
+    {
+      "name": "Uuidv4 Generator",
+      "file": "dev/uuidv4-generator.html"
+    }
+  ],
+  "image": [
+    {
+      "name": "Base64 To Image",
+      "file": "image/base64-to-image.html"
+    },
+    {
+      "name": "Image Cropper",
+      "file": "image/image-cropper.html"
+    },
+    {
+      "name": "Image Dimensions",
+      "file": "image/image-dimensions.html"
+    },
+    {
+      "name": "Image Downloader",
+      "file": "image/image-downloader.html"
+    },
+    {
+      "name": "Image Filter",
+      "file": "image/image-filter.html"
+    },
+    {
+      "name": "Image Format Converter",
+      "file": "image/image-format-converter.html"
+    },
+    {
+      "name": "Image Merge",
+      "file": "image/image-merge.html"
+    },
+    {
+      "name": "Image Metadata",
+      "file": "image/image-metadata.html"
+    },
+    {
+      "name": "Image Orientation Fix",
+      "file": "image/image-orientation-fix.html"
+    },
+    {
+      "name": "Image Preview",
+      "file": "image/image-preview.html"
+    },
+    {
+      "name": "Image Resizer",
+      "file": "image/image-resizer.html"
+    },
+    {
+      "name": "Image Rotate",
+      "file": "image/image-rotate.html"
+    },
+    {
+      "name": "Image Splitter",
+      "file": "image/image-splitter.html"
+    },
+    {
+      "name": "Image To Base64",
+      "file": "image/image-to-base64.html"
+    },
+    {
+      "name": "Image Watermarker",
+      "file": "image/image-watermarker.html"
+    }
+  ],
+  "seo": [
+    {
+      "name": "Broken Link Checker",
+      "file": "seo/broken-link-checker.html"
+    },
+    {
+      "name": "Canonical Generator",
+      "file": "seo/canonical-generator.html"
+    },
+    {
+      "name": "H1 H2 Checker",
+      "file": "seo/h1-h2-checker.html"
+    },
+    {
+      "name": "Htaccess Redirect",
+      "file": "seo/htaccess-redirect.html"
+    },
+    {
+      "name": "Keyword Density",
+      "file": "seo/keyword-density.html"
+    },
+    {
+      "name": "Link Previewer",
+      "file": "seo/link-previewer.html"
+    },
+    {
+      "name": "Meta Tag Generator",
+      "file": "seo/meta-tag-generator.html"
+    },
+    {
+      "name": "Og Generator",
+      "file": "seo/og-generator.html"
+    },
+    {
+      "name": "Page Size Checker",
+      "file": "seo/page-size-checker.html"
+    },
+    {
+      "name": "Robots Generator",
+      "file": "seo/robots-generator.html"
+    },
+    {
+      "name": "Seo Title Analyzer",
+      "file": "seo/seo-title-analyzer.html"
+    },
+    {
+      "name": "Serp Preview",
+      "file": "seo/serp-preview.html"
+    },
+    {
+      "name": "Sitemap Generator",
+      "file": "seo/sitemap-generator.html"
+    },
+    {
+      "name": "Structured Data",
+      "file": "seo/structured-data.html"
+    },
+    {
+      "name": "Url Encoder",
+      "file": "seo/url-encoder.html"
+    }
+  ],
+  "text": [
+    {
+      "name": "Anagram Checker",
+      "file": "text/anagram-checker.html"
+    },
+    {
+      "name": "Binary To Text",
+      "file": "text/binary-to-text.html"
+    },
+    {
+      "name": "Capitalize Words",
+      "file": "text/capitalize-words.html"
+    },
+    {
+      "name": "Case Converter",
+      "file": "text/case-converter.html"
+    },
+    {
+      "name": "Character Counter",
+      "file": "text/character-counter.html"
+    },
+    {
+      "name": "Duplicate Line Remover",
+      "file": "text/duplicate-line-remover.html"
+    },
+    {
+      "name": "Find Replace",
+      "file": "text/find-replace.html"
+    },
+    {
+      "name": "Html To Markdown",
+      "file": "text/html-to-markdown.html"
+    },
+    {
+      "name": "Line Counter",
+      "file": "text/line-counter.html"
+    },
+    {
+      "name": "Lowercase Converter",
+      "file": "text/lowercase-converter.html"
+    },
+    {
+      "name": "Markdown To Html",
+      "file": "text/markdown-to-html.html"
+    },
+    {
+      "name": "Palindrome Checker",
+      "file": "text/palindrome-checker.html"
+    },
+    {
+      "name": "Random Text",
+      "file": "text/random-text.html"
+    },
+    {
+      "name": "Readability Checker",
+      "file": "text/readability-checker.html"
+    },
+    {
+      "name": "Remove Duplicate Words",
+      "file": "text/remove-duplicate-words.html"
+    },
+    {
+      "name": "Remove Extra Spaces",
+      "file": "text/remove-extra-spaces.html"
+    },
+    {
+      "name": "Remove Line Breaks",
+      "file": "text/remove-line-breaks.html"
+    },
+    {
+      "name": "Reverse Text",
+      "file": "text/reverse-text.html"
+    },
+    {
+      "name": "Sentence Case Converter",
+      "file": "text/sentence-case-converter.html"
+    },
+    {
+      "name": "Slug Generator",
+      "file": "text/slug-generator.html"
+    },
+    {
+      "name": "Text Decoder",
+      "file": "text/text-decoder.html"
+    },
+    {
+      "name": "Text Difference Checker",
+      "file": "text/text-difference-checker.html"
+    },
+    {
+      "name": "Text Encoder",
+      "file": "text/text-encoder.html"
+    },
+    {
+      "name": "Text Repeater",
+      "file": "text/text-repeater.html"
+    },
+    {
+      "name": "Text Sorter",
+      "file": "text/text-sorter.html"
+    },
+    {
+      "name": "Text Statistics",
+      "file": "text/text-statistics.html"
+    },
+    {
+      "name": "Text To Binary",
+      "file": "text/text-to-binary.html"
+    },
+    {
+      "name": "Uppercase Converter",
+      "file": "text/uppercase-converter.html"
+    },
+    {
+      "name": "Word Counter",
+      "file": "text/word-counter.html"
+    },
+    {
+      "name": "Word Frequency",
+      "file": "text/word-frequency.html"
+    }
+  ],
+  "utility": [
+    {
+      "name": "Clipboard Helper",
+      "file": "utility/clipboard-helper.html"
+    },
+    {
+      "name": "Color Picker",
+      "file": "utility/color-picker.html"
+    },
+    {
+      "name": "Countdown Timer",
+      "file": "utility/countdown-timer.html"
+    },
+    {
+      "name": "Csv Validator",
+      "file": "utility/csv-validator.html"
+    },
+    {
+      "name": "Duplicate Word Highlighter",
+      "file": "utility/duplicate-word-highlighter.html"
+    },
+    {
+      "name": "Hex To Rgb",
+      "file": "utility/hex-to-rgb.html"
+    },
+    {
+      "name": "Json Schema Generator",
+      "file": "utility/json-schema-generator.html"
+    },
+    {
+      "name": "Lorem Ipsum",
+      "file": "utility/lorem-ipsum.html"
+    },
+    {
+      "name": "Password Generator",
+      "file": "utility/password-generator.html"
+    },
+    {
+      "name": "Password Strength",
+      "file": "utility/password-strength.html"
+    },
+    {
+      "name": "Qr Generator",
+      "file": "utility/qr-generator.html"
+    },
+    {
+      "name": "Random Number",
+      "file": "utility/random-number.html"
+    },
+    {
+      "name": "Regex Explainer",
+      "file": "utility/regex-explainer.html"
+    },
+    {
+      "name": "Remove Extra Spaces",
+      "file": "utility/remove-extra-spaces.html"
+    },
+    {
+      "name": "Rgb To Hex",
+      "file": "utility/rgb-to-hex.html"
+    },
+    {
+      "name": "Save As File",
+      "file": "utility/save-as-file.html"
+    },
+    {
+      "name": "Sentence Splitter",
+      "file": "utility/sentence-splitter.html"
+    },
+    {
+      "name": "Speech To Text",
+      "file": "utility/speech-to-text.html"
+    },
+    {
+      "name": "Text Statistics",
+      "file": "utility/text-statistics.html"
+    },
+    {
+      "name": "Text To Speech",
+      "file": "utility/text-to-speech.html"
+    },
+    {
+      "name": "Timezone Converter",
+      "file": "utility/timezone-converter.html"
+    },
+    {
+      "name": "Title Case Converter",
+      "file": "utility/title-case-converter.html"
+    },
+    {
+      "name": "Unit Converter Length",
+      "file": "utility/unit-converter-length.html"
+    },
+    {
+      "name": "Unit Converter Weight",
+      "file": "utility/unit-converter-weight.html"
+    },
+    {
+      "name": "Url Shortener",
+      "file": "utility/url-shortener.html"
+    }
+  ]
+}
