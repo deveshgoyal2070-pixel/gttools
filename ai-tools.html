@@ -1,32 +1,85 @@
-<!doctype html>
-<html><head>
-<meta charset="utf-8">
-<title>Ai Tools – GTTools</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Tools – GTTools</title>
+<meta name="description" content="AI tools with sub-category filters: AI Text, Code, Image, Marketing and Utility tools.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{font-family:system-ui;margin:0;background:#f8fafc;color:#0f172a}
-header{padding:24px;text-align:center;background:#0f172a;color:#fff}
-.container{max-width:1100px;margin:30px auto;padding:16px}
+header{background:#0f172a;color:#fff;padding:24px;text-align:center}
+.filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px}
+.filters button{padding:8px 16px;border-radius:999px;border:1px solid #e5e7eb;
+background:#fff;cursor:pointer;font-weight:600}
+.filters button.active{background:#0ea5a4;color:#fff;border-color:#0ea5a4}
+.container{max-width:1200px;margin:20px auto;padding:0 16px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
-a{color:#0ea5a4;text-decoration:none;font-weight:600}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px}
+.card span{display:block;font-size:12px;color:#64748b;margin-bottom:6px}
+a{text-decoration:none;color:#0ea5a4;font-weight:600}
 </style>
 </head>
 <body>
-<header><h1>Ai Tools</h1></header>
+
+<header>
+<h1>AI Tools</h1>
+<p>Filter AI tools by category</p>
+</header>
+
+<div class="filters">
+<button class="active" data-filter="all">All</button>
+<button data-filter="text">AI Text</button>
+<button data-filter="code">AI Code</button>
+<button data-filter="image">AI Image</button>
+<button data-filter="marketing">AI Marketing</button>
+<button data-filter="utility">AI Utility</button>
+</div>
+
 <div class="container">
 <div class="grid" id="tools"></div>
 </div>
+
 <script>
 fetch("tools.json")
- .then(r=>r.json())
- .then(d=>{
-   d.ai.forEach(t=>{
-     const div=document.createElement("div");
-     div.className="card";
-     div.innerHTML=`<a href="tools/${t.file}">${t.name}</a>`;
-     document.getElementById("tools").appendChild(div);
-   });
- });
+.then(r=>r.json())
+.then(data=>{
+  const box=document.getElementById("tools");
+  const allTools=data.ai;
+
+  function getType(name){
+    if(name.includes("Prompt")||name.includes("Image")||name.includes("Logo")||name.includes("Thumbnail")) return "image";
+    if(name.includes("Code")||name.includes("Sql")||name.includes("Api")||name.includes("Regex")) return "code";
+    if(name.includes("Ad")||name.includes("Marketing")||name.includes("Sales")||name.includes("Pitch")) return "marketing";
+    if(name.includes("Bio")||name.includes("Planner")||name.includes("Goals")||name.includes("Tracker")) return "utility";
+    return "text";
+  }
+
+  function render(filter){
+    box.innerHTML="";
+    allTools.forEach(t=>{
+      const type=getType(t.name);
+      if(filter==="all"||filter===type){
+        const d=document.createElement("div");
+        d.className="card";
+        d.setAttribute("data-type",type);
+        d.innerHTML=`<span>${type.toUpperCase()}</span>
+        <a href="tools/${t.file}">${t.name}</a>`;
+        box.appendChild(d);
+      }
+    });
+  }
+
+  render("all");
+
+  document.querySelectorAll(".filters button").forEach(btn=>{
+    btn.onclick=()=>{
+      document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+      btn.classList.add("active");
+      render(btn.dataset.filter);
+    }
+  });
+});
 </script>
-</body></html>
+
+</body>
+</html>
