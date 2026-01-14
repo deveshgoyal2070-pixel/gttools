@@ -1,160 +1,143 @@
-# 🚀 gtttools — 200+ Free Online Tools
+# GTTools 🔧
 
-> **A fast, free & open‑source tools website inspired by ToolsFX**
-> No login • No ads (initially) • No paid APIs • 100% GitHub Pages compatible
+**200+ Free Online Tools** — Text, Dev, AI, Image, Calculator, SEO & Utility tools.  
+No signup • Fully browser-based • Open source.
 
----
-
-## 🌟 About gtttools
-
-**gtttools** ek all‑in‑one **free tools platform** hai jisme **200+ online tools** available hain — bilkul **ToolsFX‑style experience** ke saath.
-
-Ye project un logon ke liye bana hai jo:
-
-* Free tools chahte hain (no signup, no paywall)
-* SEO, Dev, Image, Text, Calculator & AI‑style helpers use karte hain
-* Open‑source aur fast websites pasand karte hain
-
-👉 Sab tools **browser ke andar hi run** hote hain (client‑side).
-👉 Koi **paid API** ya backend dependency nahi hai.
+[Live demo → https://deveshgoyal2070-pixel.github.io/gttools/](https://deveshgoyal2070-pixel.github.io/gttools/)
 
 ---
 
-## 🧰 Tools Included (200 Total)
-
-### 🔹 100 Normal Tools
-
-* **Text Tools** — Word counter, case converter, slug generator, etc.
-* **Image Tools** — Image resize, crop, convert, watermark (canvas based)
-* **Developer Tools** — JSON formatter, Base64, Regex tester, CSV ↔ JSON
-* **SEO Tools** — Meta tag generator, sitemap, SERP preview
-* **Calculators** — EMI, GST, BMI, Interest calculators
-* **Utilities** — QR generator, password generator, color tools
-
-### 🤖 100 AI‑Style Tools (FREE)
-
-> ⚠️ Ye tools **template & rule based** hain (real paid AI APIs use nahi karte)
-
-* AI Blog Title / Meta / Caption Generator
-* AI Content Ideas & Blog Outline
-* AI Resume, Bio & Email Templates
-* AI Image Prompt Generators
-* AI Code Snippet & Regex Helpers
-* AI Marketing & Copywriting Tools
+## What is GTTools?
+GTTools is a tiny toolbox website with 200+ web utilities for creators, developers and marketers.  
+Examples: Word Counter, JSON Formatter, AI Prompt Generators, Image Helpers, EMI/BMI calculators, SEO tools and more.
 
 ---
 
-## 🛠️ Tech Stack
-
-* **HTML + CSS** (Static & lightweight)
-* **Vanilla JavaScript** (Client‑side logic)
-* **GitHub Pages** (Free hosting)
-
-✔️ No backend
-✔️ No database
-✔️ No API keys required
+## Highlights
+- ✅ 200+ tools (text/dev/ai/image/seo/utility/calculator)  
+- ✅ Zero signup, runs in browser  
+- ✅ Fast, mobile-friendly, and lightweight  
+- ✅ Open-source — contribute on GitHub
 
 ---
 
-## 📁 Project Structure
-
-```
-gtttools/
-├── index.html              # Homepage (search + categories)
-├── data/
-│   └── tools.json          # List of all 200 tools
-├── tools/                  # Individual tool pages (to be added)
-│   ├── text/
-│   ├── image/
-│   ├── dev/
-│   ├── seo/
-│   ├── calculator/
-│   └── ai/
-├── assets/
-│   ├── css/
-│   └── js/
-├── sitemap.xml
-├── robots.txt
-└── README.md
-```
+## Quick links
+- Live site: https://deveshgoyal2070-pixel.github.io/gttools/  
+- Sitemap: `/sitemap.xml`  
+- Tools index: `/tools.json`
 
 ---
 
-## 🚀 Live Deployment (GitHub Pages)
-
-### Step‑by‑step:
-
-1. Repo open karein → **Settings → Pages**
-2. Source select karein:
-
-   * Branch: `main`
-   * Folder: `/ (root)`
-3. Save karein
-
-🌐 Aapki site live ho jaayegi:
-
-```
-https://<username>.github.io/gtttools/
-```
+## Usage
+Open any category page (e.g. `text-tools.html`) and click the tool you want.  
+Each tool has a simple UI — copy/paste your input and get results immediately.
 
 ---
 
-## 🔍 SEO Friendly by Design
-
-* Clean URLs (`/tools/text/word-counter.html`)
-* Search‑based navigation
-* Sitemap & robots.txt support
-* Per‑tool landing pages (best for Google indexing)
-
-Ye project **organic traffic** ke liye optimize kiya gaya hai.
-
----
-
-## 💰 Monetization (Future Ready)
-
-> Abhi project 100% free hai
-
-Future me add kiya ja sakta hai:
-
-* Google AdSense
-* Affiliate links
-* Sponsored tools
-* Pro AI tools (optional)
+## Contribute
+Want to add a tool, fix a bug or improve UI?
+1. Fork the repo  
+2. Create a branch: `feature/<your-thing>`  
+3. Add your HTML file into the correct folder (e.g. `tools/text/your-tool.html`)  
+4. Update `tools.json` with `{ "name": "Your Tool", "file": "text/your-tool.html" }`  
+5. Create a PR — describe what your tool does
 
 ---
 
-## 🧠 Roadmap
-
-* [ ] 20+ fully working tool pages
-* [ ] Auto‑generate 200 tool landing pages
-* [ ] Better UI (Tailwind / dark mode)
-* [ ] Blog / resources section
-* [ ] Tool submission directories
+## How to add a new tool (maintainers)
+- Place tool HTML at `tools/<category>/<slug>.html`
+- Add entry in `tools.json` under the appropriate category.
+- Confirm category page auto-renders (uses `tools.json`).
 
 ---
 
-## 🤝 Contributing
-
-Contributions welcome hain 🙌
-
-* Issues raise karein
-* New tools suggest karein
-* UI / UX improve karein
+## Tech / Files
+- Static HTML + client-side JS (no server required)  
+- `index.html`, `text-tools.html`, `ai-tools.html`, `tools.json`, `tools/*/*`  
+- Sitemap: `sitemap.xml`
 
 ---
 
-## 📜 License
+## Developer setup (local)
+You can preview with a simple local server:
+```bash
+# using Python 3
+python -m http.server 8000
+# then open: http://localhost:8000
+# GTTools 🔧
 
-**MIT License**
-Free to use, modify & distribute.
+**200+ Free Online Tools** — Text, Dev, AI, Image, Calculator, SEO & Utility tools.  
+No signup • Fully browser-based • Open source.
+
+[Live demo → https://deveshgoyal2070-pixel.github.io/gttools/](https://deveshgoyal2070-pixel.github.io/gttools/)
 
 ---
 
-## ⭐ Support
-
-Agar project pasand aaye to ⭐ star zaroor dena —
-Ye project ko grow karne me madad karega ❤️
+## What is GTTools?
+GTTools is a tiny toolbox website with 200+ web utilities for creators, developers and marketers.  
+Examples: Word Counter, JSON Formatter, AI Prompt Generators, Image Helpers, EMI/BMI calculators, SEO tools and more.
 
 ---
 
-**Built with ❤️ for creators, developers & marketers**
+## Highlights
+- ✅ 200+ tools (text/dev/ai/image/seo/utility/calculator)  
+- ✅ Zero signup, runs in browser  
+- ✅ Fast, mobile-friendly, and lightweight  
+- ✅ Open-source — contribute on GitHub
+
+---
+
+## Quick links
+- Live site: https://deveshgoyal2070-pixel.github.io/gttools/  
+- Sitemap: `/sitemap.xml`  
+- Tools index: `/tools.json`
+
+---
+
+## Usage
+Open any category page (e.g. `text-tools.html`) and click the tool you want.  
+Each tool has a simple UI — copy/paste your input and get results immediately.
+
+---
+
+## Contribute
+Want to add a tool, fix a bug or improve UI?
+1. Fork the repo  
+2. Create a branch: `feature/<your-thing>`  
+3. Add your HTML file into the correct folder (e.g. `tools/text/your-tool.html`)  
+4. Update `tools.json` with `{ "name": "Your Tool", "file": "text/your-tool.html" }`  
+5. Create a PR — describe what your tool does
+
+---
+
+## How to add a new tool (maintainers)
+- Place tool HTML at `tools/<category>/<slug>.html`
+- Add entry in `tools.json` under the appropriate category.
+- Confirm category page auto-renders (uses `tools.json`).
+
+---
+
+## Tech / Files
+- Static HTML + client-side JS (no server required)  
+- `index.html`, `text-tools.html`, `ai-tools.html`, `tools.json`, `tools/*/*`  
+- Sitemap: `sitemap.xml`
+
+---
+
+## Developer setup (local)
+You can preview with a simple local server:
+```bash
+# using Python 3
+python -m http.server 8000
+# then open: http://localhost:8000
+
+License
+
+MIT — contribute & reuse freely.
+
+Contact
+
+Devesh Goyal
+Website: https://deveshgoyal2070-pixel.github.io/gttools/
+
+GitHub: https://github.com/deveshgoyal2070-pixel/gttools
