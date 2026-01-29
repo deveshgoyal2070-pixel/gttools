@@ -2,165 +2,121 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GTTools – 200+ Free Online Tools</title>
-<meta name="description" content="GTTools offers 200+ free online tools including Text, Developer, AI, Image, SEO, Calculator and Utility tools.">
+<title>GTTools – Free Online Tools</title>
+<meta name="description" content="GTTools offers 200+ free online tools including text, developer, AI, image, calculator and utility tools.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 body{margin:0;font-family:system-ui;background:#f8fafc;color:#0f172a}
-header{background:linear-gradient(135deg,#0ea5a4,#6366f1);color:#fff;padding:50px 16px;text-align:center}
-header h1{font-size:42px;margin:0}
-header p{font-size:18px;margin:12px 0 18px}
+nav{background:#0f172a;padding:14px;text-align:center}
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600}
+header{padding:60px 20px;text-align:center;background:linear-gradient(90deg,#6366f1,#0ea5a4);color:#fff}
+header h1{font-size:42px;margin-bottom:10px}
+header p{font-size:18px;opacity:.95}
 
-.nav{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
-.nav a{background:#fff;color:#0f172a;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600}
-.nav a:hover{background:#ecfeff}
-
-/* SEARCH */
-.search-box{max-width:420px;margin:0 auto 20px;position:relative}
-.search-box input{
-  width:100%;padding:12px 16px;border-radius:12px;
-  border:none;font-size:16px
+.hero-tool{
+  text-align:center;
+  margin:40px 20px;
 }
-.search-results{
-  background:#fff;border-radius:12px;margin-top:6px;
-  max-height:300px;overflow:auto;
+.hero-tool a{
+  background: linear-gradient(90deg,#6366f1,#0ea5a4);
+  color:white;
+  padding:16px 28px;
+  border-radius:14px;
+  font-weight:700;
+  text-decoration:none;
+  display:inline-block;
+  font-size:18px;
   box-shadow:0 10px 25px rgba(0,0,0,.15);
-  text-align:left
 }
-.search-results div{padding:10px 14px;border-bottom:1px solid #e5e7eb}
-.search-results a{color:#0ea5a4;font-weight:600;text-decoration:none}
-.search-results small{display:block;color:#64748b;font-size:12px}
+.hero-tool p{margin-top:10px;color:#475569;font-size:15px}
 
-.container{max-width:1200px;margin:55px auto;padding:0 16px}
-.stats{display:flex;justify-content:center;gap:50px;margin-bottom:50px;flex-wrap:wrap}
-.stat{text-align:center}
-.stat b{font-size:34px;display:block}
+.container{max-width:1100px;margin:50px auto;padding:0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
 
-h2{text-align:center;font-size:32px;margin-bottom:8px}
-.sub{text-align:center;color:#64748b;margin-bottom:36px}
+.card{background:#fff;border-radius:14px;padding:24px;border:1px solid #e5e7eb;
+box-shadow:0 10px 25px rgba(0,0,0,.04);text-align:center}
+.card h2{margin:10px 0}
+.card p{color:#64748b;font-size:15px}
+.card a{display:inline-block;margin-top:12px;padding:10px 18px;
+background:#0ea5a4;color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:26px;text-align:center}
-.card h3{margin:0 0 8px;font-size:22px}
-.card p{color:#64748b;font-size:15px;margin:0 0 14px}
-.card a{display:inline-block;color:#0ea5a4;font-weight:600;text-decoration:none}
-
-footer{text-align:center;margin:70px 0 30px;color:#64748b}
-footer a{color:#0ea5a4;text-decoration:none}
+footer{text-align:center;padding:40px 20px;color:#64748b}
 </style>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CK9BFQDWHK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CK9BFQDWHK');
-</script>
-
 </head>
-
 <body>
+
+<nav>
+  <a href="text-tools.html">Text</a>
+  <a href="dev-tools.html">Developer</a>
+  <a href="ai-tools.html">AI</a>
+  <a href="image-tools.html">Images</a>
+  <a href="calculator-tools.html">Calculator</a>
+  <a href="seo-tools.html">SEO</a>
+  <a href="utility-tools.html">Utility</a>
+</nav>
 
 <header>
   <h1>GTTools</h1>
   <p>200+ Free Online Tools for Developers, Creators & Marketers</p>
-
-  <div class="nav">
-    <a href="text-tools.html">Text</a>
-    <a href="dev-tools.html">Developer</a>
-    <a href="ai-tools.html">AI</a>
-    <a href="image-tools.html">Images</a>
-    <a href="calculator-tools.html">Calculator</a>
-    <a href="utility-tools.html">Utility</a>
-    <a href="seo-tools.html">SEO</a>
-  </div>
-
-  <!-- SEARCH BOX -->
-  <div class="search-box">
-    <input id="toolSearch" placeholder="Search 200+ tools…" />
-    <div id="searchResults" class="search-results"></div>
-  </div>
-
 </header>
 
-<!-- 🔥 ADVERTICA HOMEPAGE BANNER -->
-<div style="margin:30px auto;text-align:center;min-height:250px">
-  <script async src="https://data527.click/js/responsive.js"></script>
-  <ins class="gcd4534bd46"
-       style="display:inline-block;width:300px;height:250px"
-       data-width="300"
-       data-height="250"
-       data-domain="https://data527.click"
-       data-affquery="/ca412dc3df7f172679ee/cd4534bd46/?placementName=default">
-  </ins>
+<!-- 🔥 HERO FEATURE -->
+<div class="hero-tool">
+  <a href="ai-prompt-studio.html">🚀 NEW: Try AI Prompt Studio</a>
+  <p>Generate powerful AI image prompts for YouTube, logos, Instagram, blog images & more — FREE</p>
 </div>
 
 <div class="container">
-
-  <div class="stats">
-    <div class="stat"><b>200+</b>Tools</div>
-    <div class="stat"><b>7</b>Categories</div>
-    <div class="stat"><b>100%</b>Free</div>
-    <div class="stat"><b>0</b>Signup</div>
-  </div>
-
-  <h2>Explore Tool Categories</h2>
-  <p class="sub">Fast, free & browser-based tools</p>
-
   <div class="grid">
 
     <div class="card">
-      <h3>Text Tools</h3>
-      <p>Word counter, case converter and more.</p>
-      <a href="text-tools.html">Explore →</a>
+      <h2>Text Tools</h2>
+      <p>Word counter, case converter, slug generator and more.</p>
+      <a href="text-tools.html">Explore Text Tools</a>
     </div>
 
     <div class="card">
-      <h3>Developer Tools</h3>
-      <p>JSON, Base64, CSS & JS tools.</p>
-      <a href="dev-tools.html">Explore →</a>
+      <h2>Developer Tools</h2>
+      <p>Formatters, converters, encoders and developer utilities.</p>
+      <a href="dev-tools.html">Explore Dev Tools</a>
     </div>
 
     <div class="card">
-      <h3>AI Tools</h3>
-      <p>AI text, code, image & marketing tools.</p>
-      <a href="ai-tools.html">Explore →</a>
+      <h2>AI Tools</h2>
+      <p>AI writing, marketing, code and productivity tools.</p>
+      <a href="ai-tools.html">Explore AI Tools</a>
     </div>
 
     <div class="card">
-      <h3>Image Tools</h3>
-      <p>Resize, convert & image helpers.</p>
-      <a href="image-tools.html">Explore →</a>
+      <h2>Image Tools</h2>
+      <p>Resize, crop, convert, download and manage images.</p>
+      <a href="image-tools.html">Explore Image Tools</a>
     </div>
 
     <div class="card">
-      <h3>Calculator Tools</h3>
-      <p>EMI, GST, BMI & finance calculators.</p>
-      <a href="calculator-tools.html">Explore →</a>
+      <h2>Calculator Tools</h2>
+      <p>EMI, GST, BMI, interest and finance calculators.</p>
+      <a href="calculator-tools.html">Explore Calculators</a>
     </div>
 
     <div class="card">
-      <h3>Utility Tools</h3>
-      <p>Password, QR, converters & utilities.</p>
-      <a href="utility-tools.html">Explore →</a>
+      <h2>SEO Tools</h2>
+      <p>Meta tags, sitemaps, keyword tools and SEO utilities.</p>
+      <a href="seo-tools.html">Explore SEO Tools</a>
     </div>
 
     <div class="card">
-      <h3>SEO Tools</h3>
-      <p>Meta tags, sitemap & SERP tools.</p>
-      <a href="seo-tools.html">Explore →</a>
+      <h2>Utility Tools</h2>
+      <p>Password, QR, converter, timers and more utilities.</p>
+      <a href="utility-tools.html">Explore Utility Tools</a>
     </div>
 
   </div>
 </div>
 
 <footer>
-  <p>© 2025 GTTools · <a href="sitemap.xml">Sitemap</a></p>
+  <p>© GTTools – Free Online Tools</p>
 </footer>
-
-<script src="search.js"></script>
 
 </body>
 </html>
