@@ -1,0 +1,500 @@
+<!-- ai-prompt-studio.html -->
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI Prompt Studio — GTTools</title>
+<meta name="description" content="AI Prompt Studio — generate ready-to-use image & creative prompts for Midjourney, DALL·E, Stable Diffusion and other image AIs. Customize style, mood, colors." />
+<style>
+  :root{
+    --bg:#f8fafc; --card:#ffffff; --muted:#64748b; --accent:#0ea5a4; --glass: rgba(15,23,42,0.04);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,Segoe UI,Roboto,"Noto Sans",Arial;background:var(--bg);color:#0f172a}
+  header{background:linear-gradient(90deg,#6366f1,#0ea5a4);color:#fff;padding:28px 16px;text-align:center}
+  header h1{margin:0;font-size:22px}
+  header p{margin:8px 0 0;font-size:14px;opacity:.95}
+  .wrap{max-width:1080px;margin:20px auto;padding:16px}
+  .grid{display:grid;grid-template-columns:1fr 420px;gap:18px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border-radius:12px;padding:14px;border:1px solid var(--glass);box-shadow:0 8px 20px rgba(2,6,23,0.04)}
+  label{display:block;font-weight:600;margin:10px 0 6px}
+  select,input[type="text"],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef2;font-size:14px}
+  textarea{min-height:90px;resize:vertical}
+  .row{display:flex;gap:10px}
+  .row .col{flex:1}
+  .btn{background:var(--accent);color:#fff;border:none;padding:10px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+  .btn.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{padding:6px 10px;border-radius:999px;background:#f1f5f9;border:1px solid #e6eef2;font-size:13px;cursor:pointer}
+  .chip.active{background:var(--accent);color:#fff;border-color:transparent}
+  .prompts{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+  .prompt{background:#0f172a;color:#fff;padding:12px;border-radius:10px;word-break:break-word}
+  .prompt small{display:block;color:rgba(255,255,255,.75);font-weight:600;margin-bottom:6px}
+  .tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .muted{color:var(--muted);font-size:13px}
+  footer{max-width:1080px;margin:26px auto 60px;padding:0 16px;color:var(--muted);font-size:13px}
+  .topline{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .sharebox{display:flex;gap:8px;align-items:center}
+  .small{font-size:13px;padding:6px 10px;border-radius:8px}
+  .danger{background:#fee2e2;color:#b91c1c;border:1px solid #fed7d7}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>AI Prompt Studio</h1>
+  <p>Fast prompts for image AIs — generate, copy and share ready-to-use prompts (Midjourney / DALL·E / Stable Diffusion).</p>
+</header>
+
+<main class="wrap">
+  <div class="grid">
+    <!-- LEFT: Controls + Results -->
+    <section>
+      <div class="card">
+        <div class="topline">
+          <div>
+            <strong>Prompt Studio</strong>
+            <div class="muted" style="margin-top:6px">Choose category, fill subject & tweak style to generate multiple prompt variations.</div>
+          </div>
+          <div class="sharebox">
+            <button class="small" id="btnSave">Save</button>
+            <button class="small secondary" id="btnLoad">Load</button>
+          </div>
+        </div>
+
+        <label for="category">Category</label>
+        <select id="category" aria-label="category">
+          <option value="youtube">YouTube Thumbnail</option>
+          <option value="blog">Blog Image</option>
+          <option value="logo">Logo</option>
+          <option value="instagram">Instagram Post</option>
+          <option value="hero">Website Hero</option>
+          <option value="poster">Poster / Flyer</option>
+          <option value="mockup">Product Mockup</option>
+          <option value="pattern">Pattern / Texture</option>
+          <option value="avatar">Avatar / Character</option>
+          <option value="wallpaper">Wallpaper</option>
+        </select>
+
+        <label for="subject">Subject (kisi bhi cheez ka short description)</label>
+        <input id="subject" type="text" placeholder="e.g. 'organic honey jar with label'">
+
+        <div class="row" style="margin-top:8px">
+          <div class="col">
+            <label for="style">Style / Art Direction</label>
+            <input id="style" type="text" placeholder="e.g. 'minimal flat vector'">
+          </div>
+          <div class="col">
+            <label for="mood">Mood / Tone</label>
+            <input id="mood" type="text" placeholder="e.g. 'warm, cozy, inviting'">
+          </div>
+        </div>
+
+        <label for="colors">Colors (comma separated)</label>
+        <input id="colors" type="text" placeholder="e.g. 'pastel pink, cream, dark green'">
+
+        <label for="extra">Extra instructions (optional)</label>
+        <textarea id="extra" placeholder="e.g. 'high detail, studio lighting, shallow depth of field'"></textarea>
+
+        <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+          <button class="btn" id="generate">Generate Prompts</button>
+          <button class="btn secondary" id="randomize">Randomize</button>
+          <button class="btn secondary" id="clear">Clear</button>
+        </div>
+
+        <div style="margin-top:12px" class="muted">Tip: Subject + Style + Mood + Colors se hi mostly perfect prompt mil jaata hai. Use "Randomize" for variations.</div>
+      </div>
+
+      <!-- Results -->
+      <div class="card" style="margin-top:14px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong>Generated Prompts</strong>
+          <div class="tools">
+            <button class="small" id="copyAll">Copy All</button>
+            <button class="small" id="downloadTxt">Download .txt</button>
+            <button class="small" id="copySample">Copy 1</button>
+          </div>
+        </div>
+
+        <div class="prompts" id="promptsContainer" style="margin-top:12px">
+          <!-- JS inserts prompts here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: Presets & Examples -->
+    <aside>
+      <div class="card">
+        <strong>Quick Presets</strong>
+        <div class="chips" id="presetChips" style="margin-top:10px">
+          <div class="chip" data-subject="sunset over mountains" data-style="cinematic, high detail" data-mood="dramatic" data-colors="orange, purple">Cinematic Landscape</div>
+          <div class="chip" data-subject="small eco-friendly product box" data-style="minimal vector" data-mood="clean" data-colors="white, pastel green">Product Mockup</div>
+          <div class="chip" data-subject="female avatar portrait" data-style="digital painting" data-mood="soft" data-colors="warm tones">Avatar Portrait</div>
+          <div class="chip" data-subject="blog hero for productivity" data-style="flat modern illustration" data-mood="energetic" data-colors="blue, yellow">Blog Hero</div>
+          <div class="chip" data-subject="bold typographic poster" data-style="grunge typography" data-mood="bold" data-colors="black, red">Poster / Event</div>
+        </div>
+
+        <hr style="margin:12px 0">
+
+        <strong>Category Tips</strong>
+        <ul class="muted" style="padding-left:18px;margin:8px 0 0 0">
+          <li><small><strong>YouTube:</strong> Include "close-up, readable text, thumbnail composition".</small></li>
+          <li><small><strong>Logo:</strong> Mention 'scalable, vector, single color option'.</small></li>
+          <li><small><strong>Mockup:</strong> Mention background (studio / lifestyle) & perspective.</small></li>
+          <li><small><strong>Pattern:</strong> Mention repeat style (seamless tile, low contrast).</small></li>
+        </ul>
+
+        <hr style="margin:12px 0">
+
+        <strong>Examples (copy-paste)</strong>
+        <pre class="muted" style="white-space:pre-wrap;background:#fbfdfe;padding:8px;border-radius:8px;border:1px solid #eef6f8">
+"Organic honey jar on wooden table, minimal vector label, studio lighting, warm tones, high detail"
+"Modern logo for coffee brand, simple monogram, negative space, scalable vector, black & gold"
+"Instagram post for sale, flat illustration, bold headline space, pastel palette, centered product"
+        </pre>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <strong>Share / Save</strong>
+        <div style="margin-top:8px" class="muted">You can share current settings with a link or save locally.</div>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="btn" id="shareLinkBtn">Get Share Link</button>
+          <button class="btn secondary" id="saveLocalBtn">Export JSON</button>
+        </div>
+        <div id="shareOut" style="margin-top:10px;word-break:break-all" class="muted"></div>
+      </div>
+
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap muted">GTTools · AI Prompt Studio — free tool. Pro tip: generate 3 variations, pick the best, then tweak style for final results.</div>
+</footer>
+
+<script>
+/* --- Data & templates --- */
+const templates = {
+  youtube: [
+    "{subject}, close-up composition, bold readable text area on left, {style}, {mood}, {colors}. Cinematic lighting, ultra-detailed, 16:9",
+    "{subject} thumbnail, centered product/person, dramatic rim light, {style}, {mood}, {colors}. high contrast, tight crop",
+    "YouTube thumbnail of {subject}, large headline space, high saturation, {style}, {mood}, {colors}. focus on face/product"
+  ],
+  blog: [
+    "Hero image for blog about {subject}, {style}, {mood}, {colors}, clean layout, negative space for title",
+    "{subject} illustration for article, flat vector style, {mood}, simple background, {colors}",
+    "{subject} concept art, editorial look, {style}, {mood}, {colors}. high resolution"
+  ],
+  logo: [
+    "Logo design for {subject}, simple monogram, scalable vector, {style}, monochrome variant in {colors}",
+    "{subject} brand mark, negative space, minimal, {mood}, {style}. provide symbol + wordmark",
+    "Modern logo for {subject}, flat geometry, {colors}, {style}, high contrast, clean lines"
+  ],
+  instagram: [
+    "Instagram post: {subject}, square layout, {style}, {mood}, {colors}, clear headline area",
+    "{subject} promotional post, bold typography, {style}, {mood}, {colors}, center-aligned",
+    "Social media image for {subject}, vibrant colors {colors}, {style}, {mood}, mobile-first composition"
+  ],
+  hero: [
+    "Website hero image for {subject}, wide composition, {style}, {mood}, {colors}, room for CTA button",
+    "{subject} banner illustration, modern flat design, {mood}, {style}, {colors}, high visual hierarchy",
+    "Header hero for {subject}, soft gradients, {style}, {mood}, {colors}, clean layout"
+  ],
+  poster: [
+    "Poster for {subject}, typographic focus, {style}, bold colors {colors}, high contrast, print-ready layout",
+    "Event poster: {subject}, vintage style, {mood}, {style}, {colors}, high-res",
+    "Flyer design of {subject}, dynamic composition, {style}, {mood}, {colors}"
+  ],
+  mockup: [
+    "Product mockup of {subject}, studio lighting, realistic shadows, {style}, {mood}, {colors}. Photorealistic",
+    "Mockup showing {subject} in lifestyle scene, {style}, {mood}, {colors}, 3-point lighting",
+    "Packaging mockup for {subject}, minimal label, {style}, {mood}, {colors}, high detail"
+  ],
+  pattern: [
+    "Seamless repeating pattern of {subject}, tile-friendly, {style}, {mood}, {colors}, vector output",
+    "Textile pattern design inspired by {subject}, {style}, {mood}, {colors}, low contrast",
+    "Background texture: {subject} motif, {style}, {mood}, {colors}, high repeatability"
+  ],
+  avatar: [
+    "{subject} character portrait, digital painting, {mood}, {style}, {colors}, headshot",
+    "Stylized avatar of {subject}, vector flat colors, {mood}, {style}, {colors}, expressive",
+    "Profile avatar: {subject}, studio lighting, {style}, {mood}, {colors}, high detail"
+  ],
+  wallpaper: [
+    "Wallpaper of {subject}, wide panoramic, {style}, {mood}, {colors}, high resolution",
+    "Desktop wallpaper: {subject} scenery, cinematic, {style}, {mood}, {colors}, ultra-detailed",
+    "Phone wallpaper: {subject}, vertical composition, minimal elements, {style}, {mood}, {colors}"
+  ]
+};
+
+/* --- Helpers --- */
+const el = id => document.getElementById(id);
+const sampleColors = ["pastel pink","cream","dark green","muted blue","black & gold","warm tones","neon cyan"];
+function randomPick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+function safeTrim(s){ return (s||"").toString().trim(); }
+function titleCase(s){ return s.replace(/\b\w/g,c=>c.toUpperCase()); }
+
+/* --- UI elements --- */
+const category = el('category');
+const subject = el('subject');
+const styleIn = el('style');
+const mood = el('mood');
+const colors = el('colors');
+const extra = el('extra');
+const generateBtn = el('generate');
+const randomizeBtn = el('randomize');
+const clearBtn = el('clear');
+const promptsContainer = el('promptsContainer');
+const copyAllBtn = el('copyAll');
+const downloadBtn = el('downloadTxt');
+const copySampleBtn = el('copySample');
+const presetChips = document.getElementById('presetChips');
+const shareLinkBtn = el('shareLinkBtn');
+const shareOut = el('shareOut');
+const saveLocalBtn = el('saveLocalBtn');
+const btnSave = el('btnSave');
+const btnLoad = el('btnLoad');
+
+/* --- Core generate function --- */
+function generatePrompts(){
+  const cat = category.value;
+  const subj = safeTrim(subject.value) || "Your subject here";
+  const sty = safeTrim(styleIn.value) || "";
+  const md = safeTrim(mood.value) || "";
+  const cols = safeTrim(colors.value) || "";
+  const extraTxt = safeTrim(extra.value) || "";
+
+  const baseReplacements = {
+    subject: subj,
+    style: sty,
+    mood: md,
+    colors: cols ? cols : "natural colors",
+    extra: extraTxt
+  };
+
+  const list = templates[cat] || templates['blog'];
+  const out = [];
+
+  // generate 3 variations from template list (choose randomly but deterministic length)
+  for(let i=0;i<3;i++){
+    const t = list[i % list.length];
+    // build prompt by replacing placeholders & appending extra if present
+    let p = t.replace(/\{subject\}/g, baseReplacements.subject)
+             .replace(/\{style\}/g, baseReplacements.style)
+             .replace(/\{mood\}/g, baseReplacements.mood)
+             .replace(/\{colors\}/g, baseReplacements.colors);
+    if(baseReplacements.extra) p = p + ", " + baseReplacements.extra;
+    out.push(p.trim());
+  }
+
+  renderPrompts(out);
+  // update URL hash for sharing
+  updateHash({cat,subj,sty,md,cols,extraTxt});
+}
+
+function renderPrompts(list){
+  promptsContainer.innerHTML = "";
+  list.forEach((p,idx)=>{
+    const div = document.createElement('div');
+    div.className = "prompt";
+    div.innerHTML = `<small>Variation ${idx+1}</small><div style="font-size:15px">${escapeHtml(p)}</div>`;
+    // add small row of actions
+    const actions = document.createElement('div');
+    actions.style.marginTop = "8px";
+    actions.style.display = "flex";
+    actions.style.gap = "8px";
+    const copyBtn = document.createElement('button');
+    copyBtn.className = "small";
+    copyBtn.textContent = "Copy";
+    copyBtn.onclick = ()=>{ copyText(p); showToast("Copied"); };
+    const editBtn = document.createElement('button');
+    editBtn.className = "small";
+    editBtn.textContent = "Use as input";
+    editBtn.onclick = ()=>{
+      subject.value = p;
+      window.scrollTo({top:0,behavior:'smooth'});
+    };
+    actions.appendChild(copyBtn);
+    actions.appendChild(editBtn);
+    div.appendChild(actions);
+    promptsContainer.appendChild(div);
+  });
+}
+
+function escapeHtml(str){
+  return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function copyText(t){
+  if(!t) return;
+  navigator.clipboard.writeText(t).catch(()=>{});
+}
+
+function copyAll(){
+  const nodes = [...promptsContainer.querySelectorAll('.prompt div')];
+  const txt = nodes.map(n=>n.textContent.trim()).join("\n\n");
+  copyText(txt);
+  showToast("All prompts copied");
+}
+
+function downloadTxt(){
+  const nodes = [...promptsContainer.querySelectorAll('.prompt div')];
+  if(!nodes.length){ showToast("No prompts to download"); return; }
+  const txt = nodes.map(n=>n.textContent.trim()).join("\n\n");
+  const blob = new Blob([txt],{type:'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'ai-prompts.txt';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function randomizeFields(){
+  const randomSubjects = ["sunset cafe scene","modern startup landing","handcrafted soap jar","retro travel poster","futuristic city skyline"];
+  subject.value = randomPick(randomSubjects);
+  styleIn.value = randomPick(["minimal vector","digital painting","photorealistic","cinematic","flat modern illustration"]);
+  mood.value = randomPick(["warm and cozy","dramatic","energetic","calm","mysterious"]);
+  colors.value = randomPick(sampleColors);
+  extra.value = randomPick(["high detail","studio lighting","shallow depth of field","soft shadows"]);
+}
+
+function clearAll(){
+  subject.value = styleIn.value = mood.value = colors.value = extra.value = "";
+  promptsContainer.innerHTML = "";
+  shareOut.textContent = "";
+  history.replaceState({}, document.title, location.pathname + location.search);
+}
+
+/* --- URL hash sharing --- */
+function updateHash(obj){
+  const payload = encodeURIComponent(JSON.stringify(obj));
+  location.hash = payload;
+  shareOut.textContent = location.href;
+}
+
+function loadFromHash(){
+  try{
+    if(!location.hash) return;
+    const h = decodeURIComponent(location.hash.slice(1));
+    const data = JSON.parse(h);
+    if(data.cat) category.value = data.cat;
+    if(data.subj) subject.value = data.subj;
+    if(data.sty) styleIn.value = data.sty;
+    if(data.md) mood.value = data.md;
+    if(data.cols) colors.value = data.cols;
+    if(data.extraTxt) extra.value = data.extraTxt;
+    // auto generate after load
+    generatePrompts();
+  }catch(e){ /* ignore */ }
+}
+
+/* --- presets chips --- */
+presetChips.addEventListener('click', (ev)=>{
+  const chip = ev.target.closest('.chip');
+  if(!chip) return;
+  subject.value = chip.getAttribute('data-subject') || "";
+  styleIn.value = chip.getAttribute('data-style') || "";
+  mood.value = chip.getAttribute('data-mood') || "";
+  colors.value = chip.getAttribute('data-colors') || "";
+});
+
+/* --- Save / load local --- */
+btnSave.onclick = ()=>{
+  const data = {
+    cat: category.value,
+    subj: subject.value,
+    style: styleIn.value,
+    mood: mood.value,
+    colors: colors.value,
+    extra: extra.value
+  };
+  localStorage.setItem('gt_prompt_studio_saved', JSON.stringify(data));
+  showToast("Settings saved locally");
+};
+btnLoad.onclick = ()=>{
+  const raw = localStorage.getItem('gt_prompt_studio_saved');
+  if(!raw){ showToast("No saved settings"); return; }
+  const d = JSON.parse(raw);
+  category.value = d.cat || category.value;
+  subject.value = d.subj || "";
+  styleIn.value = d.style || "";
+  mood.value = d.mood || "";
+  colors.value = d.colors || "";
+  extra.value = d.extra || "";
+  showToast("Settings loaded");
+};
+
+/* --- other UI buttons --- */
+generateBtn.onclick = generatePrompts;
+randomizeBtn.onclick = ()=>{ randomizeFields(); generatePrompts(); };
+clearBtn.onclick = clearAll;
+copyAllBtn.onclick = copyAll;
+downloadBtn.onclick = downloadTxt;
+copySampleBtn.onclick = ()=>{ 
+  const first = promptsContainer.querySelector('.prompt div');
+  if(!first){ showToast("Generate prompts first"); return; }
+  copyText(first.textContent.trim());
+  showToast("First prompt copied");
+};
+
+shareLinkBtn.onclick = ()=>{
+  if(!location.hash){
+    generatePrompts();
+  }
+  shareOut.textContent = location.href;
+  navigator.clipboard && navigator.clipboard.writeText(location.href).then(()=>showToast("Link copied"));
+};
+
+saveLocalBtn.onclick = ()=>{
+  const obj = {
+    category: category.value,
+    subject: subject.value,
+    style: styleIn.value,
+    mood: mood.value,
+    colors: colors.value,
+    extra: extra.value,
+    generated: [...promptsContainer.querySelectorAll('.prompt div')].map(d=>d.textContent.trim())
+  };
+  const blob = new Blob([JSON.stringify(obj, null, 2)],{type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = 'ai-prompt-studio-export.json'; document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+};
+
+/* small toast */
+function showToast(msg){
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.position = "fixed";
+  t.style.right = "16px";
+  t.style.bottom = "18px";
+  t.style.background = "rgba(2,6,23,0.9)";
+  t.style.color = "#fff";
+  t.style.padding = "10px 12px";
+  t.style.borderRadius = "8px";
+  t.style.zIndex = 9999;
+  document.body.appendChild(t);
+  setTimeout(()=>t.style.opacity = "0.01",1600);
+  setTimeout(()=>t.remove(),2200);
+}
+
+/* small utility to pick random from array */
+function randomPick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+/* load url hash on open */
+window.addEventListener('load', ()=>{
+  loadFromHash();
+});
+
+/* keyboard: press / to focus search */
+window.addEventListener('keydown',(e)=>{
+  if(e.key === "/"){ e.preventDefault(); subject.focus(); subject.select(); }
+});
+
+</script>
+
+</body>
+</html>
