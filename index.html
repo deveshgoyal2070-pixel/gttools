@@ -4,13 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GTTOOLS – Free Online Tools & AI Prompt Studio</title>
-<meta name="description" content="GTTOOLS offers 200+ free online tools plus a powerful AI Prompt Studio. Fast, simple, and no signup required." />
+<meta name="description" content="200+ free online tools including image tools, text tools, calculators, converters, and AI Prompt Studio. Fast, simple, and no signup required." />
 
 <style>
 body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#111}
+
+/* NAVBAR */
 nav {background:#111827;padding:12px;text-align:center}
 nav a {color:white;margin:0 10px;text-decoration:none;font-weight:600;font-size:14px}
 
+/* HERO */
 .hero {
   padding: 90px 20px 70px;
   text-align: center;
@@ -18,21 +21,45 @@ nav a {color:white;margin:0 10px;text-decoration:none;font-weight:600;font-size:
   color: white;
 }
 .hero-inner {max-width:850px;margin:auto}
-.hero h1 {font-size:44px;margin-bottom:14px;letter-spacing:1px}
+.hero h1 {font-size:44px;margin-bottom:14px}
 .tagline {font-size:20px;opacity:.95;margin-bottom:26px}
 
 .hero-buttons {display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 .btn-primary {background:white;color:#111827;padding:14px 24px;border-radius:10px;font-weight:600;text-decoration:none}
 .btn-secondary {background:rgba(255,255,255,.15);color:white;padding:14px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.4)}
 
-.container {max-width:1100px;margin:50px auto;padding:0 16px}
+/* SECTION */
+.container {max-width:1100px;margin:60px auto;padding:0 16px}
+.section-title {text-align:center;font-size:28px;margin-bottom:30px}
+
+/* CATEGORY GRID */
 .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card {
+  background:white;border-radius:12px;padding:22px;border:1px solid #e5e7eb;
+  text-align:left;transition:.2s ease
+}
+.card:hover {transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.card h2 {margin:10px 0 8px;font-size:18px}
+.card p {color:#555;font-size:14px;margin:0 0 12px}
+.card a {display:inline-block;padding:9px 14px;background:#0ea5a4;color:white;border-radius:8px;text-decoration:none;font-weight:600}
+.icon {font-size:26px}
 
-.card {background:white;border-radius:12px;padding:20px;border:1px solid #e5e7eb;text-align:left}
-.card h2 {margin:6px 0 8px;font-size:18px}
-.card p {color:#555;font-size:14px;margin:0}
-.card a {display:inline-block;margin-top:12px;padding:8px 14px;background:#0ea5a4;color:white;border-radius:8px;text-decoration:none;font-weight:600}
+/* HIGHLIGHT */
+.highlight {
+  background:linear-gradient(90deg,#eef2ff,#e0f2f1);
+  border:1px solid #c7d2fe;padding:22px;border-radius:12px;
+  text-align:center;margin-bottom:50px
+}
 
+/* POPULAR TOOLS */
+.popular-tools {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.popular-card {
+  background:white;border-radius:10px;padding:16px;border:1px solid #e5e7eb;
+  font-size:14px
+}
+.popular-card a {text-decoration:none;color:#0ea5a4;font-weight:600}
+
+/* FOOTER */
 footer {text-align:center;padding:40px 20px;color:#555;font-size:14px}
 
 @media (max-width:768px){
@@ -66,20 +93,41 @@ footer {text-align:center;padding:40px 20px;color:#555;font-size:14px}
   </div>
 </header>
 
-<div id="tools-grid" class="container">
-  <div class="grid">
-    <div class="card"><h2>Text Tools</h2><p>Word counter, case converter and more.</p><a href="text-tools.html">Explore</a></div>
-    <div class="card"><h2>Developer Tools</h2><p>JSON, encoding, formatters and dev helpers.</p><a href="dev-tools.html">Explore</a></div>
-    <div class="card"><h2>AI Tools</h2><p>AI utilities and Prompt Studio.</p><a href="ai-tools.html">Explore</a></div>
-    <div class="card"><h2>Image Tools</h2><p>Compress, resize, convert images.</p><a href="image-tools.html">Explore</a></div>
-    <div class="card"><h2>Calculators</h2><p>Finance, BMI, GST and more.</p><a href="calculator-tools.html">Explore</a></div>
-    <div class="card"><h2>SEO Tools</h2><p>Meta tags, sitemap, SEO helpers.</p><a href="seo-tools.html">Explore</a></div>
-    <div class="card"><h2>Utility Tools</h2><p>QR codes, passwords, converters.</p><a href="utility-tools.html">Explore</a></div>
+<div class="container">
+
+  <div class="highlight">
+    <h2>✨ AI Prompt Studio</h2>
+    <p>Generate powerful AI prompts for images, logos, thumbnails, writing, and more.</p>
+    <a href="ai-prompt-studio.html" class="btn-primary">Launch Prompt Studio</a>
   </div>
+
+  <h2 class="section-title">Browse Tool Categories</h2>
+
+  <div id="tools-grid" class="grid">
+    <div class="card"><div class="icon">📝</div><h2>Text Tools</h2><p>Word counter, case converter, and text utilities.</p><a href="text-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">💻</div><h2>Developer Tools</h2><p>JSON tools, encoders, formatters and dev helpers.</p><a href="dev-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">🤖</div><h2>AI Tools</h2><p>AI utilities, generators and prompt helpers.</p><a href="ai-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">🖼️</div><h2>Image Tools</h2><p>Resize, compress, convert and edit images.</p><a href="image-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">🧮</div><h2>Calculators</h2><p>Finance, BMI, GST and daily calculators.</p><a href="calculator-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">📊</div><h2>SEO Tools</h2><p>Meta tags, sitemap helpers and SEO utilities.</p><a href="seo-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">🔧</div><h2>Utility Tools</h2><p>QR codes, password tools, converters and more.</p><a href="utility-tools.html">Explore</a></div>
+  </div>
+
+  <h2 class="section-title" style="margin-top:70px">🔥 Popular Tools</h2>
+
+  <div class="popular-tools">
+    <div class="popular-card"><a href="tools/image-compressor.html">Image Compressor</a><br>Reduce image size instantly</div>
+    <div class="popular-card"><a href="tools/word-counter.html">Word Counter</a><br>Count words, characters & sentences</div>
+    <div class="popular-card"><a href="tools/url-shortener.html">URL Shortener</a><br>Create short shareable links</div>
+    <div class="popular-card"><a href="tools/json-formatter.html">JSON Formatter</a><br>Beautify and validate JSON</div>
+    <div class="popular-card"><a href="tools/password-generator.html">Password Generator</a><br>Create strong secure passwords</div>
+    <div class="popular-card"><a href="tools/qr-code-generator.html">QR Code Generator</a><br>Generate custom QR codes</div>
+  </div>
+
 </div>
 
 <footer>
-  © GTTOOLS – Free Online Tools & AI Prompt Studio
+  © 2026 GTTOOLS – Free Online Tools & AI Prompt Studio
 </footer>
 
 </body>
