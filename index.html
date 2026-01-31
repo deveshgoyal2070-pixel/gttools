@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>GTTOOLS – Free Online Tools & AI Prompt Studio</title>
-<meta name="description" content="200+ free online tools including image tools, text tools, calculators, converters, and powerful AI tools like Prompt Studio and Text Enhancer." />
+<meta name="description" content="200+ free online tools including AI Prompt Studio, AI Text Enhancer, image tools, text tools, calculators and more." />
 
 <style>
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#111}
@@ -28,12 +28,12 @@ nav a{color:white;margin:0 10px;text-decoration:none;font-weight:600;font-size:1
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;text-align:center;margin:50px auto;max-width:1000px}
 .stats div{background:white;padding:20px;border-radius:12px;border:1px solid #e5e7eb;font-size:14px}
 
-/* SECTION */
+/* SECTIONS */
 .container{max-width:1100px;margin:60px auto;padding:0 16px}
-.section-title{text-align:center;font-size:28px;margin-bottom:30px}
+.section-title{text-align:center;font-size:26px;margin:50px 0 25px}
 
 /* HIGHLIGHT */
-.highlight{background:linear-gradient(90deg,#eef2ff,#e0f2f1);border:1px solid #c7d2fe;padding:22px;border-radius:12px;text-align:center;margin-bottom:40px}
+.highlight{background:linear-gradient(90deg,#eef2ff,#e0f2f1);border:1px solid #c7d2fe;padding:22px;border-radius:12px;text-align:center;margin-bottom:30px}
 
 /* CATEGORY GRID */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
@@ -75,7 +75,7 @@ footer{text-align:center;padding:40px 20px;color:#555;font-size:14px}
 <header class="hero">
   <div class="hero-inner">
     <h1>GTTOOLS</h1>
-    <p class="tagline">200+ Free Online Tools + Built-in AI Prompt Studio</p>
+    <p class="tagline">200+ Free Online Tools + AI Prompt Studio</p>
     <div class="hero-buttons">
       <a href="#tools-grid" class="btn-primary">Explore All Tools</a>
       <a href="ai-prompt-studio.html" class="btn-secondary">Open AI Prompt Studio</a>
@@ -98,7 +98,7 @@ footer{text-align:center;padding:40px 20px;color:#555;font-size:14px}
 
   <div class="highlight">
     <h2>✨ AI Prompt Studio</h2>
-    <p>Create powerful prompts for AI images, logos, thumbnails and more.</p>
+    <p>Create powerful prompts for AI images and content.</p>
     <a href="ai-prompt-studio.html" class="btn-primary">Launch Prompt Studio</a>
   </div>
 
@@ -110,13 +110,37 @@ footer{text-align:center;padding:40px 20px;color:#555;font-size:14px}
 
   <h2 class="section-title">Browse Tool Categories</h2>
   <div id="tools-grid" class="grid">
-    <div class="card"><div class="icon">📝</div><h2>Text Tools</h2><p>Word counter and text utilities.</p><a href="text-tools.html">Explore</a></div>
-    <div class="card"><div class="icon">💻</div><h2>Developer Tools</h2><p>JSON tools and dev helpers.</p><a href="dev-tools.html">Explore</a></div>
-    <div class="card"><div class="icon">🤖</div><h2>AI Tools</h2><p>Prompt Studio and AI writing tools.</p><a href="ai-tools.html">Explore</a></div>
-    <div class="card"><div class="icon">🖼️</div><h2>Image Tools</h2><p>Resize and compress images.</p><a href="image-tools.html">Explore</a></div>
-    <div class="card"><div class="icon">🧮</div><h2>Calculators</h2><p>Finance and health calculators.</p><a href="calculator-tools.html">Explore</a></div>
-    <div class="card"><div class="icon">📊</div><h2>SEO Tools</h2><p>Meta tags and sitemap tools.</p><a href="seo-tools.html">Explore</a></div>
-    <div class="card"><div class="icon">🔧</div><h2>Utility Tools</h2><p>QR, password, converters.</p><a href="utility-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">📝</div><h2>Text Tools</h2><a href="text-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">💻</div><h2>Developer Tools</h2><a href="dev-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">🤖</div><h2>AI Tools</h2><a href="ai-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">🖼️</div><h2>Image Tools</h2><a href="image-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">🧮</div><h2>Calculators</h2><a href="calculator-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">📊</div><h2>SEO Tools</h2><a href="seo-tools.html">Explore</a></div>
+    <div class="card"><div class="icon">🔧</div><h2>Utility Tools</h2><a href="utility-tools.html">Explore</a></div>
+  </div>
+
+  <h2 class="section-title">🕒 Recently Used Tools</h2>
+  <div id="recentTools" class="popular-tools"></div>
+
+  <h2 class="section-title">🔥 Trending Tools</h2>
+  <div class="popular-tools">
+    <div class="popular-card"><a href="ai-text-enhancer.html">AI Text Enhancer</a></div>
+    <div class="popular-card"><a href="tools/image-compressor.html">Image Compressor</a></div>
+    <div class="popular-card"><a href="tools/word-counter.html">Word Counter</a></div>
+  </div>
+
+  <h2 class="section-title">🌟 Popular Tools</h2>
+  <div class="popular-tools">
+    <div class="popular-card"><a href="tools/url-shortener.html">URL Shortener</a></div>
+    <div class="popular-card"><a href="tools/password-generator.html">Password Generator</a></div>
+    <div class="popular-card"><a href="tools/json-formatter.html">JSON Formatter</a></div>
+  </div>
+
+  <h2 class="section-title">📚 Helpful Guides</h2>
+  <div class="popular-tools">
+    <div class="popular-card"><a href="#">How to Compress Images Without Losing Quality</a></div>
+    <div class="popular-card"><a href="#">How to Make AI Text Sound Human</a></div>
+    <div class="popular-card"><a href="#">Best Free Online Tools for Students</a></div>
   </div>
 
 </div>
@@ -134,6 +158,29 @@ let text=card.innerText.toLowerCase();
 card.style.display=text.includes(input)?"block":"none";
 });
 }
+
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",function(){
+let tool=this.innerText;
+let recent=JSON.parse(localStorage.getItem("recentTools"))||[];
+if(!recent.includes(tool)){
+recent.unshift(tool);
+if(recent.length>5)recent.pop();
+localStorage.setItem("recentTools",JSON.stringify(recent));
+}
+});
+});
+
+window.onload=function(){
+let container=document.getElementById("recentTools");
+let recent=JSON.parse(localStorage.getItem("recentTools"))||[];
+recent.forEach(tool=>{
+let div=document.createElement("div");
+div.className="popular-card";
+div.innerHTML=tool;
+container.appendChild(div);
+});
+};
 </script>
 
 </body>
