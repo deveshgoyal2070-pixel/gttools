@@ -1,72 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Text Enhancer – Improve & Humanize Writing | GTTOOLS</title>
-<meta name="description" content="Use AI Text Enhancer to improve, humanize, simplify or polish your writing instantly. Free online tool, no signup required.">
-
-<style>
-body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f7fb;color:#111}
-header{background:linear-gradient(135deg,#4f46e5,#0ea5a4);color:white;padding:50px 20px;text-align:center}
-header h1{margin:0 0 10px}
-.container{max-width:900px;margin:40px auto;padding:0 16px}
-textarea{width:100%;min-height:160px;padding:12px;border-radius:10px;border:1px solid #ccc;font-size:15px}
-select,button{padding:12px 16px;border-radius:8px;border:none;font-size:15px;margin-top:10px}
-button{background:#4f46e5;color:white;font-weight:600;cursor:pointer}
-.output{background:white;border:1px solid #e5e7eb;border-radius:10px;padding:15px;margin-top:20px;white-space:pre-wrap}
-label{font-weight:600;display:block;margin-top:15px}
-</style>
-</head>
-<body>
-
-<header>
-  <h1>AI Text Enhancer Studio</h1>
-  <p>Make your writing clearer, more human, and more professional instantly.</p>
-</header>
-
-<div class="container">
-  <label>Paste your text below:</label>
-  <textarea id="inputText" placeholder="Paste your text here..."></textarea>
-
-  <label>Select improvement type:</label>
-  <select id="mode">
-    <option value="professional">Make it Professional</option>
-    <option value="human">Make it More Human</option>
-    <option value="simple">Simplify Language</option>
-    <option value="grammar">Fix Grammar</option>
-  </select>
-
-  <br>
-  <button onclick="enhanceText()">✨ Improve Text</button>
-
-  <div class="output" id="outputText">Your improved text will appear here...</div>
-</div>
-
 <script>
-function enhanceText(){
+async function enhanceText(){
 let text=document.getElementById("inputText").value.trim();
 let mode=document.getElementById("mode").value;
-if(!text){alert("Please enter some text first.");return;}
+if(!text){alert("Enter text first");return;}
 
-let result=text;
+document.getElementById("outputText").innerText="AI is improving your text...";
 
-if(mode==="professional"){
-  result="This refined version presents your message in a more professional and polished tone:\n\n"+text;
-}
-if(mode==="human"){
-  result="Here’s a more natural and human-friendly version of your text:\n\n"+text;
-}
-if(mode==="simple"){
-  result="Here’s a simpler and easier-to-understand version:\n\n"+text;
-}
-if(mode==="grammar"){
-  result="Here’s the grammatically improved version:\n\n"+text;
-}
+let instruction="";
+if(mode==="professional") instruction="Rewrite this text in a professional tone:";
+if(mode==="human") instruction="Rewrite this text to sound more natural and human:";
+if(mode==="simple") instruction="Simplify this text:";
+if(mode==="grammar") instruction="Fix grammar and improve clarity:";
 
-document.getElementById("outputText").innerText=result;
+const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer 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"
+  },
+  body: JSON.stringify({
+    model: "llama3-8b-8192",
+    messages: [
+      { role: "system", content: "You are a helpful writing assistant." },
+      { role: "user", content: instruction + "\n\n" + text }
+    ],
+    temperature: 0.7
+  })
+});
+
+const data = await response.json();
+document.getElementById("outputText").innerText =
+  data.choices?.[0]?.message?.content || "Error generating text.";
 }
 </script>
-
-</body>
-</html>
