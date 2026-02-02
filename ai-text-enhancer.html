@@ -6,55 +6,11 @@
 <title>AI Text Enhancer | GTTOOLS</title>
 
 <style>
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#f5f7fb;
-  margin:0;
-  padding:40px;
-  text-align:center
-}
-h1{margin-bottom:10px}
-p{color:#555}
-
-textarea{
-  width:90%;
-  max-width:700px;
-  height:160px;
-  margin:15px 0;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #ccc;
-  font-size:15px
-}
-
-select,button{
-  padding:12px 16px;
-  margin-top:10px;
-  font-size:15px;
-  border-radius:8px;
-  border:none
-}
-
-button{
-  background:#4f46e5;
-  color:white;
-  font-weight:600;
-  cursor:pointer
-}
-
-button:hover{opacity:.9}
-
-#output{
-  margin:25px auto 0;
-  padding:18px;
-  max-width:700px;
-  background:#ffffff;
-  border:1px solid #ddd;
-  border-radius:8px;
-  text-align:left;
-  white-space:pre-wrap;
-  min-height:80px
-}
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;margin:0;padding:40px;text-align:center}
+textarea{width:90%;max-width:700px;height:160px;margin:15px 0;padding:12px;border-radius:8px;border:1px solid #ccc;font-size:15px}
+select,button{padding:12px 16px;margin-top:10px;font-size:15px;border-radius:8px;border:none}
+button{background:#4f46e5;color:white;font-weight:600;cursor:pointer}
+#output{margin:25px auto 0;padding:18px;max-width:700px;background:#fff;border:1px solid #ddd;border-radius:8px;text-align:left;white-space:pre-wrap;min-height:80px}
 </style>
 </head>
 
@@ -92,9 +48,7 @@ async function enhanceText(){
   try {
     const res = await fetch("https://gtt-ai-backend.vercel.app/api/enhance", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text, mode })
     });
 
@@ -102,10 +56,8 @@ async function enhanceText(){
 
     if(data.result){
       output.innerText = data.result;
-    } else if(data.error){
-      output.innerText = "⚠ Server Error: " + data.error;
     } else {
-      output.innerText = "⚠ Unexpected response from AI.";
+      output.innerText = "⚠ " + (data.error || "Unexpected AI response");
     }
 
   } catch (err) {
